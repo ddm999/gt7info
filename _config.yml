@@ -1,1 +1,9 @@
 theme: jekyll-theme-minimal
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      latest-legend: "22-03-08-0035"
+      latest-ucd: "22-03-08-0035"
