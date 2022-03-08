@@ -1,16 +1,16 @@
-manufacturer, name, pp, cr, state
-Mini, Mini-Cooper 'S' '65, 251.10, 38000, normal
-Renault, R5 Turbo '80, 392.38, 154200, normal
-Alfa Romeo, MiTo '09, 396.62, 25600, normal
-Volkswagen, Volkswagen 1200 '66, 177.02, 32700, normal
-Abarth, Abarth 595 SS '70, 184.94, 48900, normal
-Alpine, A110 '72, 405.77, 140000, limited
+manufacturer, name, cr, state
+Mini, Mini-Cooper 'S' '65, 38000, normal
+Renault, R5 Turbo '80, 154200, normal
+Alfa Romeo, MiTo '09, 25600, normal
+Volkswagen, Volkswagen 1200 '66, 32700, normal
+Abarth, Abarth 595 SS '70, 48900, normal
+Alpine, A110 '72, 140000, limited
 Toyota, Celica GT-Four (ST205) '94, 78600, normal
-Mitsubishi, Lancer Evolution VI GSR T.M. SCP '99, 499.52, 162400, normal
-Honda, Integra Type R (DC2) '95, 431.35, 67300, normal
-Porsche, 911 Turbo (930) '81, 494.43, 215500, normal
-AMG, SLS AMG '10, 587.86, 316900, limited
-Porsche, 911 GT3 (997) '09, 579.76, 142400, normal
-Nissan, Fairlady Z (Z34) '08, 511.03, 39100, soldout
-Honda, Civic Type R (EK) Touring Car, 519.51, 116600, normal
-Lamborghini, Countach 25th Anniversary '88, 521.93, 713300, limited
+Mitsubishi, Lancer Evolution VI GSR T.M. SCP '99, 162400, normal
+Honda, Integra Type R (DC2) '95, 67300, normal
+Porsche, 911 Turbo (930) '81, 215500, normal
+AMG, SLS AMG '10, 316900, limited
+Porsche, 911 GT3 (997) '09, 142400, normal
+Nissan, Fairlady Z (Z34) '08, 39100, soldout
+Honda, Civic Type R (EK) Touring Car, 116600, normal
+Lamborghini, Countach 25th Anniversary '88, 713300, limited
