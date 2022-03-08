@@ -7,3 +7,5 @@ defaults:
     values:
       latest-legend: "22-03-08-0035"
       latest-ucd: "22-03-08-0035"
+      previous-legend: ""
+      previous-ucd: ""
