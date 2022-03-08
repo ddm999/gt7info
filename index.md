@@ -6,7 +6,6 @@ _Last updated string: {{page.latest-ucd}} (YY-MM-DD-hhmm)_
 
 {% for item in site.data.used[page.latest-ucd] %}
 {% if item.state == "soldout" %} <span style="color:red">**\[SOLD OUT\]**</span> {% elif item.state == "limited" %} <span style="color:red">_Limited Stock_</span> {% endif %}
-***\[{{item.state}}\]***
 **{{item.manufacturer}}** {{item.name}}
 **Cr. {{item.cr}}**
 
