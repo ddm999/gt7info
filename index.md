@@ -5,8 +5,11 @@
 Coming soon!
 {% for item in site.data.used.22-03-08-0035 %}
 \[{{item.state}}\]
+
 {{item.manufacturer}} {{item.name}}
+
 Cr. {{item.cr}}
+
 
 {% endfor %}
 
@@ -15,8 +18,11 @@ Cr. {{item.cr}}
 Coming soon!
 {% for item in site.data.legend.22-03-08-0035 %}
 \[{{item.state}}\]
+
 {{item.manufacturer}} {{item.name}}
+
 Cr. {{item.cr}}
+
 
 {% endfor %}
 
