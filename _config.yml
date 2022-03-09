@@ -5,7 +5,7 @@ defaults:
       path: ""
       type: "pages"
     values:
-      latest-legend: "22-03-08-0035"
-      latest-ucd: "22-03-08-0035"
-      previous-legend: ""
-      previous-ucd: ""
+      latest-legend: "22-03-09-0000"
+      latest-ucd: "22-03-09-0000"
+      previous-legend: "22-03-08-0035"
+      previous-ucd: "22-03-08-0035"
