@@ -20,16 +20,11 @@ jobs:
       - name: Build site
         run: python3 build.py
 
-      - name: Install SSH client
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           BRANCH: gh-pages
           FOLDER: build
-          SSH: true
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
           git-config-name: Github Actions
           git-config-email: gh.ddm999@gmail.com
