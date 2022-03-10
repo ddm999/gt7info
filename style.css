@@ -11,25 +11,25 @@
     font-family: 'Jaldi';
     font-weight: 400;
     font-weight: normal;
-    src: url("../fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
+    src: url("../test/fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;
     font-style: normal;
-    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    src: url("../test/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto Bold';
     font-weight: 400;
     font-style: normal;
-    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    src: url("../test/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto Medium';
     font-weight: 500;
     font-style: normal;
-    src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+    src: url("../test/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
 
 body {
