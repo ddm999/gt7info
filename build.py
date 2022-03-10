@@ -117,5 +117,9 @@ with open("build/index.html", "w") as f:
     f.write(html)
 
 FILES_TO_COPY = ["style.css", "ucd-auto.svg"]
+FOLDERS_TO_COPY = ["fonts"]
+
 for file in FILES_TO_COPY:
     shutil.copyfile(f"{file}", f"build/{file}")
+for folder in FOLDERS_TO_COPY:
+    shutil.copytree(f"{folder}", f"build/{folder}")
