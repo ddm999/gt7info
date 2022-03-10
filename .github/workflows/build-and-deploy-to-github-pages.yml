@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          BRANCH: web-new
+          BRANCH: gh-pages
           FOLDER: build
           SSH: true
           git-config-name: Github Actions
