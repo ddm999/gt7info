@@ -1,0 +1,248 @@
+/*
+    This stylesheet was adapted from the
+    https://github.com/orderedlist/minimal
+    GitHub Pages theme,
+    and is therefore licensed under CC BY-SA 3.0.
+
+    https://creativecommons.org/licenses/by-sa/3.0/
+*/
+
+@font-face {
+    font-family: 'Jaldi';
+    font-weight: 400;
+    font-weight: normal;
+    src: url("/fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto Bold';
+    font-weight: 400;
+    font-style: normal;
+    src: url("/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto Medium';
+    font-weight: 500;
+    font-style: normal;
+    src: url("/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+body {
+    background-color: #d3d5d7;
+    padding: 20px;
+    font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #727272;
+    font-weight: 400;
+
+    min-width: 400px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #222;
+    margin: 0 0 20px
+}
+h1,h2,h3 {
+    line-height: 1.1
+}
+h1 {
+    font-size: 28px
+}
+h2 {
+    color: #393939
+}
+h3,h4,h5,h6 {
+    color: #494949
+}
+
+a {
+    color: #267CB9;
+    text-decoration: none
+}
+a:hover,a:focus {
+    color: #069;
+    font-weight: bold
+}
+
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.3em;
+    display: block
+}
+a:hover small {
+    color: #777
+}
+
+code,pre {
+    font-family: Consolas, Terminal, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+    color: #333
+}
+pre {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+th,td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5
+}
+dt {
+    color: #444;
+    font-weight: 700
+}
+th {
+    color: #444
+}
+
+img {
+    max-width: 100%
+}
+
+strong {
+    color: #222;
+    font-weight: 700
+}
+section {
+    width: 500px;
+    padding-bottom: 50px
+}
+small {
+    font-size: 11px
+}
+
+section {
+    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+    width: 100%;
+    padding: 20px 0;
+}
+
+#section-header {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#section-header img {
+    vertical-align: middle;
+}
+#used-cars {
+    font-family: 'Roboto Bold';
+    font-size: 18px;
+    color: #000;
+    display: inline-block;
+    vertical-align: middle;
+}
+#update-string {
+    font-size: 13px;
+    position: absolute;
+    right: 26px;
+    top: 32px;
+}
+#car-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#car {
+    background-color: #d9dbdb;
+    position: relative;
+    height: 220px;
+    min-width: 300px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0px 0px 12px #ccced0;
+
+    flex: 0 0 29%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#car #flag {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 16px;
+    width: 24px;
+}
+#car #manufacturer {
+    font-family: 'Jaldi';
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #292929;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 280px;
+}
+#car #name {
+    font-family: 'Roboto Medium';
+    font-weight: 500;
+    font-size: 24px;
+
+    position: absolute;
+    color: #292929;
+    top: 50px;
+    left: 10px;
+    width: 280px;
+}
+#car #credits {
+    font-family: 'Roboto Bold';
+    font-weight: 400;
+    font-size: 26px;
+
+    position: absolute;
+    color: #000;
+    bottom: 20px;
+    right: 20px;
+    width: 282px;
+    text-align: right;
+}
+#car #cr {
+    font-family: 'Roboto';
+    font-size: 22px;
+}
+#car #limited {
+    font-family: 'Roboto Bold';
+    font-size: 18px;
+    color: #D00;
+
+    position: absolute;
+    bottom: 55px;
+    right: 20px;
+}
+#car #soldout {
+    font-family: 'Roboto Bold';
+    font-size: 32px;
+    color: #B00;
+
+    margin: 24px 0px 0px 0px;
+    padding: 6px;
+    border: 4px solid #B00;
+    z-index: 1;
+}
+#car #dimmer {
+    background-color: #0008;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#car #daycount {
+    font-family: 'Roboto';
+    font-size: 12px;
+}
