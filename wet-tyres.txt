@@ -1,0 +1,6 @@
+Comfort Soft             | aquaplaning >50% surface water
+Sports Hard              | aquaplaning >50% surface water
+Sports Soft     2:15.267 | aquaplaning >50% surface water
+Racing Hard     2:24.114 | faster than SS <30% surface water, aquaplaning >45% surface water
+Intermediate    2:10.917 | equal to SS <30% surface water, keeps that speed up to 50% water, aquaplaning >60% surface water
+Heavy Wet       2:12.709 | a bit slower than SS <50%, aquaplaning >60% surface water, aquaplanes less severely
