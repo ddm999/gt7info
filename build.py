@@ -57,7 +57,7 @@ for line in lines:
     data = line.strip().split(",")
     manufacturer_orig, name, cr, state = data
     manufacturer = manufacturer_orig.strip().upper()
-    car = car_template
+    car = '<p id="car">\n'+car_template
     region = manufacturer_to_region(manufacturer)
     car = car.replace("%REGION", region)
     car = car.replace("%MANUFACTURER", manufacturer)
@@ -84,7 +84,7 @@ for line in lines:
     data = line.strip().split(",")
     manufacturer_orig, name, cr, state = data
     manufacturer = manufacturer_orig.strip().upper()
-    car = car_template
+    car = '<p id="car">\n'+car_template
     region = manufacturer_to_region(manufacturer)
     car = car.replace("%REGION", region)
     car = car.replace("%MANUFACTURER", manufacturer)
