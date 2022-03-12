@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="3.4255395"
-     inkscape:cx="54.298016"
-     inkscape:cy="98.524626"
+     inkscape:zoom="4.8444444"
+     inkscape:cx="85.87156"
+     inkscape:cy="88.451835"
      inkscape:window-width="1837"
      inkscape:window-height="1057"
      inkscape:window-x="75"
@@ -35,6 +35,10 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -58,17 +62,15 @@
        d="m 26.0197,26.869321 h 1.293743 l 1.380638,-3.649515 h 0.502049 l -1.274434,3.649515 h 4.972224 l 1.892343,-4.470173 h -2.52956 l -0.415155,0.811003 h 1.602698 l -1.071684,3.012299 h -2.886787 l 1.16823,-3.002644 1.187543,-0.0097 0.415155,-0.811003 -3.466073,0 c -0.858168,0.03008 -1.269016,0.156992 -1.554425,0.849622 z"
        id="path3279"
        sodipodi:nodetypes="cccccccccccccccccc" />
-    <rect
-       style="fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:4.49774"
-       id="rect4158"
-       width="9.5168085"
-       height="0.47788846"
-       x="35.991829"
-       y="24.385967" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 35.486633,24.358658 0.38231,0.58712 h 10.158545 l -0.349885,-0.588827 z"
+       d="m 35.486633,24.358658 0.38231,0.58712 3.41349,0 -0.349885,-0.588827 z"
        id="path4688"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 42.313611,24.352685 0.38231,0.58712 h 3.41349 l -0.349885,-0.588827 z"
+       id="path4688-3"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
