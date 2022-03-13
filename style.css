@@ -11,35 +11,36 @@
     font-family: 'Jaldi';
     font-weight: 400;
     font-weight: normal;
-    src: url("/test/fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
+    src: url("/test/fonts/Jaldi/Jaldi-Regular.ttf") format("truetype"), url("./fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;
     font-style: normal;
-    src: url("/test/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    src: url("/test/fonts/Roboto/Roboto-Regular.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto Bold';
     font-weight: 400;
     font-style: normal;
-    src: url("/test/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    src: url("/test/fonts/Roboto/Roboto-Bold.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
     font-family: 'Roboto Medium';
     font-weight: 500;
     font-style: normal;
-    src: url("/test/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+    src: url("/test/fonts/Roboto/Roboto-Medium.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Medium.ttf") format("truetype");
 }
 
 body {
     background-color: #d3d5d7;
-    padding: 20px;
+    padding: 20px 0px;
     font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #727272;
     font-weight: 400;
 
     min-width: 400px;
+    margin: 0px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -115,19 +116,23 @@ strong {
     color: #222;
     font-weight: 700
 }
-section {
-    width: 500px;
-    padding-bottom: 50px
-}
 small {
     font-size: 11px
 }
 
-section {
-    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
-    width: 100%;
-    padding: 20px 0;
+header {
+    padding: 0px 20px;
 }
+section {
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+}
+footer {
+    font-size: 12px;
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+}
+
 
 #section-header {
     display: inline-block;
@@ -141,6 +146,13 @@ section {
     font-family: 'Roboto Bold';
     font-size: 18px;
     color: #000;
+    display: inline-block;
+    vertical-align: middle;
+}
+#legend-cars {
+    font-family: 'Roboto';
+    font-size: 22px;
+    color: #d5d5d5;
     display: inline-block;
     vertical-align: middle;
 }
@@ -158,6 +170,7 @@ section {
     justify-content: center;
     align-items: center;
 }
+
 #car {
     background-color: #d9dbdb;
     position: relative;
@@ -246,4 +259,106 @@ section {
 #car #daycount {
     font-family: 'Roboto';
     font-size: 12px;
+}
+
+#legend-section {
+    background-color: #28282b;
+    box-shadow: 0 0 16px #28282b;
+    color:#898989;
+}
+#after-legend-section {
+    padding: 40px 20px 50px 20px;
+    box-shadow: none;
+}
+#lcar {
+    position: relative;
+    height: 280px;
+    min-width: 280px;
+    width: 280px;
+
+    margin: 19px;
+    border: 1px solid #444446;
+    flex: 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#lcar #flag {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 16px;
+    width: 24px;
+}
+#lcar #manufacturer {
+    font-family: 'Jaldi';
+    font-weight: 400;
+    font-size: 20px;
+
+    color: #d5d5d5;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 240px;
+}
+#lcar #name {
+    font-family: 'Roboto Medium';
+    font-weight: 500;
+    font-size: 24px;
+
+    position: absolute;
+    color: #d5d5d5;
+    top: 45px;
+    left: 20px;
+    width: 240px;
+}
+#lcar #credits {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 26px;
+
+    border-top: 1px solid #0487C4;
+    padding: 6px 0px 0px 0px;
+    position: absolute;
+    color: #d5d5d5;
+    bottom: 45px;
+    left: 20px;
+    width: 240px;
+}
+#lcar #cr {
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+#lcar #limited {
+    font-family: 'Roboto Bold';
+    font-size: 18px;
+    color: #D00;
+
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+#lcar #soldout {
+    font-family: 'Roboto Bold';
+    font-size: 32px;
+    color: #B00;
+
+    transform: rotate(-10deg);
+    margin: 0px 0px 8px 0px;
+    padding: 6px;
+    border: 4px solid #B00;
+    z-index: 1;
+}
+#lcar #daycount {
+    font-family: 'Roboto';
+    font-size: 12px;
+}
+#lcar #icon {
+    position: absolute;
+    right: 40px;
+    top: 0px;
+    height: 40px;
+    width: 40px;
 }
