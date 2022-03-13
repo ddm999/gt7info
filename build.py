@@ -24,7 +24,7 @@ def manufacturer_to_region(manu : str):
             return "de" #  5
         case "CITROEN" | "PEUGEOT" | "RENAULT" | "ALPINE" | "RENAULT SPORT" | "DS AUTOMOBILES":
             return "fr" #  6
-        case "ALFA ROMEO" | "FIAT" | "LANCIA" | "PAGANI" | "AUTOBIANCI" | "FERRARI" |\
+        case "ALFA ROMEO" | "FIAT" | "LANCIA" | "PAGANI" | "AUTOBIANCHI" | "FERRARI" |\
                 "LAMBORGHINI" | "MASERATI" | "ABARTH" | "ZAGATO" | "DE TOMASO":
             return "it" #  7
         case "HYUNDAI" | "GENESIS":
@@ -38,9 +38,13 @@ html = ""
 with open("index.html", "r") as f:
     html = f.read()
 
-car_template = ""
-with open("car.html", "r") as f:
-    car_template = f.read()
+used_template = ""
+with open("used.html", "r") as f:
+    used_template = f.read()
+
+legend_template = ""
+with open("legend.html", "r") as f:
+    legend_template = f.read()
 
 ##################################################
 # handle used car dealership
@@ -57,7 +61,7 @@ for line in lines:
     data = line.strip().split(",")
     manufacturer_orig, name, cr, state = data
     manufacturer = manufacturer_orig.strip().upper()
-    car = '<p id="car">\n'+car_template
+    car = '<p id="car">\n'+used_template
     region = manufacturer_to_region(manufacturer)
     car = car.replace("%REGION", region)
     car = car.replace("%MANUFACTURER", manufacturer)
@@ -83,9 +87,9 @@ for line in lines:
         continue
     data = line.strip().split(",")
     manufacturer_orig, name, cr, state = data
-    manufacturer = manufacturer_orig.strip().upper()
-    car = '<p id="car">\n'+car_template
-    region = manufacturer_to_region(manufacturer)
+    manufacturer = manufacturer_orig.strip()
+    car = '<p id="lcar">\n'+legend_template
+    region = manufacturer_to_region(manufacturer.upper())
     car = car.replace("%REGION", region)
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
@@ -93,7 +97,7 @@ for line in lines:
     if state == "limited":
         car += '\n<span id="limited">Limited Stock</span>'
     elif state == "soldout":
-        car += '\n<span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+        car += '\n<span id="soldout">SOLD OUT</span>'
     car += '\n</p>'
     legendcars_section += car + '\n'
 
@@ -116,7 +120,7 @@ os.mkdir("build")
 with open("build/index.html", "w") as f:
     f.write(html)
 
-FILES_TO_COPY = ["style.css", "ucd-auto.svg"]
+FILES_TO_COPY = ["style.css", "legend-hagerty.svg", "legend-hagerty-icon.svg", "ucd-auto.svg"]
 FOLDERS_TO_COPY = ["fonts"]
 
 for file in FILES_TO_COPY:
