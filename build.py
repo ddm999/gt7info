@@ -120,7 +120,7 @@ os.mkdir("build")
 with open("build/index.html", "w") as f:
     f.write(html)
 
-FILES_TO_COPY = ["style.css", "legend-hagerty.svg", "legend-hagerty-icon.svg", "ucd-auto.svg"]
+FILES_TO_COPY = ["style-220313.css", "legend-hagerty.svg", "legend-hagerty-icon.svg", "ucd-auto.svg"]
 FOLDERS_TO_COPY = ["fonts"]
 
 for file in FILES_TO_COPY:
