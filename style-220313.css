@@ -175,9 +175,9 @@ footer {
     background-color: #d9dbdb;
     position: relative;
     height: 220px;
-    min-width: 300px;
-    width: 300px;
-    margin: 20px;
+    min-width: 310px;
+    width: 310px;
+    margin: 10px;
     box-shadow: 0px 0px 12px #ccced0;
 
     flex: 0 0 29%;
@@ -212,7 +212,7 @@ footer {
     color: #292929;
     top: 50px;
     left: 10px;
-    width: 280px;
+    width: 290px;
 }
 #car #credits {
     font-family: 'Roboto Bold';
@@ -276,7 +276,7 @@ footer {
     min-width: 280px;
     width: 280px;
 
-    margin: 19px;
+    margin: 9px;
     border: 1px solid #444446;
     flex: 0 0 0;
     display: flex;
