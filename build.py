@@ -110,6 +110,8 @@ html = html.replace("%LEGENDCARS_UPDATESTRING", LAST_UPDATE)
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", "Coming soon! In the meantime, check:")
 html = html.replace("%ENGINESWAPS_SECTION", "Coming soon! In the meantime, check:")
+html = html.replace("%GAMEISSUES_SECTION", "Coming soon! In the meantime, check issues known by the developers here:")
+html = html.replace("%BOP_SECTION", "Coming soon! In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
 ##################################################
 # output built html
