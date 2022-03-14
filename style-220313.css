@@ -126,6 +126,7 @@ header {
 section {
     padding: 20px 20px 50px 20px;
     box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+    position: relative;
 }
 footer {
     font-size: 12px;
@@ -212,7 +213,7 @@ footer {
     color: #292929;
     top: 50px;
     left: 10px;
-    width: 290px;
+    width: 300px;
 }
 #car #credits {
     font-family: 'Roboto Bold';
@@ -265,10 +266,6 @@ footer {
     background-color: #28282b;
     box-shadow: 0 0 16px #28282b;
     color:#898989;
-}
-#after-legend-section {
-    padding: 40px 20px 50px 20px;
-    box-shadow: none;
 }
 #lcar {
     position: relative;
@@ -361,4 +358,16 @@ footer {
     top: 0px;
     height: 40px;
     width: 40px;
+}
+
+#campaign-reward-section {
+    padding: 40px 20px 50px 20px;
+    box-shadow: none;
+}
+
+#back-to-top {
+    font-size: 13px;
+    position: absolute;
+    right: 26px;
+    bottom: 32px;
 }
