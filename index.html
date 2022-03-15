@@ -15,7 +15,7 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships","name":"ddm999.github.io","url":"https://ddm999.github.io/test/"}
   </script>
-  <link rel="stylesheet" href="style-220313.css">
+  <link rel="stylesheet" href="style-220315.css">
 </head>
 <body>
   <div class="wrapper">
@@ -26,10 +26,10 @@
         This page is manually updated and may be out of date: check the last updated string next to each section.<br>
         Note: Names are displayed in English with non-ASCII characters removed or replaced with alternatives.<br>
         <br>
-        13/03/22: Legend Cars styling has been updated.<br>
+        15/03/22 update:<br>
+        - A NEW label has been added to cars that weren't in that dealership yesterday.<br>
+        - Day counters have been added: showing estimates while in regular stock, and time remaining for limited stock.<br>
         Coming soon:<br>
-        - a day counter showing how long a vehicle has been available for, and how long is left for Limited Stock cars.<br>
-        - "NEW" labels on cars that have just arrived to the dealership.<br>
         - more content, as seen in each section below the dealerships.<br>
         In the far future:<br>
         - pages to view historic dealership info.<br>
@@ -45,6 +45,7 @@
       <a href="#menu-book-used-section">Jump to Menu Book Used Cars</a><br>
       <a href="#engine-swaps-section">Jump to Engine Swaps</a><br>
       <a href="#game-issues-section">Jump to Game Issues</a><br>
+      <a href="#daily-races-section">Jump to Sport Mode - Daily Races</a><br>
       <a href="#bop-section">Jump to Balance of Performance</a>
     </section>
     <section id="used-section">
@@ -55,7 +56,11 @@
       You may see some cars before the ones displayed here.<br>
       These come from the menu book you currently have active.<br>
       A list of these menu book specific used cars can be found <a href="#menu-book-used-section">here</a>. (coming soon)<br>
-      <span id="car-container">%USEDCARS_SECTION</span>
+      <br>
+      The displayed estimates assume cars will be available for 7 days after they appear.<br>
+      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
+      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
+      <span class="car-container">%USEDCARS_SECTION</span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="legend-section">
@@ -63,7 +68,10 @@
         <h2 id="legend-cars"><img src="legend-hagerty.svg"/> | Collection</h2>
         <span id="update-string">Last updated: %LEGENDCARS_UPDATESTRING (YY-MM-DD)</span>
       </div>
-      <span id="car-container">%LEGENDCARS_SECTION</span>
+      The displayed estimates assume cars will be available for 7 days after they appear.<br>
+      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
+      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
+      <span class="car-container">%LEGENDCARS_SECTION</span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="campaign-reward-section">
@@ -92,8 +100,13 @@
       <a href="https://www.gran-turismo.com/world/gt7/news/00_8730173.html">"Known Issues" on gran-turismo.com by Polyphony Digital Inc</a>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
+    <section id="daily-races-section">
+      <h2 id="daily-races">Sport Mode - Daily Races</h2>
+      %DAILYRACES_SECTION
+      <span id="back-to-top"><a href="#navigation">Back to top</a></span>
+    </section>
     <section id="bop-section">
-      <h2 id="issues">Balance of Performance (BoP)</h2>
+      <h2 id="bop">Balance of Performance (BoP)</h2>
       %BOP_SECTION
       <br>
       <a href="https://gt-engine.com/gtsport/cars/gr1/gr1_specs.html#spec_tables">Gran Turismo Sport BoP: Gr.1</a><br>
