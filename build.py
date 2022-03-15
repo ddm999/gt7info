@@ -48,6 +48,8 @@ with open("legend.html", "r") as f:
 
 legenddir = os.listdir("_data/legend")
 useddir = os.listdir("_data/used")
+legenddir.sort()
+useddir.sort()
 useddir.remove("starter.csv")
 ##################################################
 # handle used car dealership
