@@ -7,6 +7,10 @@
     https://creativecommons.org/licenses/by-sa/3.0/
 */
 
+/*
+    note: you really need to restructure this to use classes instead of ids
+*/
+
 @font-face {
     font-family: 'Jaldi';
     font-weight: 400;
@@ -163,7 +167,7 @@ footer {
     right: 26px;
     top: 32px;
 }
-#car-container {
+.car-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -172,7 +176,7 @@ footer {
     align-items: center;
 }
 
-#car {
+.car {
     background-color: #d9dbdb;
     position: relative;
     height: 220px;
@@ -186,14 +190,14 @@ footer {
     justify-content: center;
     align-items: center;
 }
-#car #flag {
+.car #flag {
     position: absolute;
     top: 20px;
     left: 10px;
     height: 16px;
     width: 24px;
 }
-#car #manufacturer {
+.car #manufacturer {
     font-family: 'Jaldi';
     font-weight: 400;
     font-size: 24px;
@@ -204,7 +208,7 @@ footer {
     left: 40px;
     width: 280px;
 }
-#car #name {
+.car #name {
     font-family: 'Roboto Medium';
     font-weight: 500;
     font-size: 24px;
@@ -215,7 +219,7 @@ footer {
     left: 10px;
     width: 300px;
 }
-#car #credits {
+.car #credits {
     font-family: 'Roboto Bold';
     font-weight: 400;
     font-size: 26px;
@@ -227,11 +231,11 @@ footer {
     width: 282px;
     text-align: right;
 }
-#car #cr {
+.car #cr {
     font-family: 'Roboto';
     font-size: 22px;
 }
-#car #limited {
+.car #limited {
     font-family: 'Roboto Bold';
     font-size: 18px;
     color: #D00;
@@ -240,7 +244,7 @@ footer {
     bottom: 55px;
     right: 20px;
 }
-#car #soldout {
+.car #soldout {
     font-family: 'Roboto Bold';
     font-size: 32px;
     color: #B00;
@@ -251,15 +255,42 @@ footer {
     border: 4px solid #B00;
     z-index: 1;
 }
-#car #dimmer {
+.car #dimmer {
     background-color: #0008;
     position: absolute;
     height: 100%;
     width: 100%;
 }
-#car #daycount {
+.car #daycount {
     font-family: 'Roboto';
     font-size: 12px;
+}
+.car #new {
+    font-family: 'Roboto Bold';
+    font-size: 32px;
+    color: #0487C4;
+
+    position: absolute;
+    top: 2px;
+    right: 20px;
+}
+.car #days-estimate {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #777;
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.car #days-remaining {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #D00;
+
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
 }
 
 #legend-section {
@@ -267,7 +298,7 @@ footer {
     box-shadow: 0 0 16px #28282b;
     color:#898989;
 }
-#lcar {
+.lcar {
     position: relative;
     height: 280px;
     min-width: 280px;
@@ -280,14 +311,14 @@ footer {
     justify-content: center;
     align-items: center;
 }
-#lcar #flag {
+.lcar #flag {
     position: absolute;
     top: 20px;
     left: 10px;
     height: 16px;
     width: 24px;
 }
-#lcar #manufacturer {
+.lcar #manufacturer {
     font-family: 'Jaldi';
     font-weight: 400;
     font-size: 20px;
@@ -298,7 +329,7 @@ footer {
     left: 20px;
     width: 240px;
 }
-#lcar #name {
+.lcar #name {
     font-family: 'Roboto Medium';
     font-weight: 500;
     font-size: 24px;
@@ -309,7 +340,7 @@ footer {
     left: 20px;
     width: 240px;
 }
-#lcar #credits {
+.lcar #credits {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 26px;
@@ -322,11 +353,11 @@ footer {
     left: 20px;
     width: 240px;
 }
-#lcar #cr {
+.lcar #cr {
     font-family: 'Roboto';
     font-size: 20px;
 }
-#lcar #limited {
+.lcar #limited {
     font-family: 'Roboto Bold';
     font-size: 18px;
     color: #D00;
@@ -337,7 +368,7 @@ footer {
     width: 240px;
     text-align: center;
 }
-#lcar #soldout {
+.lcar #soldout {
     font-family: 'Roboto Bold';
     font-size: 32px;
     color: #B00;
@@ -348,16 +379,60 @@ footer {
     border: 4px solid #B00;
     z-index: 1;
 }
-#lcar #daycount {
+.lcar #daycount {
     font-family: 'Roboto';
     font-size: 12px;
 }
-#lcar #icon {
+.lcar #icon {
     position: absolute;
     right: 40px;
     top: 0px;
     height: 40px;
     width: 40px;
+}
+.lcar #new {
+    font-family: 'Roboto Bold';
+    font-size: 32px;
+    color: #0487C4;
+
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+}
+.lcar #days-estimate {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #898989;
+
+    position: absolute;
+    bottom: 6px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+.lcar #days-remaining {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #D00;
+
+    position: absolute;
+    bottom: 6px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+
+.carnew {
+    border: 1px solid #0487C4;
+    margin: 9px;
+}
+.carlimited {
+    border: 1px solid #D00;
+    margin: 9px;
+}
+.carsold {
+    border: 1px solid #000;
+    margin: 9px;
 }
 
 #campaign-reward-section {
