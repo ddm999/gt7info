@@ -223,9 +223,9 @@ for line in lines:
 ##################################################
 # do replacements
 ##################################################
-html = html.replace("%USEDCARS_UPDATESTRING", LAST_UPDATE)
+html = html.replace("%USEDCARS_UPDATESTRING", useddir[-1].replace(".csv", ""))
 html = html.replace("%USEDCARS_SECTION", usedcars_section)
-html = html.replace("%LEGENDCARS_UPDATESTRING", LAST_UPDATE)
+html = html.replace("%LEGENDCARS_UPDATESTRING", legenddir[-1].replace(".csv", ""))
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", "Coming soon!<br>In the meantime, check:")
 html = html.replace("%ENGINESWAPS_SECTION", "Coming soon!<br>In the meantime, check:")
