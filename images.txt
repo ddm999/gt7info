@@ -1,0 +1,201 @@
+BASE URL - https://www.gran-turismo.com/common/dist/gt7/companion/images/
+File hashes are MD-4
+
+[Country Flags]
+AE.png - images/386008034bb242b42eacb3595b245c28.png
+AR.png - images/e68d3348b28a8b60910a15fd5bd2971b.png
+AU.png - images/da99518bc2834f5eb532641f72b81ef2.png
+BE.png - images/836af591bcc407ac2a2d40e6345e73c5.png
+BG.png - images/edce125963b333f503b3314760fcab33.png
+BG.png - images/6efb33ebd7e8aa14cea7bae78f9077e5.png
+BH.png - images/4786a58f02cd5d0b90b36ec795c426ac.png
+BN.png - images/31899545d0ab2e2bfcd5098c8f2c7c46.png
+BO.png - images/c3b6dc555abb5d6595182eafdc48e513.png
+BR.png - images/c3d9293c66bf0a320ac45f35023a490a.png
+CA.png - images/7e8f368a1919930d92ee91fd59061678.png
+CH.png - images/c7c9f73addd148bea4edb8c0319d0c22.png
+CL.png - images/d731e284b430ae6114962639325b32af.png
+CN.png - images/e7ecbc25387cd14e32696da161877b0c.png
+CO.png - images/77dd066d9c4ed24a97ab064d72d31f4a.png
+CR.png - images/9c45674c63106961ffcddeb7c334c55f.png
+CU.png - images/858a0251657e9f8f2895b9e6fb4f533b.png
+CY.png - images/41913b601865e2f9abd6eb23bc6e8079.png
+CZ.png - images/60505d4fd40b3d55412835fc3fe57161.png
+DE.png - images/4f762028b3be0ff4d04cd719dedcf421.png
+DK.png - images/e93b26d0ce93fd24f054a832870537e0.png
+EC.png - images/4c31ef5d2466cb65d2193ddcf9107e05.png
+EL.png - images/a81e53b359c053e76cf15d86add04e68.png
+ES.png - images/2654a70800739b5640238d373fcf8de1.png
+FI.png - images/cf1b4c97509b37e0581c828177ed6c9a.png
+FL.png - images/a280b2482227f56c8c45779b6c23af36.png
+FR.png - images/1b158970611d96d7a2f3366f2ec0f144.png
+GB.png - images/b9c52456711d434900eb35e7d88f4b95.png
+GR.png - images/fcab232a5baf7f3eda4c04736770f0a9.png
+GT.png - images/d7f04e542e5875201caa9d46a0630c52.png
+HK.png - images/e7853dc47508d061e164b64a7be430c3.png
+HN.png - images/21faa1600a52f1f4aa1630e43f251981.png
+HR.png - images/26bc6c290214a335fd2f01ff42218a2f.png
+HU.png - images/316c5f12d4a83dfb6124c275ef040457.png
+ID.png - images/260606e69da45829bb75302030f01a18.png
+IE.png - images/81cfeea17c3f54f50eba31538f54a6ff.png
+IL.png - images/a0d24cec9cdd72aa64df292296eca6b5.png
+IN.png - images/347badbd535b93acaac52b195c33fffb.png
+IS.png - images/35ae9fca8aab0af781c943f65fb0671d.png
+IT.png - images/6b98702c2521787ee2b4973e67a977ac.png
+JP.png - images/0d5490d349fc9d71e46314bb5acf4f6a.png
+KR.png - images/e27e7357dfc5c545a0eccbe820333311.png
+LB.png - images/69cd81964b176088503445898e4dd6ee.png
+LT.png - images/8070cc184814dcb00fdc5fbd32a2f819.png
+LU.png - images/b2126ca24b1888e78d685d21f2dd7de6.png
+MC.png - images/af6a28d8f8aab672a0726d5f1ad5cc09.png
+MT.png - images/9bb1877989517b5973a04d9bc4f8d7a9.png
+MX.png - images/0d1e8ad596bc8b1505523c13aa3f00e5.png
+MY.png - images/ffa280a5915ecde3fca2103e089184ee.png
+NI.png - images/4dd56a7209a4a47fb36f0b3f32fbc3ed.png
+NL.png - images/72d563e60d719a39a13fa342c232b1ee.png
+NO.png - images/6780e1594d1b5c228236a2625eb9c413.png
+NZ.png - images/3bf36c84f200acc2dd84f28207967f35.png
+OM.png - images/131e29c496ee67f882013d768b49db83.png
+PA.png - images/cc9120a90fcca01458556b776304fbc7.png
+PD.png - images/aa3e3bd872a1f975299c9f1008163241.png
+PDI.png - images/c24a31978167a524923e4bd27e6d2c9b.png
+PE?.png - images/906797cdc88d6442038928f9d73606f9.png
+PE.png - images/bc77a323acbb7ecf6fbac39bff5e305e.png
+PH.png - images/b14a0bf645be8811c6ed1d004720c773.png
+PL.png - images/688461d74e61c9db7f3d44777605792c.png
+PT.png - images/b8930bae257537afd723a93aebc8ef76.png
+PY.png - images/d12251d5db1a1a7e5714acffebb36fb8.png
+QA.png - images/d644b3d98ee7ed280e643eefaff8899e.png
+RO.png - images/aa7a334aafe18714e91261ee5602ddd6.png
+RU.png - images/ee4375e9930b4bfee69dd5ec8c17f87d.png
+SA.png - images/1f8a32e61f3adced16209f3bfb7a7c9d.png
+SE.png - images/68f136bdb14ef6f5753da1349c3b299c.png
+SG.png - images/d02cf61dd54b120bbe32c3af9b0d5966.png
+SI.png - images/c1642ecbebfbb2b8965e6ca1fbd886d9.png
+SK.png - images/604c9e8cd7d07ea556c97c937e1c0fba.png
+SV.png - images/595517a611b7c81eacea8133fbd3efcf.png
+TH.png - images/77f0d8fdf58cd436a82b9aaf7c2dafdd.png
+TR.png - images/60709ac1d5ff655762336e7ca03c3e83.png
+TW.png - images/689863e8bdeff46e4908d65bdd2cb0c4.png
+UA.png - images/e0fa135c3ac55f56d6d6a8fb61682362.png
+UN.png - images/89f1cd971719595215f32d32c43fc585.png
+US.png - images/124b7551c67421a2b9e83dc9997dbfa2.png
+UY.png - images/03ad177aa7ad4fe9a2138ccd8f3439b8.png
+VN.png - images/c9fda172fd9f6705d789e1a608a3c8a5.png
+ZA.png - images/105866da32126f814a46aeed98c665c6.png
+
+[Manufacturer Logos]
+/tuner_logo_m_w/tnr3.png - images/7dedaec3dfc77603a7b711f0a3149894.png
+/tuner_logo_m_w/tnr4.png - images/142123e30ed0ebb31a013915feef5a45.png
+/tuner_logo_m_w/tnr5.png - images/602e32c6171001642727bed74bbb77a5.png
+/tuner_logo_m_w/tnr6.png - images/3d9918a8d08c3e1b76e81682ca3c08c6.png
+/tuner_logo_m_w/tnr7.png - images/74b4db6eef2e48766fe1e17367cd9b94.png
+/tuner_logo_m_w/tnr9.png - images/f26f45f827fba432f65316ff12c91467.png
+/tuner_logo_m_w/tnr10.png - images/3cde22b6f86b4ccc5990d10ff0838c86.png
+/tuner_logo_m_w/tnr11.png - images/826dc6f05671d1c23bd73a310ed0bb33.png
+/tuner_logo_m_w/tnr12.png - images/46d948b5c25b51d5003b41eea28233ca.png
+/tuner_logo_m_w/tnr13.png - images/0dd23bd75a12eb1b356ab13958bbcfef.png
+/tuner_logo_m_w/tnr15.png - images/09c1daf0ef874fa48dbc969431d86726.png
+/tuner_logo_m_w/tnr16.png - images/dd7436310ba12717210d04482e71cc19.png
+/tuner_logo_m_w/tnr17.png - images/ebcc8579483cb4231864a2b03abaa6b1.png
+/tuner_logo_m_w/tnr18.png - images/17c53b95f7560607712e137fbdc19612.png
+/tuner_logo_m_w/tnr21.png - images/d35081715f37b12d0d5c746c854252b9.png
+/tuner_logo_m_w/tnr22.png - images/b1321ebff0484eeb2c0818c96bda6633.png
+/tuner_logo_m_w/tnr25.png - images/1536136b81990d4648671d0590599ec7.png
+/tuner_logo_m_w/tnr28.png - images/f6b44e046559a7ebf98875faea77e464.png
+/tuner_logo_m_w/tnr30.png - images/ef1aa716d7ebc5eeaf0df2f0e953dd94.png
+/tuner_logo_m_w/tnr32.png - images/86969d38df7b90f5cbdf4fec4a70b352.png
+/tuner_logo_m_w/tnr33.png - images/87a51fd97e974c7432ead2e90991d928.png
+/tuner_logo_m_w/tnr34.png - images/772aaae5aa04a2852aea51d36a0b0edd.png
+/tuner_logo_m_w/tnr35.png - images/555248045882820ad5a5fea2daf69977.png
+/tuner_logo_m_w/tnr36.png - images/be52e3b2b58e278f902d370bb3307883.png
+/tuner_logo_m_w/tnr38.png - images/d402026a1503e363f71b829877627ef6.png
+/tuner_logo_m_w/tnr39.png - images/1665616666039813640605b5614702ef.png
+/tuner_logo_m_w/tnr43.png - images/a9bfefcc6fc007b75e247448baf2ebf5.png
+/tuner_logo_m_w/tnr44.png - images/d21500a824f9f424da29f9b6b4817fc9.png
+/tuner_logo_m_w/tnr46.png - images/7b191e4af3b8352fdb02ff6138f0855f.png
+/tuner_logo_m_w/tnr49.png - images/02f591cdc86cec70e7b6ca54b3138905.png
+/tuner_logo_m_w/tnr50.png - images/63fa935c1952b8a38b53b80e817acba0.png
+/tuner_logo_m_w/tnr51.png - images/a350613cd0e381f671b1685e8fc7f19b.png
+/tuner_logo_m_w/tnr52.png - images/c87083b2cba14da23719fecf2f126310.png
+/tuner_logo_m_w/tnr55.png - images/53f76502b0d3bf8408d1d48302fc69c7.png
+/tuner_logo_m_w/tnr57.png - images/3017390099279cc5e36f3af842e220eb.png
+/tuner_logo_m_w/tnr59.png - images/0a6aa64c3b8d9ee62b248e2657efc442.png
+/tuner_logo_m_w/tnr65.png - images/296ab9f6ce30eacb8c0c74decd879b19.png
+/tuner_logo_m_w/tnr86.png - images/178918773a6b5022d49059485b1a449c.png
+/tuner_logo_m_w/tnr87.png - images/58bc4f832e10295b813c17e41256b4b6.png
+/tuner_logo_m_w/tnr93.png - images/03538576a00d12bfe5fa53b725b97add.png
+/tuner_logo_m_w/tnr110.png - images/44e493a2409f6161c3629b15ce39efc2.png
+/tuner_logo_m_w/tnr112.png - images/266e69a84b43eabe37c6d01dc2c8601e.png
+/tuner_logo_m_w/tnr113.png - images/17303083d53f31bcf10d9e726392ab9b.png
+/tuner_logo_m_w/tnr114.png - images/afdff8a598ba6b6c05d7f266790dc99a.png
+/tuner_logo_m_w/tnr116.png - images/37cb5797b4e99c708e16d6025e656e34.png
+/tuner_logo_m_w/tnr117.png - images/e007e896129db2b236f967550879071c.png
+/tuner_logo_m_w/tnr119.png - images/78881cc2058de95011b8fa91de6c43ea.png
+/tuner_logo_m_w/tnr121.png - images/5a276b0d77829c201c86946679b456a1.png
+/tuner_logo_m_w/tnr125.png - images/370795d1961599204e67431c78aaf58a.png
+/tuner_logo_m_w/tnr134.png - images/6750031354cbc3741ce6b129f3b7ca99.png
+/tuner_logo_m_w/tnr136.png - images/547f88047573c488ea1be5b95f68c560.png
+/tuner_logo_m_w/tnr138.png - images/569b9333de6037fc9d0843b206afc3b7.png
+/tuner_logo_m_w/tnr139.png - images/87a51fd97e974c7432ead2e90991d928.png
+/tuner_logo_m_w/tnr140.png - images/b170f57b97a64338be75bf3dfbd2aab2.png
+/tuner_logo_m_w/tnr141.png - images/808fa51768957b4e0756939342486875.png
+/tuner_logo_m_w/tnr143.png - images/42a764f6c2f06f039467f8722457c051.png
+/tuner_logo_m_w/tnr144.png - images/2a82404dc75c2d202c61b818653677d2.png
+/tuner_logo_m_w/tnr146.png - images/c00afd599b03cd833c29077081ee650b.png
+/tuner_logo_m_w/tnr147.png - images/88a084656a718817863ca2be21619b42.png
+/tuner_logo_m_w/tnr148.png - images/9dfb0dbf950b3e3593c6b176c56b5b84.png
+/tuner_logo_m_w/tnr149.png - images/8844f95f287df6390ad55b744f3a1929.png
+/tuner_logo_m_w/tnr150.png - images/567aaef3b42dfd9704cf5f1cd5a54f77.png
+/tuner_logo_m_w/tnr151.png - images/af1caa5b4b53172b7a479ad985d80d34.png
+/tuner_logo_m_w/tnr152.png - images/f477d1035e0faaaa24e44f4df1519f4c.png
+/tuner_logo_m_w/tnr153.png - images/e36d28adc57fa91074565785e8b0fa93.png
+/tuner_logo_m_w/tnr154.png - images/8ddc9c9396ef13e397f816ad307419e4.png
+
+[Course Logos]
+Dragon Trail - images/23f6804650726fe9d3d9960b3428616f.png
+Spa - images/418e9cbb36ec95d4b47a7fa37ceff6c2.png
+Tokyo Expressway - images/ea5457bf30f5a6b7503aecb97f8f22d7.png
+Brands Hatch - images/5fe09f8720bfc29ac3bf5bd7f068e138.png
+ST Croissant - images/22dfdef14b9d596effd0252de9ea0a6d.png
+Colorado Springs - images/49df17dc51c7d41b4edb9977b4edc826.png
+Circuit de Barcelona - images/07295a31dd2d67aff3f1d26645046dda.png
+Fisherman's Ranch - images/584166d3e0c1e3a602f9fd40b7c63f81.png
+Tokyo Expressway - images/ea5457bf30f5a6b7503aecb97f8f22d7.png
+Alsace - images/cd00fc764f6266fb8e9c08bf3a04b604.png
+Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
+Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
+Autopolis - images/08bcf63633d747e0c1f3c879894a5d40.png
+Circuit de la Sarthe - images/7927335313447011205e4af49439c095.png
+SSRX - images/63e520b5cea2b682b84c0ba1bc37d53f.png
+Trial Mountain - images/71145921ab604d772ff8d79a1ebfb154.png
+High Speed Ring - images/31e7532685f943233e5cbf5d50483497.png
+Fuji Speedway - images/09482eddd4d45b5e05e1b89626d5a386.png
+Sardegna - images/199807d79f1226e88669ec44cb1234f6.png
+Monza - images/7ed9a80e9ae7e9f5e8ed504f5f5b0890.png
+BB Raceway - images/1ff6b437b73fcfc224083d94fb7e74af.png
+Red Bull Ring - images/dd764cc093fc89f21ea71530ab18dc74.png
+Dragon Trail - images/23f6804650726fe9d3d9960b3428616f.png
+Deep Forest - images/4b6b2c23461d4bf0433b938106985696.png
+Sardegna Road Track - images/c7fb73c3416aa4e7839540848fb515a0.png
+Tokyo Expressway - images/ea5457bf30f5a6b7503aecb97f8f22d7.png
+Tsukuba - images/655c98484a89001d7f5620d9989f12bb.png
+Northern Isle Speedway - images/aafc03c8768369e96c041369b1466042.png
+Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
+Blue Moon Bay - images/9bcede6d0d0c34ccb0b3c7e25dd45666.png
+Mount Panorama - images/a1386ddd8b5e057938f75e6b23f1dbf7.png
+Nurburgring - images/95448f0884efcdf6853583d950ef6ecd.png
+Goodwood - images/811d84303c582aa7fda0069c5640a2bc.png
+Laguna Seca - images/b3380da460847a07c0c3f285a9ba9875.png
+Maggiore - images/93d3a9df0be3928d51b6552f5528a978.png
+Kyoto Driving Park - images/e5e5544a58d3447729f8d5e7cd6ed3be.png
+Interlagos - images/6666abdcae0e287a40e2889524412116.png
+Suzuka - images/0c7e3734d8cd06a8aa08c055dfe96ee7.png
+Daytona - images/0ccfcc207bb76264c88b43799b4ca9dc.png
+
+[Licenses]
+B - images/c555e1ef95fd66eef50b329a8ad015c5.png
+A - images/fb08258a163b1d274ee94a4210316961.png
+IB - images/fc0dd72cc4d321885d466f87359e0406.png
+IA - images/9bcd7946d800143f762fac56dfff8a56.png
+S - images/c3c35c7710a8f5932b05712851412033.png

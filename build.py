@@ -7,7 +7,7 @@ from config import LAST_UPDATE
 def manufacturer_to_region(manu : str):
     match manu:
         case "GRAN TURISMO" | "GT AWARDS (SEMA)":
-            return "" # 0
+            return "pdi" # 0
         case "DAIHATSU" | "HONDA" | "MAZDA" | "MITSUBISHI" | "NISSAN" | "SUBARU" |\
                 "SUZUKI" | "TOYOTA" | "INFINITI" | "LEXUS" | "AMUSE" | "RE AMEMIYA" |\
                 "SUPER FORMULA" | "GREDDY":
@@ -113,7 +113,9 @@ for line in lines:
     else:
         car = '<p class="car">\n'+used_template
 
-    car = car.replace("%REGION", region)
+    flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
+
+    car = car.replace("%FLAG", flag)
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
@@ -221,13 +223,20 @@ for line in lines:
     legendcars_section += car + '\n'
 
 ##################################################
+# handle campaign rewards
+##################################################
+campaignrewards_section = ""
+with open(f"campaign-rewards.html") as f:
+    campaignrewards_section = f.read()
+
+##################################################
 # do replacements
 ##################################################
 html = html.replace("%USEDCARS_UPDATESTRING", useddir[-1].replace(".csv", ""))
 html = html.replace("%USEDCARS_SECTION", usedcars_section)
 html = html.replace("%LEGENDCARS_UPDATESTRING", legenddir[-1].replace(".csv", ""))
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
-html = html.replace("%CAMPAIGNREWARDS_SECTION", "Coming soon!<br>In the meantime, check:")
+html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
 html = html.replace("%ENGINESWAPS_SECTION", "Coming soon!<br>In the meantime, check:")
 html = html.replace("%GAMEISSUES_SECTION", "Coming soon!<br>In the meantime, check issues known by the developers here:")
 html = html.replace("%DAILYRACES_SECTION", "Coming soon!<br>Sorry, I don't know anywhere that provides just this data right now. Check GTPlanet news?")
@@ -242,8 +251,8 @@ os.mkdir("build")
 with open("build/index.html", "w") as f:
     f.write(html)
 
-FILES_TO_COPY = ["style-220315.css", "legend-hagerty.svg", "legend-hagerty-icon.svg", "ucd-auto.svg"]
-FOLDERS_TO_COPY = ["fonts"]
+FILES_TO_COPY = ["style-220315.css"]
+FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
     shutil.copyfile(f"{file}", f"build/{file}")
