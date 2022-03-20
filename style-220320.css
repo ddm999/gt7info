@@ -396,7 +396,7 @@ footer {
     color: #0487C4;
 
     position: absolute;
-    bottom: 90px;
+    bottom: 120px;
     right: 20px;
 }
 .lcar #days-estimate {
@@ -417,6 +417,26 @@ footer {
 
     position: absolute;
     bottom: 6px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+.lcar #grind {
+    font-family: 'Roboto';
+    font-size: 11px;
+
+    position: absolute;
+    bottom: 110px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+.lcar #play {
+    font-family: 'Roboto';
+    font-size: 11px;
+
+    position: absolute;
+    bottom: 95px;
     left: 20px;
     width: 240px;
     text-align: center;
