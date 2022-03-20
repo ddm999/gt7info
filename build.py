@@ -202,6 +202,12 @@ for line in lines:
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
+    grind = int(cr)/900000
+    play = int(cr)/200000
+    if grind > 2:
+        car += f'\n      <span id="grind">Time to optimally grind for: {int(grind)+1} hours</span>'
+        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
+
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
@@ -251,7 +257,7 @@ os.mkdir("build")
 with open("build/index.html", "w") as f:
     f.write(html)
 
-FILES_TO_COPY = ["style-220315.css"]
+FILES_TO_COPY = ["style-220320.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
