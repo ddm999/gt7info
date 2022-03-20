@@ -396,7 +396,7 @@ footer {
     color: #0487C4;
 
     position: absolute;
-    bottom: 120px;
+    bottom: 160px;
     right: 20px;
 }
 .lcar #days-estimate {
@@ -426,12 +426,32 @@ footer {
     font-size: 11px;
 
     position: absolute;
-    bottom: 110px;
+    bottom: 140px;
     left: 20px;
     width: 240px;
     text-align: center;
 }
 .lcar #play {
+    font-family: 'Roboto';
+    font-size: 11px;
+
+    position: absolute;
+    bottom: 125px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+.lcar #customrace {
+    font-family: 'Roboto';
+    font-size: 11px;
+
+    position: absolute;
+    bottom: 110px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
+.lcar #nordslaps {
     font-family: 'Roboto';
     font-size: 11px;
 

@@ -204,9 +204,20 @@ for line in lines:
     car = car.replace("%CREDITS", f"{int(cr):,}")
     grind = int(cr)/900000
     play = int(cr)/200000
-    if grind > 2:
+    customrace = int(cr)/122053
+    nordslaps = int(cr)/6203.8
+    if grind > 3:
         car += f'\n      <span id="grind">Time to optimally grind for: {int(grind)+1} hours</span>'
+    if play > 50:
+        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
+    elif play > 10:
+        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
+    elif play > 3:
         car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
+    if customrace > 3:
+        car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
+    if nordslaps > 25:
+        car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
     if new:
         car += '\n      <span id="new">NEW</span>'
@@ -254,10 +265,10 @@ html = html.replace("%BOP_SECTION", "Coming soon!<br>In the meantime, you can re
 if os.path.exists("build"):
     shutil.rmtree("build")
 os.mkdir("build")
-with open("build/index.html", "w") as f:
+with open("build/index.html", "w", encoding='utf-8') as f:
     f.write(html)
 
-FILES_TO_COPY = ["style-220320.css"]
+FILES_TO_COPY = ["style-220320-new.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
