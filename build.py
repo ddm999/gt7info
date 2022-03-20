@@ -206,18 +206,19 @@ for line in lines:
     play = int(cr)/200000
     customrace = int(cr)/122053
     nordslaps = int(cr)/6203.8
-    if grind > 3:
-        car += f'\n      <span id="grind">Time to optimally grind for: {int(grind)+1} hours</span>'
-    if play > 50:
-        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
-    elif play > 10:
-        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
-    elif play > 3:
-        car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
-    if customrace > 3:
-        car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
-    if nordslaps > 25:
-        car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
+    if state != "soldout":
+        if grind > 3:
+            car += f'\n      <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
+        if play > 50:
+            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
+        elif play > 10:
+            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
+        elif play > 3:
+            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
+        if customrace > 3:
+            car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
+        if nordslaps > 25:
+            car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
     if new:
         car += '\n      <span id="new">NEW</span>'
