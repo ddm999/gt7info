@@ -179,7 +179,7 @@ for line in lines:
         estimatedays = 0
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     usedcars_section += f'{car}\n      </p>'
-    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": cr, "state": state, "estimatedays": estimatedays})
+    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays})
 
 ##################################################
 # handle legend car dealership
@@ -294,7 +294,7 @@ for line in lines:
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     car += '\n</p>'
     legendcars_section += car + '\n'
-    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": cr, "state": state, "estimatedays": estimatedays})
+    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays})
 
 ##################################################
 # handle campaign rewards
