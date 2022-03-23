@@ -15,19 +15,27 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships","name":"ddm999.github.io","url":"https://ddm999.github.io/test/"}
   </script>
-  <link rel="stylesheet" href="style-220320-new.css">
+  <link rel="stylesheet" href="style-220322.css">
 </head>
 <body>
   <div class="wrapper">
     <header>
       <h1 id="title">GT7 Online Dealerships</h1>
       <span id="details">
-        Got rid of a bunch of stuff from this top section.<br>
-        If you play GT7 enough to check the dealerships here, you're aware of the hellish state of the game.<br>
-        There's no point in me reiterating it further.<br>
+        Note because I know it's a bit confusing:<br>
+        "X More Days Remaining" means "this day and X more" left in the dealership.<br>
+        ie. "2 More Days Remaining" -> "1 More Day Remaining" -> "Last Day Remaining".<br>
+        Hope that clears up any confusion.<br>
         <br>
-        <strong>Recent changes:</strong><br>
-        - Legend Cars now shows "how long to grind", plus some other fun stats to show how ruined the game's economy is.<br>
+        If you want to make a bot that uses this data, a JSON file is built from the data and can be found at:<br>
+        <a href="https://ddm999.github.io/gt7info/data.json">ddm999.github.io/gt7info/data.json</a><br>
+        This will update when the site is updated.<br>
+        Also, if you're wondering, the site is updated manually.<br>
+        <br>
+        <strong>Recent changes:&emsp;<small>All dates are (YY-MM-DD)</small></strong><br>
+        - Legend Cars now shows "how long to grind", plus some other fun stats to show how ruined the game's economy is. (22-03-20)<br>
+        - A currently known engine swap list has been added. (22-03-22)<br>
+        - Daily Races have been added - note the styling is incomplete. (22-03-22)<br>
       </span>
       <br>
     </header>
@@ -36,135 +44,133 @@
       <a href="#used-section">Jump to Auto+: Used Car Dealership</a><br>
       <a href="#legend-section">Jump to Hagerty Collection: Legendary Dealership</a><br>
       <a href="#campaign-reward-section">Jump to Campaign Rewards</a><br>
-      <a href="#menu-book-used-section">Jump to Menu Book Used Cars</a><br>
       <a href="#engine-swaps-section">Jump to Engine Swaps</a><br>
-      <a href="#game-issues-section">Jump to Game Issues</a><br>
       <a href="#daily-races-section">Jump to Sport Mode - Daily Races</a><br>
-      <a href="#bop-section">Jump to Balance of Performance</a>
+      <a href="#v107-reward-changes">Jump to v1.07 Reward Changes</a><br>
+      <small>Note: I've removed anything "coming soon" from here. It'll reappear when it's done.</small>
     </section>
     <section id="used-section">
       <div id="section-header">
         <span id="used-cars"><img src="img/ucd-auto.svg"/>| USED CAR DEALERSHIP</span>
-        <span id="update-string">Last updated: 22-03-22 (YY-MM-DD)</span>
+        <span id="update-string">Last updated: 22-03-23 (YY-MM-DD)</span>
       </div>
       You may see some cars before the ones displayed here.<br>
       These come from the menu book you currently have active.<br>
       A list of these menu book specific used cars can be found <a href="#menu-book-used-section">here</a>. (coming soon)<br>
       <br>
-      The displayed estimates assume cars will be available for 7 days after they appear.<br>
-      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
-      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
-      <span class="car-container"><p class="car carsold">
-        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
-        <span id="manufacturer">HONDA</span>
-        <span id="name">S800 '66</span>
-        <span id="credits"><span id="cr">Cr.</span> 44,800</span>
-      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>
+      Estimates assume cars will be available for 7 days after they appear.<br>
+      For used cars it seems to actually be 7 to 9 days (so cars may appear for longer) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
+      <span class="car-container"><p class="car carnew">
+        <img id="flag" src="https://flagcdn.com/h24/de.png"/>
+        <span id="manufacturer">BMW</span>
+        <span id="name">3.0 CSL '71</span>
+        <span id="credits"><span id="cr">Cr.</span> 146,700</span>
+      <span id="new">NEW</span>
+      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/de.png"/>
         <span id="manufacturer">VOLKSWAGEN</span>
         <span id="name">Golf I GTI '83</span>
         <span id="credits"><span id="cr">Cr.</span> 48,300</span>
-      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
         <span id="manufacturer">TOYOTA</span>
         <span id="name">Corolla Levin 1600GT APEX (AE86) '83</span>
         <span id="credits"><span id="cr">Cr.</span> 47,400</span>
-      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/us.png"/>
         <span id="manufacturer">PONTIAC</span>
         <span id="name">Firebird Trans Am '78</span>
         <span id="credits"><span id="cr">Cr.</span> 96,200</span>
-      <span id="days-estimate">Estimate: 2 More Days Remaining</span>
+      <span id="days-estimate">Estimate: Limited Stock Soon</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/it.png"/>
         <span id="manufacturer">ABARTH</span>
         <span id="name">Abarth 500 '09</span>
         <span id="credits"><span id="cr">Cr.</span> 21,700</span>
-      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
-      </p><p class="car carnew">
+      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
+      </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
         <span id="manufacturer">MITSUBISHI</span>
         <span id="name">GTO Twin Turbo '91</span>
         <span id="credits"><span id="cr">Cr.</span> 48,900</span>
-      <span id="new">NEW</span>
-      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
-      </p><p class="car carnew">
+      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
+      </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
         <span id="manufacturer">NISSAN</span>
         <span id="name">Fairlady Z 300ZX TT 2seater '89</span>
         <span id="credits"><span id="cr">Cr.</span> 52,900</span>
+      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
+      </p><p class="car carnew">
+        <img id="flag" src="https://flagcdn.com/h24/it.png"/>
+        <span id="manufacturer">LANCIA</span>
+        <span id="name">Stratos '73</span>
+        <span id="credits"><span id="cr">Cr.</span> 532,100</span>
       <span id="new">NEW</span>
       <span id="days-estimate">Estimate: 6 More Days Remaining</span>
-      </p><p class="car carsold">
-        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
-        <span id="manufacturer">MITSUBISHI</span>
-        <span id="name">Lancer Evolution IV GSR '96</span>
-        <span id="credits"><span id="cr">Cr.</span> 45,300</span>
-      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
         <span id="manufacturer">TOYOTA</span>
         <span id="name">Supra 3.0GT Turbo A '88</span>
         <span id="credits"><span id="cr">Cr.</span> 109,600</span>
-      <span id="days-estimate">Estimate: 2 More Days Remaining</span>
-      </p><p class="car carsold">
+      <span id="days-estimate">Estimate: Limited Stock Soon</span>
+      </p><p class="car carnew">
         <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
-        <span id="manufacturer">NISSAN</span>
-        <span id="name">R32 GT-R V-spec II '94</span>
-        <span id="credits"><span id="cr">Cr.</span> 176,000</span>
-      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>
+        <span id="manufacturer">HONDA</span>
+        <span id="name">Integra Type R (DC2) '98</span>
+        <span id="credits"><span id="cr">Cr.</span> 54,000</span>
+      <span id="new">NEW</span>
+      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/de.png"/>
         <span id="manufacturer">RUF</span>
         <span id="name">CTR3 '07</span>
         <span id="credits"><span id="cr">Cr.</span> 792,100</span>
-      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
-      </p><p class="car carnew">
+      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
+      </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/de.png"/>
         <span id="manufacturer">BMW</span>
         <span id="name">M3 '07</span>
         <span id="credits"><span id="cr">Cr.</span> 69,800</span>
-      <span id="new">NEW</span>
-      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/us.png"/>
         <span id="manufacturer">DODGE</span>
         <span id="name">Viper SRT10 Coupe '06</span>
         <span id="credits"><span id="cr">Cr.</span> 112,200</span>
-      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
-      </p><p class="car carsold">
-        <img id="flag" src="https://flagcdn.com/h24/de.png"/>
-        <span id="manufacturer">PORSCHE</span>
-        <span id="name">911 Carrera RS CS (993) '95</span>
-        <span id="credits"><span id="cr">Cr.</span> 421,000</span>
-      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>
+      <span id="days-estimate">Estimate: 2 More Days Remaining</span>
+      </p><p class="car carnew">
+        <img id="flag" src="https://flagcdn.com/h24/it.png"/>
+        <span id="manufacturer">MASERATI</span>
+        <span id="name">GranTurismo S '08</span>
+        <span id="credits"><span id="cr">Cr.</span> 136,200</span>
+      <span id="new">NEW</span>
+      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
       </p><p class="car">
         <img id="flag" src="https://flagcdn.com/h24/it.png"/>
         <span id="manufacturer">LAMBORGHINI</span>
         <span id="name">Murcielago LP 640 '09</span>
         <span id="credits"><span id="cr">Cr.</span> 340,800</span>
-      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
       </p></span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="legend-section">
       <div id="section-header">
         <h2 id="legend-cars"><img src="img/legend-hagerty.svg"/> | Collection</h2>
-        <span id="update-string">Last updated: 22-03-22 (YY-MM-DD)</span>
+        <span id="update-string">Last updated: 22-03-23 (YY-MM-DD)</span>
       </div>
-      The displayed estimates assume cars will be available for 7 days after they appear.<br>
-      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
-      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
+      Estimates assume cars will be available for 7 days after they appear.<br>
+      I believe this has been accurate for every legendary car thus far.<br>
       <br>
       To better explain the problems with GT7's economy, estimated 'grind' and 'normal' playtimes have been added.<br>
       For 'grind', this assumes that you are extremely efficient and earn 900k Cr. per hour by doing nothing but the single current best event.<br>
       For 'normal', this assumes you're playing reasonably and earning 200k Cr. per hour <i>but not spending a single credit until you can afford the car</i>.<br>
       <br>
-      Oh, there's also some fun data with custom race payouts. These are with the player at the back of a 20 car grid on Professional difficulty.<br>
-      Number of 24 hour custom races is self-explanatory. A 24 hour duration custom race pays out 122,053 Cr.<br>
+      And there's some custom race payouts info. These are with the player at the back of a 20 car grid on Professional difficulty.<br>
+      Number of 24 hour custom races is self-explanatory. A 24 hour duration custom race pays out 122,053 Cr. (in any Gr., dunno what it is for road cars)<br>
       Number of Gr.3 custom race laps of the Nordschleife is calculated based on 10 lap races (which give the most efficient reward). This is 62,038 Cr. per race.<br>
       <span class="car-container"><p class="lcar">
         <img id="icon" src="img/legend-hagerty-icon.svg"/>
@@ -175,14 +181,16 @@
       <span id="play">Normal gameplay time to earn: 16 hours 💀</span>
       <span id="customrace">Number of <b>24 hour</b> custom races to earn: 25</span>
       <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: 484</span>
-      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 2 More Days Remaining</span>
 </p>
-<p class="lcar carsold">
+<p class="lcar carnew">
         <img id="icon" src="img/legend-hagerty-icon.svg"/>
-        <span id="manufacturer">Ferrari</span>
-        <span id="name">500 Mondial Pinin Farina Coupe '54</span>
-        <span id="credits"><span id="cr">Cr.</span> 4,000,000</span>
-      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>
+        <span id="manufacturer">De Tomaso</span>
+        <span id="name">Mangusta '69</span>
+        <span id="credits"><span id="cr">Cr.</span> 245,000</span>
+      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: 40</span>
+      <span id="new">NEW</span>
+      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
 </p>
 <p class="lcar">
         <img id="icon" src="img/legend-hagerty-icon.svg"/>
@@ -193,7 +201,7 @@
       <span id="play">Normal gameplay time to earn: 91 hours 🤡</span>
       <span id="customrace">Number of <b>24 hour</b> custom races to earn: 148</span>
       <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: 2902</span>
-      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
 </p>
 <p class="lcar">
         <img id="icon" src="img/legend-hagerty-icon.svg"/>
@@ -204,9 +212,9 @@
       <span id="play">Normal gameplay time to earn: 93 hours 🤡</span>
       <span id="customrace">Number of <b>24 hour</b> custom races to earn: 152</span>
       <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: 2983</span>
-      <span id="days-estimate">Estimate: 4 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 3 More Days Remaining</span>
 </p>
-<p class="lcar carnew">
+<p class="lcar">
         <img id="icon" src="img/legend-hagerty-icon.svg"/>
         <span id="manufacturer">Ford</span>
         <span id="name">GT40 Mark I '66</span>
@@ -215,8 +223,7 @@
       <span id="play">Normal gameplay time to earn: 29 hours 💀</span>
       <span id="customrace">Number of <b>24 hour</b> custom races to earn: 46</span>
       <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: 903</span>
-      <span id="new">NEW</span>
-      <span id="days-estimate">Estimate: 6 More Days Remaining</span>
+      <span id="days-estimate">Estimate: 5 More Days Remaining</span>
 </p>
 </span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
@@ -351,31 +358,257 @@ Original source:<br>
     </section>
     <section id="menu-book-used-section">
       <h2 id="menu-book-used-cars">Menu Book Used Cars</h2>
-      <span>Coming soon!</span>
+      %MENUBOOKUSEDCARS_SECTION
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="engine-swaps-section">
       <h2 id="engine-swaps">Known Engine Swaps</h2>
-      Coming soon!<br>In the meantime, check:
-      <br>
-      <a href="https://www.gtplanet.net/forum/threads/gran-turismo-7-engine-swap-compatibility-list.405033/">"Gran Turismo 7 Engine Swap Compatibility List" on GTPlanet by Famine and GTPlanet members</a>
+      <div id="engine-swap-block">
+<h4 style="display: inline-block;">LT1-Corvette</h3>&emsp;<small>Source car:<br>Chevrolet Corvette Stingray (C7) '14</small><ul>
+<li>Mazda Roadster S (ND) '15</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">Hellcat-Charger</h3>&emsp;<small>Source car:<br>Dodge Charger SRT Hellcat '15</small><ul>
+<li>Dodge Challenger R/T '70</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">Coyote-5.0L-Mustang</h3>&emsp;<small>Source car:<br>Ford Mustang GT '15</small><ul>
+<li>Ford Mustang Mach 1 '71</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">K20C1-Civic-'20</h3>&emsp;<small>Source car:<br>Honda Civic Type R Limited Edition (FK8) '20</small><ul>
+<li>Honda CIVIC TYPE R (EK) '98</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">13B-REW-RX-7</h3>&emsp;<small>Source car:<br>Mazda RX-7 Spirit R Type A (FD) '02</small><ul>
+<li>Mazda Eunos Roadster (NA Special Package) '89</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">R26B-787B</h3>&emsp;<small>Source car:<br>Mazda 787B '91</small><ul>
+<li>Mazda RX-7 Spirit R Type A (FD) '02</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">SR20DET-Silvia</h3>&emsp;<small>Source car:<br>Nissan SILVIA spec-R AERO (S15) '02</small><ul>
+<li>Nissan SILVIA K's Dia Selection (S13) '90</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">M96/76-Porsche-'01</h3>&emsp;<small>Source car:<br>Porsche 911 GT3 (996) '01</small><ul>
+<li>Volkswagen 1200 '66</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">M64/03-911</h3>&emsp;<small>Source car:<br>Porsche 911 Carrera RS (964) '92</small><ul>
+<li>Volkswagen 1200 '66</li>
+<li>Volkswagen typ2(T1) SambaBus '62</li>
+</ul></div><div id="engine-swap-block">
+<h4 style="display: inline-block;">2JZ-GTE-Supra</h3>&emsp;<small>Source car:<br>Toyota SUPRA RZ '97</small><ul>
+<li>Nissan SILVIA spec-R AERO (S15) '02</li>
+</ul></div>
+
+<!-- empty div for zero effort border -->
+<div id="engine-swap-block"></div>
+
+Adapted from:<br>
+<a href="https://www.gtplanet.net/forum/threads/gran-turismo-7-engine-swap-compatibility-list.405033/">"Gran Turismo 7 Engine Swap Compatibility List" on GTPlanet by Famine and GTPlanet members</a>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="game-issues-section">
       <h2 id="issues">Game Issues</h2>
       Coming soon!<br>In the meantime, check issues known by the developers here:
-      <br>
       <a href="https://www.gran-turismo.com/world/gt7/news/00_8730173.html">"Known Issues" on gran-turismo.com by Polyphony Digital Inc</a>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="daily-races-section">
-      <h2 id="daily-races">Sport Mode - Daily Races</h2>
-      Coming soon!<br>Sorry, I don't know anywhere that provides just this data right now. Check GTPlanet news?
+      <h2 id="daily-races">Daily Race</h2>
+      <div style="text-align: center;">This section is a work-in-progress. It should look nicer soon. :)</div>
+      <span class="dailyrace-container"><div class="dailyrace">        <span id="racetitle">RACE A</span>
+        <img id="logo" src="img/track/tsukuba.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
+        <span id="trackname">Tsukuba Circuit</span>
+        <span class="racedetails">
+        <span class="racedetailsection" id="times">
+            <span class="racedetaillabel" id="timelabel">Time Required</span>
+            <span class="racedetailcontent" id="time">15 <small>Min(s)</small></span><br>
+            <span class="racedetaillabel" id="schedulelabel">Race Schedule</span>
+            <span class="racedetailcontent" id="schedule">XX:00, XX:20, XX:40</span>
+        </span>
+        <span class="racedetailsection" id="raceinfo">
+            <div class="racedetailheader" id="raceinfo">Race Information</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
+                <span class="racedetailcontent" id="laps">6</span>
+                <span class="racedetaillabel" id="carslabel">No. of Cars</span>
+                <span class="racedetailcontent" id="cars">12</span>
+                <span class="racedetaillabel" id="starttypelabel">Start Type</span>
+                <span class="racedetailcontent" id="starttype">Grid Start</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="fueltyrelabel">Fuel Consumption / Tyre Wear</span>
+                <span class="racedetaillabel" id="fuelconsfinallabel">Final:</span>
+                <span class="racedetailcontent" id="fuelcons">1x</span>
+                <span class="racedetaillabel" id="tyrewearfinallabel">Final:</span>
+                <span class="racedetailcontent" id="tyrewear">1x</span>
+            </div>
+        </span>
+        
+        <span class="racedetailsection" id="specificcars">
+            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>
+                <div class="racedetailrow">
+                    <span class="specifiedcar">Clio R.S. 220 Trophy '16</span>
+                </div>
+            </span>
+        <span class="racedetailsection" id="regulations">
+            <div class="racedetailheader" id="regulations">Regulations</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="widebodylabel">Wide Body</span>
+                <span class="racedetailcontent" id="widebody">Prohibited</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="nitrouslabel">Nitrous</span>
+                <span class="racedetailcontent" id="nitrous">Cannot be Fitted</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="">Tyre Choice</span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="CS">CS</div></span>
+            </div>
+        </span>
+        <span class="racedetailsection" id="racesettings">
+            <div class="racedetailheader" id="racesettings">Race Settings</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="boplabel">BoP/Tuning Forbidden</span>
+                <span class="racedetailcontent" id="bop">Applicable</span>
+                <span class="racedetaillabel" id="garagecarlabel">Car Used</span>
+                <span class="racedetailcontent" id="garagecar">Garage Car</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="speclabel">Car Settings</span>
+                <span class="racedetailcontent" id="spec">Specified</span>
+                <span class="racedetaillabel" id="pitlanepenlabel">Pit Lane Line Cutting Penalty</span>
+                <span class="racedetailcontent" id="pitlanepen">Enabled</span>
+            </div>
+        </span>
+        </span><div class="boprace">BoP Race</div>
+</div><div class="dailyrace">        <span id="racetitle">RACE B</span>
+        <img id="logo" src="img/track/interlagos.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/br.png"/>
+        <span id="trackname">Autodromo de Interlagos</span>
+        <span class="racedetails">
+        <span class="racedetailsection" id="times">
+            <span class="racedetaillabel" id="timelabel">Time Required</span>
+            <span class="racedetailcontent" id="time">15 <small>Min(s)</small></span><br>
+            <span class="racedetaillabel" id="schedulelabel">Race Schedule</span>
+            <span class="racedetailcontent" id="schedule">XX:10, XX:30, XX:50</span>
+        </span>
+        <span class="racedetailsection" id="raceinfo">
+            <div class="racedetailheader" id="raceinfo">Race Information</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
+                <span class="racedetailcontent" id="laps">5</span>
+                <span class="racedetaillabel" id="carslabel">No. of Cars</span>
+                <span class="racedetailcontent" id="cars">16</span>
+                <span class="racedetaillabel" id="starttypelabel">Start Type</span>
+                <span class="racedetailcontent" id="starttype">Formation</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="fueltyrelabel">Fuel Consumption / Tyre Wear</span>
+                <span class="racedetaillabel" id="fuelconsfinallabel">Final:</span>
+                <span class="racedetailcontent" id="fuelcons">1x</span>
+                <span class="racedetaillabel" id="tyrewearfinallabel">Final:</span>
+                <span class="racedetailcontent" id="tyrewear">1x</span>
+            </div>
+        </span>
+        
+        <span class="racedetailsection" id="regulations">
+            <div class="racedetailheader" id="regulations">Regulations</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="categorylabel">Category</span>
+                <span class="racedetailcontent" id="category">Gr.3</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="widebodylabel">Wide Body</span>
+                <span class="racedetailcontent" id="widebody">Prohibited</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="nitrouslabel">Nitrous</span>
+                <span class="racedetailcontent" id="nitrous">Cannot be Fitted</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="">Tyre Choice</span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="RH">RH</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
+            </div>
+        </span>
+        <span class="racedetailsection" id="racesettings">
+            <div class="racedetailheader" id="racesettings">Race Settings</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="boplabel">BoP/Tuning Forbidden</span>
+                <span class="racedetailcontent" id="bop">Applicable</span>
+                <span class="racedetaillabel" id="garagecarlabel">Car Used</span>
+                <span class="racedetailcontent" id="garagecar">Garage Car</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="speclabel">Car Settings</span>
+                <span class="racedetailcontent" id="spec">Specified</span>
+                <span class="racedetaillabel" id="pitlanepenlabel">Pit Lane Line Cutting Penalty</span>
+                <span class="racedetailcontent" id="pitlanepen">Enabled</span>
+            </div>
+        </span>
+        </span><div class="boprace">BoP Race</div>
+</div><div class="dailyrace">        <span id="racetitle">RACE C</span>
+        <img id="logo" src="img/track/autopolis.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
+        <span id="trackname">Autopolis International Racing Course</span>
+        <span class="racedetails">
+        <span class="racedetailsection" id="times">
+            <span class="racedetaillabel" id="timelabel">Time Required</span>
+            <span class="racedetailcontent" id="time">25 <small>Min(s)</small></span><br>
+            <span class="racedetaillabel" id="schedulelabel">Race Schedule</span>
+            <span class="racedetailcontent" id="schedule">XX:00, XX:30</span>
+        </span>
+        <span class="racedetailsection" id="raceinfo">
+            <div class="racedetailheader" id="raceinfo">Race Information</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
+                <span class="racedetailcontent" id="laps">10</span>
+                <span class="racedetaillabel" id="carslabel">No. of Cars</span>
+                <span class="racedetailcontent" id="cars">20</span>
+                <span class="racedetaillabel" id="starttypelabel">Start Type</span>
+                <span class="racedetailcontent" id="starttype">Formation</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="fueltyrelabel">Fuel Consumption / Tyre Wear</span>
+                <span class="racedetaillabel" id="fuelconsfinallabel">Final:</span>
+                <span class="racedetailcontent" id="fuelcons">2x</span>
+                <span class="racedetaillabel" id="tyrewearfinallabel">Final:</span>
+                <span class="racedetailcontent" id="tyrewear">2x</span>
+            </div>
+        </span>
+        
+        <span class="racedetailsection" id="regulations">
+            <div class="racedetailheader" id="regulations">Regulations</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="categorylabel">Category</span>
+                <span class="racedetailcontent" id="category">Gr.4</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="widebodylabel">Wide Body</span>
+                <span class="racedetailcontent" id="widebody">Prohibited</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="nitrouslabel">Nitrous</span>
+                <span class="racedetailcontent" id="nitrous">Cannot be Fitted</span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="">Tyre Choice</span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="RH">RH</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
+            </div>
+        </span>
+        <span class="racedetailsection" id="racesettings">
+            <div class="racedetailheader" id="racesettings">Race Settings</div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="boplabel">BoP/Tuning Forbidden</span>
+                <span class="racedetailcontent" id="bop">Applicable</span>
+                <span class="racedetaillabel" id="garagecarlabel">Car Used</span>
+                <span class="racedetailcontent" id="garagecar">Garage Car</span>
+            </div><div class="racedetailrow">
+                <span class="racedetaillabel" id="speclabel">Car Settings</span>
+                <span class="racedetailcontent" id="spec">Specified</span>
+                <span class="racedetaillabel" id="pitlanepenlabel">Pit Lane Line Cutting Penalty</span>
+                <span class="racedetailcontent" id="pitlanepen">Enabled</span>
+            </div>
+        </span>
+        </span><div class="boprace">BoP Race</div>
+</div></span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="bop-section">
       <h2 id="bop">Balance of Performance (BoP)</h2>
-      Coming soon!<br>In the meantime, you can reference Gran Turismo Sport's BoP here:
+      Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:
       <br>
       <a href="https://gt-engine.com/gtsport/cars/gr1/gr1_specs.html#spec_tables">Gran Turismo Sport BoP: Gr.1</a><br>
       <a href="https://gt-engine.com/gtsport/cars/gr2/gr2_specs.html#spec_tables">Gran Turismo Sport BoP: Gr.2</a><br>
@@ -392,7 +625,7 @@ Original source:<br>
         World Touring Car 800:      24 Heures du Mans Racing Circuit:    5,000 Cr -> 70,000 Cr
         World Touring Car 800:      Monza Circuit:                       5,000 Cr -> 70,000 Cr
         World Rally Challenge:      Alsace Village:                     50,000 Cr -> 30,000 Cr
-        Dirt Champions:             Fisherman’s Ranch:                  65,000 Cr -> 30,000 Cr
+        Dirt Champions:             Fisherman's Ranch:                  65,000 Cr -> 30,000 Cr
         Dirt Champions:             Sardegna Windmills:                 65,000 Cr -> 40,000 Cr
         Dirt Champions:             Colorado Springs Lake:              65,000 Cr -> 40,000 Cr
         GT Cup Gr.4:                High Speed Ring:                    65,000 Cr -> 35,000 Cr
@@ -417,11 +650,12 @@ Original source:<br>
         You may have issues if you browse with Internet Explorer.<br>
         (The same can be said for the rest of the internet, so why use it?)<br>
         <br>
-        Hosted on GitHub Pages — Source is available at <a href="https://github.com/ddm999/gt7info">github.com/ddm999/gt7info</a><br>
+        Hosted on GitHub Pages - Source is available at <a href="https://github.com/ddm999/gt7info">github.com/ddm999/gt7info</a><br>
         Styling adapted from <a href="https://github.com/orderedlist/minimal">github.com/orderedlist/minimal</a><br><br>
+        A JSON file for this data you can use with bots is available and updated here <a href="https://ddm999.github.io/gt7info/data.json">ddm999.github.io/gt7info/data.json</a><br><br>
         If you're interested in delving deeper into Gran Turismo / have an interest in GT5 and GT6 modding (which improves all the time!)<br>
         you can hang out on the <a href="https://discord.gg/YbJjbYEKzB">GT Modding Community Discord</a>.<br>
-        Note that entries are made on a case-by-case basis:<br>
+        Note that entries are made on a case-by-case basis:
         if you want to take part in some chatter, you'll need to give a short intro to yourself and your reason for joining.<br>
         (in the interest of keeping the server easy to manage & keep out any bad eggs: it's not that strict, even if those requirements might make you think so).<br>
     </footer>
