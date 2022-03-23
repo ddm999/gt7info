@@ -164,7 +164,7 @@ for line in lines:
                 car += f'\n      <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
             else:
                 estimatedays = 2
-                car += '\n      <span id="days-estimate">Estimate: Limited Stock Soon</span>'
+                car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
         if name in limited.keys() and limited[name] == 2:
             estimatedays = 2
@@ -273,12 +273,12 @@ for line in lines:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
         if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
-            if normal[name] <= 5:
-                estimatedays = 8-normal[name]
+            if normal[name] <= 3:
+                estimatedays = 6-normal[name]
                 car += f'\n      <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
             else:
                 estimatedays = 3
-                car += '\n      <span id="days-estimate">Estimate: Limited Stock Soon</span>'
+                car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
         if name in limited.keys() and limited[name] == 2:
             estimatedays = 1
