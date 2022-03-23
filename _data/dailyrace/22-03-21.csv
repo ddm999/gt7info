@@ -1,0 +1,4 @@
+track,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,pitlanepen,time,offset
+Tsukuba Circuit,6,12,grid,1,1,specific,-,Clio R.S. 220 Trophy '16,y,y,CS,y,y,y,y,15,0
+Autodromo de Interlagos,5,16,formation,1,1,category,Gr.3,-,y,y,RH|IM|W,y,y,y,y,15,10
+Autopolis International Racing Course,10,20,formation,2,2,category,Gr.4,-,y,y,RH|IM|W,y,y,y,y,25,0

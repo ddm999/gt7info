@@ -1,4 +1,4 @@
-import os, shutil
+import os, shutil, json
 from config import LAST_UPDATE
 
 ##################################################
@@ -34,6 +34,28 @@ def manufacturer_to_region(manu : str):
         case _:
             raise ValueError(f"{manu=}")
 
+def track_to_region(track : str):
+    match track:
+        case "Tsukuba Circuit" | "Autopolis International Racing Course":
+            return "jp"
+        case "Autodromo de Interlagos":
+            return "br"
+        case _:
+            raise ValueError(f"{track=}")
+
+def track_to_logo(track : str):
+    match track:
+        case "Tsukuba Circuit":
+            return "tsukuba"
+        case "Autodromo de Interlagos":
+            return "interlagos"
+        case "Autopolis International Racing Course":
+            return "autopolis"
+        case _:
+            raise ValueError(f"{track=}")
+
+jsondata = {}
+
 html = ""
 with open("index.html", "r") as f:
     html = f.read()
@@ -45,12 +67,20 @@ with open("used.html", "r") as f:
 legend_template = ""
 with open("legend.html", "r") as f:
     legend_template = f.read()
+    
+dailyrace_template = ""
+with open("dailyrace.html", "r") as f:
+    dailyrace_template = f.read()
 
-legenddir = os.listdir("_data/legend")
 useddir = os.listdir("_data/used")
-legenddir.sort()
 useddir.sort()
 useddir.remove("starter.csv")
+
+legenddir = os.listdir("_data/legend")
+legenddir.sort()
+
+dailyracedir = os.listdir("_data/dailyrace")
+dailyracedir.sort()
 ##################################################
 # handle used car dealership
 ##################################################
@@ -58,6 +88,11 @@ lines = [] # type: list[str]
 with open(f"_data/used/{useddir[-1]}") as f:
     lines = f.readlines()
 lines = lines[1:] # remove headers
+
+jsondata["used"] = {
+    "date": useddir[-1][:-4],
+    "cars": [],
+}
 
 normal = {} # type: dict[str, int]
 limited = {} # type: dict[str, int]
@@ -119,24 +154,32 @@ for line in lines:
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
+    estimatedays = 0
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
         if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
             if normal[name] <= 5:
-                car += f'\n      <span id="days-estimate">Estimate: {7-normal[name]} More Days Remaining</span>'
+                estimatedays = 7-normal[name]
+                car += f'\n      <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
             else:
+                estimatedays = 2
                 car += '\n      <span id="days-estimate">Estimate: Limited Stock Soon</span>'
     elif state == "limited":
         if name in limited.keys() and limited[name] == 2:
+            estimatedays = 2
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
         elif name in limited.keys() and limited[name] == 1:
+            estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
+            estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span>'
     elif state == "soldout":
+        estimatedays = 0
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     usedcars_section += f'{car}\n      </p>'
+    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": cr, "state": state, "estimatedays": estimatedays})
 
 ##################################################
 # handle legend car dealership
@@ -145,6 +188,11 @@ lines = [] # type: list[str]
 with open(f"_data/legend/{legenddir[-1]}") as f:
     lines = f.readlines()
 lines = lines[1:] # remove headers
+
+jsondata["legend"] = {
+    "date": legenddir[-1][:-4],
+    "cars": [],
+}
 
 normal = {} # type: dict[str, int]
 limited = {} # type: dict[str, int]
@@ -220,25 +268,33 @@ for line in lines:
         if nordslaps > 25:
             car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
+    estimatedays = 0
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
         if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
             if normal[name] <= 5:
-                car += f'\n      <span id="days-estimate">Estimate: {7-normal[name]} More Days Remaining</span>'
+                estimatedays = 8-normal[name]
+                car += f'\n      <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
             else:
+                estimatedays = 3
                 car += '\n      <span id="days-estimate">Estimate: Limited Stock Soon</span>'
     elif state == "limited":
         if name in limited.keys() and limited[name] == 2:
+            estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
         elif name in limited.keys() and limited[name] == 1:
+            estimatedays = 2
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
+            estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span>'
     elif state == "soldout":
+        estimatedays = 0
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     car += '\n</p>'
     legendcars_section += car + '\n'
+    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": cr, "state": state, "estimatedays": estimatedays})
 
 ##################################################
 # handle campaign rewards
@@ -248,6 +304,122 @@ with open(f"campaign-rewards.html") as f:
     campaignrewards_section = f.read()
 
 ##################################################
+# handle engine swaps
+##################################################
+engineswaps_section = ""
+with open(f"engine-swaps.html") as f:
+    engineswaps_section = f.read()
+
+##################################################
+# handle daily races
+##################################################
+dailyraces_section = ""
+
+lines = [] # type: list[str]
+with open(f"_data/dailyrace/{dailyracedir[-1]}") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+#jsondata["dailyrace"] = {
+#    "date": dailyracedir[-1][:-4],
+#    "races": [],
+#}
+
+letters = ["A", "B", "C"] # lmao
+
+i = -1
+for line in lines:
+    i += 1
+    if line == "\n":
+        continue
+    data = line.strip().split(",")
+    track,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,pitlanepen,time,offset = data
+    logo = track_to_logo(track)
+    region = track_to_region(track)
+
+    dailyrace = '<div class="dailyrace">'+dailyrace_template
+
+    flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
+
+    dailyrace = dailyrace.replace("%LETTER", letters[i])
+    dailyrace = dailyrace.replace("%TRACKLOGO", logo)
+    dailyrace = dailyrace.replace("%FLAG", flag)
+    dailyrace = dailyrace.replace("%TRACKNAME", track)
+    dailyrace = dailyrace.replace("%LAPS", laps)
+    dailyrace = dailyrace.replace("%CARS", cars)
+    dailyrace = dailyrace.replace("%STARTTYPE", "Grid Start" if starttype == "grid" else starttype.capitalize())
+    dailyrace = dailyrace.replace("%FUELCONS", fuelcons)
+    dailyrace = dailyrace.replace("%TYREWEAR", tyrewear)
+    dailyrace = dailyrace.replace("%TIME", time)
+    dailyrace = dailyrace.replace("%BOP", "Applicable" if bop == "y" else "no [TODO]")
+    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec == "y" else "no [TODO]")
+    dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car" if garagecar == "y" else "no [TODO]")
+    dailyrace = dailyrace.replace("%PITLANEPEN", "Enabled" if pitlanepen == "y" else "Disabled")
+
+    mincheck = int(offset)
+    schedule = ""
+    while mincheck < 60:
+        schedule += f"XX:{mincheck:02}, "
+        mincheck += int(time)+5
+    schedule = schedule[:-2]
+    dailyrace = dailyrace.replace("%SCHEDULE", schedule)
+
+    regulations = ''
+
+    if cartype == "category":
+        regulations += '\n        <span class="racedetailsection" id="regulations">'+\
+                       '\n            <div class="racedetailheader" id="regulations">Regulations</div>'+\
+                       '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="categorylabel">Category</span>'+\
+                      f'\n                <span class="racedetailcontent" id="category">{category}</span>'+\
+                       '\n            </div>'
+    elif cartype == "specific":
+        regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
+                       '\n            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>'
+        x = 0
+        for car in specificcars.split("|"):
+            if x == 0:
+                regulations += '\n                <div class="racedetailrow">'
+            regulations += f'\n                    <span class="specifiedcar">{car}</span>'
+            x += 1
+            if x == 2:
+                x = 0
+                regulations += '\n                </div>'
+        if x != 0:
+            regulations += '\n                </div>'
+        regulations += '\n            </span>'+\
+                       '\n        <span class="racedetailsection" id="regulations">'+\
+                       '\n            <div class="racedetailheader" id="regulations">Regulations</div>'
+
+    if widebodyban == "y":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="widebodylabel">Wide Body</span>'+\
+                       '\n                <span class="racedetailcontent" id="widebody">Prohibited</span>'+\
+                       '\n            </div>'
+    if nitrousban == "y":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="nitrouslabel">Nitrous</span>'+\
+                       '\n                <span class="racedetailcontent" id="nitrous">Cannot be Fitted</span>'+\
+                       '\n            </div>'
+    if tyres != "-":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="">Tyre Choice</span>'+\
+                      f'\n                <span class="racedetailcontent" id="">'
+        for tyre in tyres.split("|"):
+            regulations += f'<div class="tyre" id="{tyre}">{tyre}</div> '
+        regulations = regulations[:-1] + '</span>\n            </div>'
+    
+    regulations += '\n        </span>'
+
+    dailyrace = dailyrace.replace("%REGULATIONS", regulations)
+
+    if bop == "y":
+        dailyrace += '<div class="boprace">BoP Race</div>'
+
+    dailyrace += '\n</div>'
+    dailyraces_section += dailyrace
+
+##################################################
 # do replacements
 ##################################################
 html = html.replace("%USEDCARS_UPDATESTRING", useddir[-1].replace(".csv", ""))
@@ -255,21 +427,23 @@ html = html.replace("%USEDCARS_SECTION", usedcars_section)
 html = html.replace("%LEGENDCARS_UPDATESTRING", legenddir[-1].replace(".csv", ""))
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
-html = html.replace("%ENGINESWAPS_SECTION", "Coming soon!<br>In the meantime, check:")
+html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%GAMEISSUES_SECTION", "Coming soon!<br>In the meantime, check issues known by the developers here:")
-html = html.replace("%DAILYRACES_SECTION", "Coming soon!<br>Sorry, I don't know anywhere that provides just this data right now. Check GTPlanet news?")
-html = html.replace("%BOP_SECTION", "Coming soon!<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
+html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
+html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
 ##################################################
-# output built html
+# output built html & json data
 ##################################################
 if os.path.exists("build"):
     shutil.rmtree("build")
 os.mkdir("build")
 with open("build/index.html", "w", encoding='utf-8') as f:
     f.write(html)
+with open(f"build/data.json", "w") as f:
+    json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220320-new.css"]
+FILES_TO_COPY = ["style-220322.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:

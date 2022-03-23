@@ -15,19 +15,27 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships","name":"ddm999.github.io","url":"https://ddm999.github.io/test/"}
   </script>
-  <link rel="stylesheet" href="style-220320-new.css">
+  <link rel="stylesheet" href="style-220322.css">
 </head>
 <body>
   <div class="wrapper">
     <header>
       <h1 id="title">GT7 Online Dealerships</h1>
       <span id="details">
-        Got rid of a bunch of stuff from this top section.<br>
-        If you play GT7 enough to check the dealerships here, you're aware of the hellish state of the game.<br>
-        There's no point in me reiterating it further.<br>
+        Note because I know it's a bit confusing:<br>
+        "X More Days Remaining" means "this day and X more" left in the dealership.<br>
+        ie. "2 More Days Remaining" -> "1 More Day Remaining" -> "Last Day Remaining".<br>
+        Hope that clears up any confusion.<br>
         <br>
-        <strong>Recent changes:</strong><br>
-        - Legend Cars now shows "how long to grind", plus some other fun stats to show how ruined the game's economy is.<br>
+        If you want to make a bot that uses this data, a JSON file is built from the data and can be found at:<br>
+        <a href="https://ddm999.github.io/gt7info/data.json">ddm999.github.io/gt7info/data.json</a><br>
+        This will update when the site is updated.<br>
+        Also, if you're wondering, the site is updated manually.<br>
+        <br>
+        <strong>Recent changes:&emsp;<small>All dates are (YY-MM-DD)</small></strong><br>
+        - Legend Cars now shows "how long to grind", plus some other fun stats to show how ruined the game's economy is. (22-03-20)<br>
+        - A currently known engine swap list has been added. (22-03-22)<br>
+        - Daily Races have been added - note the styling is incomplete. (22-03-22)<br>
       </span>
       <br>
     </header>
@@ -36,11 +44,10 @@
       <a href="#used-section">Jump to Auto+: Used Car Dealership</a><br>
       <a href="#legend-section">Jump to Hagerty Collection: Legendary Dealership</a><br>
       <a href="#campaign-reward-section">Jump to Campaign Rewards</a><br>
-      <a href="#menu-book-used-section">Jump to Menu Book Used Cars</a><br>
       <a href="#engine-swaps-section">Jump to Engine Swaps</a><br>
-      <a href="#game-issues-section">Jump to Game Issues</a><br>
       <a href="#daily-races-section">Jump to Sport Mode - Daily Races</a><br>
-      <a href="#bop-section">Jump to Balance of Performance</a>
+      <a href="#v107-reward-changes">Jump to v1.07 Reward Changes</a><br>
+      <small>Note: I've removed anything "coming soon" from here. It'll reappear when it's done.</small>
     </section>
     <section id="used-section">
       <div id="section-header">
@@ -51,9 +58,8 @@
       These come from the menu book you currently have active.<br>
       A list of these menu book specific used cars can be found <a href="#menu-book-used-section">here</a>. (coming soon)<br>
       <br>
-      The displayed estimates assume cars will be available for 7 days after they appear.<br>
-      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
-      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
+      Estimates assume cars will be available for 7 days after they appear.<br>
+      For used cars it seems to actually be 7 to 9 days (so cars may appear for longer) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
       <span class="car-container">%USEDCARS_SECTION</span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
@@ -62,16 +68,15 @@
         <h2 id="legend-cars"><img src="img/legend-hagerty.svg"/> | Collection</h2>
         <span id="update-string">Last updated: %LEGENDCARS_UPDATESTRING (YY-MM-DD)</span>
       </div>
-      The displayed estimates assume cars will be available for 7 days after they appear.<br>
-      This is not always true (hence, estimate) - note that cars ARE always "Limited Stock" for 2 days, however.<br>
-      "Estimate: Limited Stock Soon" is displayed for cars that are lasting longer than estimated.<br>
+      Estimates assume cars will be available for 7 days after they appear.<br>
+      I believe this has been accurate for every legendary car thus far.<br>
       <br>
       To better explain the problems with GT7's economy, estimated 'grind' and 'normal' playtimes have been added.<br>
       For 'grind', this assumes that you are extremely efficient and earn 900k Cr. per hour by doing nothing but the single current best event.<br>
       For 'normal', this assumes you're playing reasonably and earning 200k Cr. per hour <i>but not spending a single credit until you can afford the car</i>.<br>
       <br>
-      Oh, there's also some fun data with custom race payouts. These are with the player at the back of a 20 car grid on Professional difficulty.<br>
-      Number of 24 hour custom races is self-explanatory. A 24 hour duration custom race pays out 122,053 Cr.<br>
+      And there's some custom race payouts info. These are with the player at the back of a 20 car grid on Professional difficulty.<br>
+      Number of 24 hour custom races is self-explanatory. A 24 hour duration custom race pays out 122,053 Cr. (in any Gr., dunno what it is for road cars)<br>
       Number of Gr.3 custom race laps of the Nordschleife is calculated based on 10 lap races (which give the most efficient reward). This is 62,038 Cr. per race.<br>
       <span class="car-container">%LEGENDCARS_SECTION</span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
@@ -83,26 +88,24 @@
     </section>
     <section id="menu-book-used-section">
       <h2 id="menu-book-used-cars">Menu Book Used Cars</h2>
-      <span>Coming soon!</span>
+      %MENUBOOKUSEDCARS_SECTION
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="engine-swaps-section">
       <h2 id="engine-swaps">Known Engine Swaps</h2>
       %ENGINESWAPS_SECTION
-      <br>
-      <a href="https://www.gtplanet.net/forum/threads/gran-turismo-7-engine-swap-compatibility-list.405033/">"Gran Turismo 7 Engine Swap Compatibility List" on GTPlanet by Famine and GTPlanet members</a>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="game-issues-section">
       <h2 id="issues">Game Issues</h2>
       %GAMEISSUES_SECTION
-      <br>
       <a href="https://www.gran-turismo.com/world/gt7/news/00_8730173.html">"Known Issues" on gran-turismo.com by Polyphony Digital Inc</a>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="daily-races-section">
-      <h2 id="daily-races">Sport Mode - Daily Races</h2>
-      %DAILYRACES_SECTION
+      <h2 id="daily-races">Daily Race</h2>
+      <div style="text-align: center;">This section is a work-in-progress. It should look nicer soon. :)</div>
+      <span class="dailyrace-container">%DAILYRACES_SECTION</span>
       <span id="back-to-top"><a href="#navigation">Back to top</a></span>
     </section>
     <section id="bop-section">
@@ -124,7 +127,7 @@
         World Touring Car 800:      24 Heures du Mans Racing Circuit:    5,000 Cr -> 70,000 Cr
         World Touring Car 800:      Monza Circuit:                       5,000 Cr -> 70,000 Cr
         World Rally Challenge:      Alsace Village:                     50,000 Cr -> 30,000 Cr
-        Dirt Champions:             Fisherman’s Ranch:                  65,000 Cr -> 30,000 Cr
+        Dirt Champions:             Fisherman's Ranch:                  65,000 Cr -> 30,000 Cr
         Dirt Champions:             Sardegna Windmills:                 65,000 Cr -> 40,000 Cr
         Dirt Champions:             Colorado Springs Lake:              65,000 Cr -> 40,000 Cr
         GT Cup Gr.4:                High Speed Ring:                    65,000 Cr -> 35,000 Cr
@@ -149,11 +152,12 @@
         You may have issues if you browse with Internet Explorer.<br>
         (The same can be said for the rest of the internet, so why use it?)<br>
         <br>
-        Hosted on GitHub Pages — Source is available at <a href="https://github.com/ddm999/gt7info">github.com/ddm999/gt7info</a><br>
+        Hosted on GitHub Pages - Source is available at <a href="https://github.com/ddm999/gt7info">github.com/ddm999/gt7info</a><br>
         Styling adapted from <a href="https://github.com/orderedlist/minimal">github.com/orderedlist/minimal</a><br><br>
+        A JSON file for this data you can use with bots is available and updated here <a href="https://ddm999.github.io/gt7info/data.json">ddm999.github.io/gt7info/data.json</a><br><br>
         If you're interested in delving deeper into Gran Turismo / have an interest in GT5 and GT6 modding (which improves all the time!)<br>
         you can hang out on the <a href="https://discord.gg/YbJjbYEKzB">GT Modding Community Discord</a>.<br>
-        Note that entries are made on a case-by-case basis:<br>
+        Note that entries are made on a case-by-case basis:
         if you want to take part in some chatter, you'll need to give a short intro to yourself and your reason for joining.<br>
         (in the interest of keeping the server easy to manage & keep out any bad eggs: it's not that strict, even if those requirements might make you think so).<br>
     </footer>

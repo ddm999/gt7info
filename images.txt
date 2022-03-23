@@ -161,9 +161,7 @@ ST Croissant - images/22dfdef14b9d596effd0252de9ea0a6d.png
 Colorado Springs - images/49df17dc51c7d41b4edb9977b4edc826.png
 Circuit de Barcelona - images/07295a31dd2d67aff3f1d26645046dda.png
 Fisherman's Ranch - images/584166d3e0c1e3a602f9fd40b7c63f81.png
-Tokyo Expressway - images/ea5457bf30f5a6b7503aecb97f8f22d7.png
 Alsace - images/cd00fc764f6266fb8e9c08bf3a04b604.png
-Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
 Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
 Autopolis - images/08bcf63633d747e0c1f3c879894a5d40.png
 Circuit de la Sarthe - images/7927335313447011205e4af49439c095.png
@@ -175,13 +173,10 @@ Sardegna - images/199807d79f1226e88669ec44cb1234f6.png
 Monza - images/7ed9a80e9ae7e9f5e8ed504f5f5b0890.png
 BB Raceway - images/1ff6b437b73fcfc224083d94fb7e74af.png
 Red Bull Ring - images/dd764cc093fc89f21ea71530ab18dc74.png
-Dragon Trail - images/23f6804650726fe9d3d9960b3428616f.png
 Deep Forest - images/4b6b2c23461d4bf0433b938106985696.png
 Sardegna Road Track - images/c7fb73c3416aa4e7839540848fb515a0.png
-Tokyo Expressway - images/ea5457bf30f5a6b7503aecb97f8f22d7.png
 Tsukuba - images/655c98484a89001d7f5620d9989f12bb.png
 Northern Isle Speedway - images/aafc03c8768369e96c041369b1466042.png
-Willow Springs - images/27ab39a583e7144cff6f9207c894094d.png
 Blue Moon Bay - images/9bcede6d0d0c34ccb0b3c7e25dd45666.png
 Mount Panorama - images/a1386ddd8b5e057938f75e6b23f1dbf7.png
 Nurburgring - images/95448f0884efcdf6853583d950ef6ecd.png

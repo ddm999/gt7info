@@ -49,67 +49,73 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
     color: #222;
-    margin: 0 0 20px
+    margin: 0 0 20px;
 }
 h1,h2,h3 {
-    line-height: 1.1
+    line-height: 1.1;
 }
 h1 {
-    font-size: 28px
+    font-size: 28px;
 }
 h2 {
-    color: #393939
+    color: #393939;
 }
 h3,h4,h5,h6 {
-    color: #494949
+    color: #494949;
+    margin-block-end: 6px;
 }
 
 a {
     color: #267CB9;
-    text-decoration: none
+    text-decoration: none;
 }
 a:hover,a:focus {
     color: #069;
-    font-weight: bold
+    font-weight: bold;
 }
 
 a small {
     font-size: 11px;
     color: #777;
     margin-top: -0.3em;
-    display: block
+    display: block;
 }
 a:hover small {
-    color: #777
+    color: #777;
 }
 
 code,pre {
     font-family: Consolas, Terminal, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-    color: #333
+    color: #333;
 }
 pre {
     padding: 8px 15px;
     background: #f8f8f8;
     border-radius: 5px;
     border: 1px solid #e5e5e5;
-    overflow-x: auto
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse
+    border-collapse: collapse;
 }
 th,td {
     text-align: left;
     padding: 5px 10px;
-    border-bottom: 1px solid #e5e5e5
+    border-bottom: 1px solid #e5e5e5;
 }
 dt {
     color: #444;
-    font-weight: 700
+    font-weight: 700;
 }
 th {
-    color: #444
+    color: #444;
+}
+
+ul {
+    margin-block-start: 4px;
+    margin-block-end: 4px;
 }
 
 img {
@@ -475,9 +481,173 @@ footer {
     margin: 9px;
 }
 
-#campaign-reward-section {
+#campaign-reward-section, #bop-section {
     padding: 40px 20px 50px 20px;
     box-shadow: none;
+}
+#campaign-reward-section h3 {
+    width: 360px;
+    border-top: 1px solid #999;
+}
+
+#engine-swap-block {
+    border-top: 1px solid #999;
+    min-width: 360px;
+    max-width: 460px;
+    position: relative;
+}
+#engine-swap-block small {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-weight: 700;
+    text-align: right;
+}
+
+#daily-races {
+    font-family: 'Roboto';
+    font-size: 32px;
+    color: #ddedf7;
+    text-align: center;
+}
+#daily-races-section {
+    background: #080c10;
+    background: linear-gradient(45deg, #080c10 0%, #404f5c 100%);
+    box-shadow: 0 0 16px #1a2128;
+    color:#ddedf7;
+}
+
+.dailyrace-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.dailyrace {
+    background-color: #0c1316;
+    position: relative;
+    height: 600px;
+    min-width: 380px;
+    max-width: 380px;
+    width: 380px;
+    margin: 10px;
+    border: 1px solid #ffffff88;
+    color: #fff;
+}
+.dailyrace #racetitle {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    font-family: 'Roboto Bold';
+    font-size: 22px;
+}
+.dailyrace #flag {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    height: 16px;
+    width: 24px;
+}
+.dailyrace #logo {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    width: 300px;
+}
+.dailyrace #trackname {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    width: 340px;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+.dailyrace .racedetails {
+    position: absolute;
+    top: 180px;
+    left: 20px;
+    width: 340px;
+}
+.dailyrace .racedetailrow {
+    width: 340px;
+    height: 32px;
+    vertical-align: middle;
+}
+.dailyrace .racedetailheader {
+    font-family: 'Roboto Bold';
+    font-size: 12px;
+    background-color: #394245;
+    color: #eff;
+    width: 340px;
+    text-align: center;
+}
+.dailyrace .racedetaillabel {
+    font-family: 'Roboto Bold';
+    font-size: 12px;
+    color: #667176;
+}
+.dailyrace .racedetailcontent, .dailyrace .specifiedcar {
+    font-family: 'Roboto Bold';
+    font-size: 14px;
+    color: #eff;
+}
+.dailyrace #fuelcons, .dailyrace #tyrewear {
+    color: #f64;
+}
+.dailyrace #bop, .dailyrace #spec {
+    color: #fe2;
+}
+.dailyrace #garagecar, .dailyrace #pitlanepen {
+    color: #7bf;
+}
+.dailyrace #pitlanepenlabel {
+    font-size: 10px;
+}
+.dailyrace .boprace {
+    background-color: #fe2;
+    color: #000;
+    width: auto;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    width: 80px;
+    height: 20px;
+    font-family: 'Roboto Bold';
+    text-align: center;
+}
+
+.tyre {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 26px;
+    min-width: 26px;
+    height: 26px;
+    min-height: 26px;
+    vertical-align: middle;
+    display: table-cell;
+    border-radius: 50%;
+    text-align: center;
+}
+.tyre#CS, .tyre#SS, .tyre#RS {
+    color: #f40;
+    border: 2px solid #f40;
+}
+.tyre#CM, .tyre#SM, .tyre#RM {
+    color: #ff4;
+    border: 2px solid #ff4;
+}
+.tyre#IM {
+    color: #6b4;
+    border: 2px solid #6b4;
+}
+.tyre#W {
+    color: #26b;
+    border: 2px solid #26b;
 }
 
 #back-to-top {
