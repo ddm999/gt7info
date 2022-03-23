@@ -320,10 +320,10 @@ with open(f"_data/dailyrace/{dailyracedir[-1]}") as f:
     lines = f.readlines()
 lines = lines[1:] # remove headers
 
-#jsondata["dailyrace"] = {
-#    "date": dailyracedir[-1][:-4],
-#    "races": [],
-#}
+jsondata["dailyrace"] = {
+    "date": dailyracedir[-1][:-4],
+    "races": [],
+}
 
 letters = ["A", "B", "C"] # lmao
 
@@ -358,8 +358,10 @@ for line in lines:
 
     mincheck = int(offset)
     schedule = ""
+    scheduledata = []
     while mincheck < 60:
         schedule += f"XX:{mincheck:02}, "
+        scheduledata.append(mincheck)
         mincheck += int(time)+5
     schedule = schedule[:-2]
     dailyrace = dailyrace.replace("%SCHEDULE", schedule)
@@ -419,6 +421,14 @@ for line in lines:
     dailyrace += '\n</div>'
     dailyraces_section += dailyrace
 
+    jsondata["dailyrace"]["races"].append({"track": track, "region": region, "laps": laps, "cars": cars, "starttype": starttype, "fuelcons": fuelcons, "tyrewear": tyrewear,
+        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "bop": bop, "spec": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
+        "time": time, "offset": offset, "schedule": scheduledata})
+    if cartype == "category":
+        jsondata["dailyrace"]["races"][-1]["category"] = category
+    elif cartype == "specific":
+        jsondata["dailyrace"]["races"][-1]["specificcars"] = specificcars.split("|")
+
 ##################################################
 # do replacements
 ##################################################
@@ -429,6 +439,7 @@ html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
 html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%GAMEISSUES_SECTION", "Coming soon!<br>In the meantime, check issues known by the developers here:")
+html = html.replace("%MENUBOOKUSEDCARS_SECTION", "Coming soon! Well, whenever I can find all this data.")
 html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
