@@ -128,6 +128,7 @@ for i in range(len(useddir)-1):
                 limited[k] -= 1
             else:                       
                 limited[k] = 0-limited[k]
+                normal[k] = -1
 
 usedcars_section = ""
 for line in lines:
@@ -155,9 +156,11 @@ for line in lines:
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
     estimatedays = 0
+    daysvisible = 0
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
+        daysvisible = normal[name]
         if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
             if normal[name] <= 5:
                 estimatedays = 7-normal[name]
@@ -166,6 +169,7 @@ for line in lines:
                 estimatedays = 2
                 car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
+        daysvisible = normal[name] + limited[name]
         if name in limited.keys() and limited[name] == 2:
             estimatedays = 2
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
@@ -179,7 +183,7 @@ for line in lines:
         estimatedays = 0
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     usedcars_section += f'{car}\n      </p>'
-    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new})
+    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
 ##################################################
 # handle legend car dealership
@@ -226,8 +230,9 @@ for i in range(len(legenddir)-1):
         if limited[k] < 0:
             if k in carnames.keys() and carnames[k] == "limited":
                 limited[k] -= 1
-            else:                       
+            else:
                 limited[k] = 0-limited[k]
+                normal[k] = -1
 
 legendcars_section = ""
 for line in lines:
@@ -270,9 +275,11 @@ for line in lines:
             car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
     estimatedays = 0
+    daysvisible = 0
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
+        daysvisible = normal[name]
         if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
             if normal[name] <= 3:
                 estimatedays = 6-normal[name]
@@ -281,6 +288,7 @@ for line in lines:
                 estimatedays = 3
                 car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
+        daysvisible = normal[name] + limited[name]
         if name in limited.keys() and limited[name] == 2:
             estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
@@ -295,7 +303,7 @@ for line in lines:
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     car += '\n</p>'
     legendcars_section += car + '\n'
-    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new})
+    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
 ##################################################
 # handle campaign rewards
