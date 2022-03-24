@@ -437,9 +437,9 @@ for line in lines:
     dailyrace += '\n</div>'
     dailyraces_section += dailyrace
 
-    jsondata["dailyrace"]["races"].append({"track": track, "logo": f'img/track/{logo}.png', "region": region, "laps": laps, "cars": cars, "starttype": starttype, "fuelcons": fuelcons, "tyrewear": tyrewear,
+    jsondata["dailyrace"]["races"].append({"track": track, "logo": f'img/track/{logo}.png', "region": region, "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
         "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "bop": bop, "carsettings_specified": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
-        "time": time, "offset": offset, "schedule": scheduledata})
+        "time": int(time), "offset": int(offset), "schedule": scheduledata})
     if cartype == "category":
         jsondata["dailyrace"]["races"][-1]["category"] = category
     elif cartype == "specific":
