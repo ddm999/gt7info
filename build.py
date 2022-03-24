@@ -346,6 +346,13 @@ for line in lines:
     logo = track_to_logo(track)
     region = track_to_region(track)
 
+    widebodyban = widebodyban == "y"
+    nitrousban = nitrousban == "y"
+    bop = bop == "y"
+    spec = spec == "y"
+    garagecar = garagecar == "y"
+    pitlanepen = pitlanepen == "y"
+
     dailyrace = '<div class="dailyrace">'+dailyrace_template
 
     flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
@@ -360,10 +367,10 @@ for line in lines:
     dailyrace = dailyrace.replace("%FUELCONS", fuelcons)
     dailyrace = dailyrace.replace("%TYREWEAR", tyrewear)
     dailyrace = dailyrace.replace("%TIME", time)
-    dailyrace = dailyrace.replace("%BOP", "Applicable" if bop == "y" else "no [TODO]")
-    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec == "y" else "no [TODO]")
-    dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car" if garagecar == "y" else "no [TODO]")
-    dailyrace = dailyrace.replace("%PITLANEPEN", "Enabled" if pitlanepen == "y" else "Disabled")
+    dailyrace = dailyrace.replace("%BOP", "Applicable" if bop else "no [TODO]")
+    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "no [TODO]")
+    dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car" if garagecar else "no [TODO]")
+    dailyrace = dailyrace.replace("%PITLANEPEN", "Enabled" if pitlanepen else "Disabled")
 
     mincheck = int(offset)
     schedule = ""
@@ -402,12 +409,12 @@ for line in lines:
                        '\n        <span class="racedetailsection" id="regulations">'+\
                        '\n            <div class="racedetailheader" id="regulations">Regulations</div>'
 
-    if widebodyban == "y":
+    if widebodyban:
         regulations += '\n            <div class="racedetailrow">'+\
                        '\n                <span class="racedetaillabel" id="widebodylabel">Wide Body</span>'+\
                        '\n                <span class="racedetailcontent" id="widebody">Prohibited</span>'+\
                        '\n            </div>'
-    if nitrousban == "y":
+    if nitrousban:
         regulations += '\n            <div class="racedetailrow">'+\
                        '\n                <span class="racedetaillabel" id="nitrouslabel">Nitrous</span>'+\
                        '\n                <span class="racedetailcontent" id="nitrous">Cannot be Fitted</span>'+\
@@ -431,7 +438,7 @@ for line in lines:
     dailyraces_section += dailyrace
 
     jsondata["dailyrace"]["races"].append({"track": track, "region": region, "laps": laps, "cars": cars, "starttype": starttype, "fuelcons": fuelcons, "tyrewear": tyrewear,
-        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "bop": bop, "spec": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
+        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "bop": bop, "carsettings_specified": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
         "time": time, "offset": offset, "schedule": scheduledata})
     if cartype == "category":
         jsondata["dailyrace"]["races"][-1]["category"] = category
