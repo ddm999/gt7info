@@ -236,6 +236,7 @@ for line in lines:
     data = line.strip().split(",")
     manufacturer_orig, name, cr, state = data
     manufacturer = manufacturer_orig.strip()
+    region = manufacturer_to_region(manufacturer.upper())
 
     new = state == "normal" and name in normal.keys() and normal[name] == 1
     if new:
