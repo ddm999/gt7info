@@ -1,5 +1,5 @@
 import os, shutil, json
-from config import LAST_UPDATE
+from db import *
 
 ##################################################
 # get region code from manufacturer name
