@@ -1,6 +1,6 @@
-manufacturer,name,cr,state
-Porsche,356 A/1500 GS Carrera '56,615000,soldout
-Shelby,G.T.350 '65,487000,normal
-Ford,Mark IV Race Car '67,4600000,limited
-Ferrari,F50 '95,3300000,limited
-Plymouth,XNR Ghia Roadster '60,1600000,normal
+id,cr,state
+3375,615000,soldout
+1925,487000,normal
+1565,4600000,limited
+3362,3300000,limited
+1900,1600000,normal

@@ -1,6 +1,6 @@
-manufacturer,name,cr,state
-Mercedes-Benz,Sauber Mercedes C9 '89,3000000,limited
-De Tomaso,Mangusta '69,245000,normal
-Porsche,917K '70,18000000,normal
-McLaren,McLaren F1 '94,18500000,limited
-Ford,GT40 Mark I '66,5600000,normal
+id,cr,state
+998,3000000,limited
+3437,245000,normal
+3410,18000000,normal
+1540,18500000,limited
+1935,5600000,normal

@@ -1,16 +1,16 @@
-manufacturer,name,cr,state
-BMW,3.0 CSL '71,146700,normal
-Volkswagen,Golf I GTI '83,48300,normal
-Toyota,Corolla Levin 1600GT APEX (AE86) '83,47400,normal
-Pontiac,Firebird Trans Am '78,96200,normal
-Abarth,Abarth 500 '09,21700,limited
-Mitsubishi,GTO Twin Turbo '91,48900,normal
-Nissan,Fairlady Z 300ZX TT 2seater '89,52900,normal
-Lancia,Stratos '73,532100,normal
-Toyota,Supra 3.0GT Turbo A '88,109600,normal
-Honda,Integra Type R (DC2) '98,54000,normal
-RUF,CTR3 '07,792100,normal
-BMW,M3 '07,69800,normal
-Dodge,Viper SRT10 Coupe '06,112200,normal
-Maserati,GranTurismo S '08,136200,normal
-Lamborghini,Murcielago LP 640 '09,340800,normal
+id,cr,state
+3454,146700,normal
+3403,48300,normal
+63,47400,normal
+1985,96200,normal
+1973,21700,limited
+3384,48900,normal
+709,52900,normal
+533,532100,normal
+843,109600,normal
+203,54000,normal
+3398,792100,normal
+1399,69800,normal
+1402,112200,normal
+1539,136200,normal
+1545,340800,normal

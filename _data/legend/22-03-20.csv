@@ -1,6 +1,6 @@
-manufacturer,name,cr,state
-Mercedes-Benz,Sauber Mercedes C9 '89,3000000,normal
-Ferrari,500 Mondial Pinin Farina Coupe '54,4000000,limited
-Porsche,911 GT1 Strassenversion '97,3000000,soldout
-McLaren,McLaren F1 '94,18500000,normal
-Chevrolet,Corvette (C2) '63,178000,limited
+id,cr,state
+998,3000000,normal
+2011,4000000,limited
+3400,3000000,soldout
+1540,18500000,normal
+818,178000,limited

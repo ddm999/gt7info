@@ -1,6 +1,6 @@
-manufacturer,name,cr,state
-Ferrari,F40 '92,1350000,normal
-Shelby,G.T.350 '65,487000,normal
-Ford,Mark IV Race Car '67,4600000,soldout
-Jaguar,XJ13 '66,12000000,normal
-Plymouth,XNR Ghia Roadster '60,1600000,normal
+id,cr,state
+1409,1350000,normal
+1925,487000,normal
+1565,4600000,soldout
+1553,12000000,normal
+1900,1600000,normal

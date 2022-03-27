@@ -1,6 +1,6 @@
-manufacturer,name,cr,state
-Nissan,Skyline Hard Top 2000GT-R (KPGC10) '70,121000,normal
-De Tomaso,Mangusta '69,245000,limited
-Porsche,917K '70,18000000,limited
-McLaren,McLaren F1 '94,18500000,soldout
-Ford,GT40 Mark I '66,5600000,limited
+id,cr,state
+837,121000,normal
+3437,245000,limited
+3410,18000000,limited
+1540,18500000,soldout
+1935,5600000,limited

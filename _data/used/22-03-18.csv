@@ -1,16 +1,16 @@
-manufacturer,name,cr,state
-Honda,S800 '66,44800,normal
-Autobianchi,A112 Abarth '85,31100,limited
-Nissan,Silvia Q's (S13) '88,33900,limited
-Pontiac,Firebird Trans Am '78,96200,normal
-Honda,Civic Type R (EK) '97,51200,limited
-Mitsubishi,Lancer Evolution V GSR '98,67100,normal
-Honda,S2000 '99,100100,normal
-Mitsubishi,Lancer Evolution IV GSR '96,45300,normal
-Toyota,Supra 3.0GT Turbo A '88,109600,normal
-Nissan,R32 GT-R V-spec II '94,176000,normal
-Nissan,R34 GT-R V-spec II Nur '02,396900,limited
-BMW,Z8 '01,257700,normal
-Ferrari,458 Italia '09,249800,soldout
-Porsche,911 Carrera RS CS (993) '95,421000,normal
-Porsche,911 GT3 (996) '01,157600,limited
+id,cr,state
+135,44800,normal
+3442,31100,limited
+919,33900,limited
+1985,96200,normal
+821,51200,limited
+211,67100,normal
+514,100100,normal
+301,45300,normal
+843,109600,normal
+773,176000,normal
+210,396900,limited
+1893,257700,normal
+1504,249800,soldout
+3404,421000,normal
+3358,157600,limited
