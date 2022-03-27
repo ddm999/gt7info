@@ -31,6 +31,7 @@ db_maker = db_maker[1:] # remove headers
 # database queries
 ##################################################
 def cardb_id_to_name(input_id : int):
+    input_id = int(input_id)
     for line in db_cars:
         id, name, maker = line.strip().split(",")
         if int(id) == input_id:
@@ -38,6 +39,7 @@ def cardb_id_to_name(input_id : int):
     raise ValueError(f"carid {input_id} not found!")
 
 def cardb_id_to_maker(input_id : int):
+    input_id = int(input_id)
     for line in db_cars:
         id, name, maker = line.strip().split(",")
         if int(id) == input_id:
@@ -45,6 +47,7 @@ def cardb_id_to_maker(input_id : int):
     raise ValueError(f"carid {input_id} not found!")
 
 def countrydb_id_to_name(input_id : int):
+    input_id = int(input_id)
     for line in db_country:
         id, name, code = line.strip().split(",")
         if int(id) == input_id:
@@ -52,6 +55,7 @@ def countrydb_id_to_name(input_id : int):
     raise ValueError(f"countryid {input_id} not found!")
 
 def countrydb_id_to_code(input_id : int):
+    input_id = int(input_id)
     for line in db_country:
         id, name, code = line.strip().split(",")
         if int(id) == input_id:
@@ -59,6 +63,7 @@ def countrydb_id_to_code(input_id : int):
     raise ValueError(f"countryid {input_id} not found!")
 
 def coursedb_id_to_name(input_id : int):
+    input_id = int(input_id)
     for line in db_course:
         id, name, base, country = line.strip().split(",")
         if int(id) == input_id:
@@ -66,6 +71,7 @@ def coursedb_id_to_name(input_id : int):
     raise ValueError(f"courseid {input_id} not found!")
 
 def coursedb_id_to_base(input_id : int):
+    input_id = int(input_id)
     for line in db_course:
         id, name, base, country = line.strip().split(",")
         if int(id) == input_id:
@@ -73,6 +79,7 @@ def coursedb_id_to_base(input_id : int):
     raise ValueError(f"courseid {input_id} not found!")
 
 def coursedb_id_to_country(input_id : int):
+    input_id = int(input_id)
     for line in db_course:
         id, name, base, country = line.strip().split(",")
         if int(id) == input_id:
@@ -80,6 +87,7 @@ def coursedb_id_to_country(input_id : int):
     raise ValueError(f"courseid {input_id} not found!")
 
 def crsbasedb_id_to_name(input_id : int):
+    input_id = int(input_id)
     for line in db_crsbase:
         id, name, logo = line.strip().split(",")
         if int(id) == input_id:
@@ -87,6 +95,7 @@ def crsbasedb_id_to_name(input_id : int):
     raise ValueError(f"crsbaseid {input_id} not found!")
 
 def crsbasedb_id_to_logo(input_id : int):
+    input_id = int(input_id)
     for line in db_crsbase:
         id, name, logo = line.strip().split(",")
         if int(id) == input_id:
@@ -94,6 +103,7 @@ def crsbasedb_id_to_logo(input_id : int):
     raise ValueError(f"crsbaseid {input_id} not found!")
 
 def makerdb_id_to_name(input_id : int):
+    input_id = int(input_id)
     for line in db_maker:
         id, name, country = line.strip().split(",")
         if int(id) == input_id:
@@ -101,6 +111,7 @@ def makerdb_id_to_name(input_id : int):
     raise ValueError(f"makerid {input_id} not found!")
 
 def makerdb_id_to_country(input_id : int):
+    input_id = int(input_id)
     for line in db_maker:
         id, name, country = line.strip().split(",")
         if int(id) == input_id:
@@ -117,6 +128,10 @@ def cardb_id_to_makername(input_id : int):
 def cardb_id_to_countrycode(input_id : int):
     maker = cardb_id_to_maker(input_id)
     return makerdb_id_to_countrycode(maker)
+
+def coursedb_id_to_basename(input_id : int):
+    crsbase = coursedb_id_to_base(input_id)
+    return crsbasedb_id_to_name(crsbase)
 
 def coursedb_id_to_logoname(input_id : int):
     crsbase = coursedb_id_to_base(input_id)

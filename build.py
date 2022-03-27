@@ -1,59 +1,6 @@
 import os, shutil, json
 from db import *
 
-##################################################
-# get region code from manufacturer name
-##################################################
-def manufacturer_to_region(manu : str):
-    match manu:
-        case "GRAN TURISMO" | "GT AWARDS (SEMA)":
-            return "pdi" # 0
-        case "DAIHATSU" | "HONDA" | "MAZDA" | "MITSUBISHI" | "NISSAN" | "SUBARU" |\
-                "SUZUKI" | "TOYOTA" | "INFINITI" | "LEXUS" | "AMUSE" | "RE AMEMIYA" |\
-                "SUPER FORMULA" | "GREDDY":
-            return "jp" #  2
-        case "CHEVROLET" | "DODGE" | "FORD" | "SHELBY" | "PONTIAC" | "PLYMOUTH" | "DMC" |\
-                "CHAPARRAL" | "TESLA" | "SRT" | "FITTIPALDI MOTORS" | "WILLYS" | "JEEP" |\
-                "CHRIS HOLSTROM CONCEPTS" | "ECKERT'S ROD & CUSTOM" | "WICKED FABRICATION":
-            return "us" #  3
-        case "ASTON MARTIN" | "JAGUAR" | "TVR" | "MINI" | "CATERHAM" | "MCLAREN" |\
-                "RADICAL" | "BAC":
-            return "gb" #  4
-        case "AUDI" | "BMW" | "MERCEDES-BENZ" | "RUF" | "VOLKSWAGEN" | "BUGATTI" |\
-                "PORSCHE" | "AMG":
-            return "de" #  5
-        case "CITROEN" | "PEUGEOT" | "RENAULT" | "ALPINE" | "RENAULT SPORT" | "DS AUTOMOBILES":
-            return "fr" #  6
-        case "ALFA ROMEO" | "FIAT" | "LANCIA" | "PAGANI" | "AUTOBIANCHI" | "FERRARI" |\
-                "LAMBORGHINI" | "MASERATI" | "ABARTH" | "ZAGATO" | "DE TOMASO":
-            return "it" #  7
-        case "HYUNDAI" | "GENESIS":
-            return "kr" #  9
-        case "KTM":
-            return "at" # 15
-        case _:
-            raise ValueError(f"{manu=}")
-
-def track_to_region(track : str):
-    match track:
-        case "Tsukuba Circuit" | "Autopolis International Racing Course":
-            return "jp"
-        case "Autodromo de Interlagos":
-            return "br"
-        case _:
-            raise ValueError(f"{track=}")
-
-def track_to_logo(track : str):
-    match track:
-        case "Tsukuba Circuit":
-            return "tsukuba"
-        case "Autodromo de Interlagos":
-            return "interlagos"
-        case "Autopolis International Racing Course":
-            return "autopolis"
-        case _:
-            raise ValueError(f"{track=}")
-
 jsondata = {}
 
 html = ""
@@ -99,10 +46,10 @@ limited = {} # type: dict[str, int]
 for car in lines:
     carsplit = car.strip().split(",")
     # days appeared, negative means still counting
-    if carsplit[3] == "normal":
-        normal[carsplit[1]] = -1
-    elif carsplit[3] == "limited":
-        limited[carsplit[1]] = -1
+    if carsplit[2] == "normal":
+        normal[carsplit[0]] = -1
+    elif carsplit[2] == "limited":
+        limited[carsplit[0]] = -1
 
 for i in range(len(useddir)-1):
     morelines = []
@@ -113,7 +60,7 @@ for i in range(len(useddir)-1):
     carnames = {}
     for car in morelines:
         carsplit = car.strip().split(",")
-        carnames[carsplit[1]] = carsplit[3]
+        carnames[carsplit[0]] = carsplit[2]
 
     for k in normal.keys():
         if normal[k] < 0:
@@ -134,12 +81,12 @@ usedcars_section = ""
 for line in lines:
     if line == "\n":
         continue
-    data = line.strip().split(",")
-    manufacturer_orig, name, cr, state = data
-    manufacturer = manufacturer_orig.strip().upper()
-    region = manufacturer_to_region(manufacturer)
+    carid, cr, state = line.strip().split(",")
+    name = cardb_id_to_name(carid)
+    manufacturer = cardb_id_to_makername(carid)
+    region = cardb_id_to_countrycode(carid)
 
-    new = state == "normal" and name in normal.keys() and normal[name] == 1
+    new = state == "normal" and carid in normal.keys() and normal[carid] == 1
     if new:
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
@@ -152,7 +99,7 @@ for line in lines:
     flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
 
     car = car.replace("%FLAG", flag)
-    car = car.replace("%MANUFACTURER", manufacturer)
+    car = car.replace("%MANUFACTURER", manufacturer.upper())
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
     estimatedays = 0
@@ -160,20 +107,20 @@ for line in lines:
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
-        daysvisible = normal[name]
-        if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
-            if normal[name] <= 5:
-                estimatedays = 7-normal[name]
+        daysvisible = normal[carid]
+        if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
+            if normal[carid] <= 5:
+                estimatedays = 7-normal[carid]
                 car += f'\n      <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
             else:
                 estimatedays = 2
                 car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
-        daysvisible = normal[name] + limited[name]
-        if name in limited.keys() and limited[name] == 2:
+        daysvisible = normal[carid] + limited[carid]
+        if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 2
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
-        elif name in limited.keys() and limited[name] == 1:
+        elif carid in limited.keys() and limited[carid] == 1:
             estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
@@ -183,7 +130,7 @@ for line in lines:
         estimatedays = 0
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     usedcars_section += f'{car}\n      </p>'
-    jsondata["used"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
+    jsondata["used"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
 ##################################################
 # handle legend car dealership
@@ -203,10 +150,10 @@ limited = {} # type: dict[str, int]
 for car in lines:
     carsplit = car.strip().split(",")
     # days appeared, negative means still counting
-    if carsplit[3] == "normal":
-        normal[carsplit[1]] = -1
-    elif carsplit[3] == "limited":
-        limited[carsplit[1]] = -1
+    if carsplit[2] == "normal":
+        normal[carsplit[0]] = -1
+    elif carsplit[2] == "limited":
+        limited[carsplit[0]] = -1
 
 for i in range(len(legenddir)-1):
     morelines = []
@@ -217,7 +164,7 @@ for i in range(len(legenddir)-1):
     carnames = {}
     for car in morelines:
         carsplit = car.strip().split(",")
-        carnames[carsplit[1]] = carsplit[3]
+        carnames[carsplit[0]] = carsplit[2]
 
     for k in normal.keys():
         if normal[k] < 0:
@@ -238,12 +185,12 @@ legendcars_section = ""
 for line in lines:
     if line == "\n":
         continue
-    data = line.strip().split(",")
-    manufacturer_orig, name, cr, state = data
-    manufacturer = manufacturer_orig.strip()
-    region = manufacturer_to_region(manufacturer.upper())
+    carid, cr, state = line.strip().split(",")
+    name = cardb_id_to_name(carid)
+    manufacturer = cardb_id_to_makername(carid)
+    region = cardb_id_to_countrycode(carid)
 
-    new = state == "normal" and name in normal.keys() and normal[name] == 1
+    new = state == "normal" and carid in normal.keys() and normal[carid] == 1
     if new:
         car = '<p class="lcar carnew">\n'+legend_template
     elif state == "limited":
@@ -279,20 +226,20 @@ for line in lines:
     if new:
         car += '\n      <span id="new">NEW</span>'
     if state == "normal":
-        daysvisible = normal[name]
-        if name in normal.keys() and normal[name] > 0: # >0 checks for messed up data
-            if normal[name] <= 3:
-                estimatedays = 6-normal[name]
+        daysvisible = normal[carid]
+        if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
+            if normal[carid] <= 3:
+                estimatedays = 6-normal[carid]
                 car += f'\n      <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
             else:
                 estimatedays = 3
                 car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
-        daysvisible = normal[name] + limited[name]
-        if name in limited.keys() and limited[name] == 2:
+        daysvisible = normal[carid] + limited[carid]
+        if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 1
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
-        elif name in limited.keys() and limited[name] == 1:
+        elif carid in limited.keys() and limited[carid] == 1:
             estimatedays = 2
             car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
@@ -303,7 +250,7 @@ for line in lines:
         car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     car += '\n</p>'
     legendcars_section += car + '\n'
-    jsondata["legend"]["cars"].append({"manufacturer": manufacturer_orig, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
+    jsondata["legend"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
 ##################################################
 # handle campaign rewards
@@ -341,10 +288,11 @@ for line in lines:
     i += 1
     if line == "\n":
         continue
-    data = line.strip().split(",")
-    track,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,pitlanepen,time,offset = data
-    logo = track_to_logo(track)
-    region = track_to_region(track)
+    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,pitlanepen,time,offset = line.strip().split(",")
+    track = coursedb_id_to_name(courseid)
+    crsbase = coursedb_id_to_basename(courseid)
+    logo = coursedb_id_to_logoname(courseid)
+    region = coursedb_id_to_countrycode(courseid)
 
     widebodyban = widebodyban == "y"
     nitrousban = nitrousban == "y"
@@ -437,9 +385,13 @@ for line in lines:
     dailyrace += '\n</div>'
     dailyraces_section += dailyrace
 
-    jsondata["dailyrace"]["races"].append({"track": track, "logo": f'img/track/{logo}.png', "region": region, "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
-        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "bop": bop, "carsettings_specified": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
-        "time": int(time), "offset": int(offset), "schedule": scheduledata})
+    jsondata["dailyrace"]["races"].append({
+        "courseid": courseid, "crsbase": crsbase, "track": track, "logo": f'img/track/{logo}.png', "region": region,
+        "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
+        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"),
+        "bop": bop, "carsettings_specified": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
+        "time": int(time), "offset": int(offset), "schedule": scheduledata
+    })
     if cartype == "category":
         jsondata["dailyrace"]["races"][-1]["category"] = category
     elif cartype == "specific":
