@@ -57,19 +57,19 @@ def track_to_logo(track : str):
 jsondata = {}
 
 html = ""
-with open("index.html", "r") as f:
+with open("index.html", "r", encoding='utf-8') as f:
     html = f.read()
 
 used_template = ""
-with open("used.html", "r") as f:
+with open("used.html", "r", encoding='utf-8') as f:
     used_template = f.read()
 
 legend_template = ""
-with open("legend.html", "r") as f:
+with open("legend.html", "r", encoding='utf-8') as f:
     legend_template = f.read()
     
 dailyrace_template = ""
-with open("dailyrace.html", "r") as f:
+with open("dailyrace.html", "r", encoding='utf-8') as f:
     dailyrace_template = f.read()
 
 useddir = os.listdir("_data/used")
@@ -309,14 +309,14 @@ for line in lines:
 # handle campaign rewards
 ##################################################
 campaignrewards_section = ""
-with open(f"campaign-rewards.html") as f:
+with open(f"campaign-rewards.html", encoding='utf-8') as f:
     campaignrewards_section = f.read()
 
 ##################################################
 # handle engine swaps
 ##################################################
 engineswaps_section = ""
-with open(f"engine-swaps.html") as f:
+with open(f"engine-swaps.html", encoding='utf-8') as f:
     engineswaps_section = f.read()
 
 ##################################################

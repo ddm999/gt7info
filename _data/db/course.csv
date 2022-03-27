@@ -1,0 +1,100 @@
+ID,Name,Base,Country
+4,Daytona Tri-Oval,14,3
+10,Suzuka Circuit,29,2
+11,High Speed Ring,20,2
+16,Fuji International Speedway,18,2
+41,WeatherTech Raceway Laguna Seca,33,3
+51,Deep Forest Raceway,15,16
+95,Nurburgring Nordschleife,24,5
+116,Mount Panorama Motor Racing Circuit,22,8
+119,Brands Hatch Grand Prix Circuit,8,4
+122,Willow Springs International Raceway: Big Willow,34,3
+123,Willow Springs International Raceway: Streets of Willow Springs,34,3
+125,Willow Springs International Raceway: Horse Thief Mile,34,3
+152,Autodromo de Interlagos,5,17
+154,Goodwood Motor Circuit,19,4
+346,Brands Hatch Indy Circuit,8,4
+347,Nurburgring Nordschleife Tourist Layout,24,5
+348,Nurburgring 24h,24,5
+349,Nurburgring GP,24,5
+351,Tokyo Expressway - Central Clockwise,30,2
+353,Fishermans Ranch,17,3
+354,Northern Isle Speedway,23,3
+356,Blue Moon Bay Speedway,7,3
+357,BB Raceway,9,2
+358,Alsace - Village,2,6
+361,Tokyo Expressway - East Clockwise,30,2
+362,Tokyo Expressway - South Clockwise,30,2
+363,Dragon Trail - Seaside,16,18
+365,Autodrome Lago Maggiore - Full Course,3,7
+372,Colorado Springs - Lake,13,3
+376,Kyoto Driving Park - Yamagiwa,21,2
+439,Alsace - Village Reverse,2,6
+440,Kyoto Driving Park - Miyabi,21,2
+442,Suzuka Circuit East Course,29,2
+443,Fishermans Ranch Reverse,17,3
+444,BB Raceway Reverse,9,2
+449,Blue Moon Bay Speedway Reverse,7,3
+450,Tokyo Expressway - Central Counterclockwise,30,2
+451,Tokyo Expressway - East Counterclockwise,30,2
+452,Willow Springs International Raceway: Horse Thief Mile Reverse,34,3
+453,Sardegna - Windmills,27,7
+454,24 Heures du Mans Racing Circuit,1,6
+462,Circuit de Spa-Francorchamps,12,10
+469,Autodromo Nazionale Monza,4,7
+470,Red Bull Ring,25,15
+471,Tsukuba Circuit,32,2
+598,Willow Springs International Raceway: Streets of Willow Springs Reverse,34,3
+599,Sardegna - Windmills Reverse,27,7
+600,Colorado Springs - Lake Reverse,13,3
+601,Dragon Trail - Seaside Reverse,16,18
+602,Autodrome Lago Maggiore - Full Course Reverse,3,7
+613,Kyoto Driving Park - Yamagiwa Reverse,21,2
+742,Autodromo Nazionale Monza No Chicane,4,7
+747,Deep Forest Raceway Reverse,15,16
+776,Kyoto Driving Park - Yamagiwa+Miyabi,21,2
+777,Kyoto Driving Park - Yamagiwa+Miyabi Reverse,21,2
+790,Autodrome Lago Maggiore - East End Reverse,3,7
+791,Autodrome Lago Maggiore - Centre Reverse,3,7
+792,Autodrome Lago Maggiore - West End,3,7
+793,Autodrome Lago Maggiore - Centre,3,7
+794,Autodrome Lago Maggiore - West End Reverse,3,7
+795,Autodrome Lago Maggiore - East End,3,7
+819,Blue Moon Bay Speedway - Infield B,7,3
+820,Blue Moon Bay Speedway - Infield A,7,3
+822,Blue Moon Bay Speedway - Infield A Reverse,7,3
+823,Blue Moon Bay Speedway - Infield B Reverse,7,3
+825,Circuit de Sainte-Croix - A,11,6
+826,Circuit de Sainte-Croix - A Reverse,11,6
+827,Circuit de Sainte-Croix - B,11,6
+828,Circuit de Sainte-Croix - B Reverse,11,6
+829,Circuit de Sainte-Croix - C,11,6
+830,Circuit de Sainte-Croix - C Reverse,11,6
+837,Fuji International Speedway (Short),18,2
+838,Sardegna - Road Track - C Reverse,26,7
+839,Sardegna - Road Track - B Reverse,26,7
+841,Sardegna - Road Track - B,26,7
+843,Sardegna - Road Track - C,26,7
+846,Red Bull Ring Short Track,25,15
+847,Dragon Trail - Gardens,16,18
+853,Dragon Trail - Gardens Reverse,16,18
+854,24 Heures du Mans Racing Circuit No Chicane,1,6
+874,Circuit de Barcelona-Catalunya Grand Prix Layout,10,13
+896,Autopolis International Racing Course,6,2
+898,Autopolis International Racing Course - Short Course,6,2
+915,Tokyo Expressway - South Counterclockwise,30,2
+921,Sardegna - Road Track - A,26,7
+922,Sardegna - Road Track - A Reverse,26,7
+1024,Trial Mountain Circuit,31,3
+1034,Trial Mountain Circuit - Reverse,31,3
+1069,High Speed Ring Reverse,20,2
+1163,Daytona Road Course,14,3
+1224,Alsace - Test Course,2,6
+1225,Alsace - Test Course Reverse,2,6
+1226,Autodrome Lago Maggiore - East,3,7
+1231,Autodrome Lago Maggiore - East Reverse,3,7
+1232,Autodrome Lago Maggiore - West,3,7
+1233,Autodrome Lago Maggiore - West Reverse,3,7
+1260,Special Stage Route X,28,3
+1261,Special Stage Route X 400,28,3
+1262,Special Stage Route X 1000,28,3
