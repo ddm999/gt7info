@@ -269,10 +269,10 @@ for line in lines:
             car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
         elif play > 3:
             car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
-        if customrace > 3:
-            car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
-        if nordslaps > 25:
-            car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
+        #if customrace > 3:
+        #    car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
+        #if nordslaps > 25:
+        #    car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
     estimatedays = 0
     daysvisible = 0
@@ -470,7 +470,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220322.css"]
+FILES_TO_COPY = ["style-220327.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
