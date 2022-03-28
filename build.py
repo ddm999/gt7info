@@ -343,7 +343,8 @@ for line in lines:
         regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
                        '\n            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>'
         x = 0
-        for car in specificcars.split("|"):
+        for carid in specificcars.split("|"):
+            car = cardb_id_to_name(carid)
             if x == 0:
                 regulations += '\n                <div class="racedetailrow">'
             regulations += f'\n                    <span class="specifiedcar">{car}</span>'
