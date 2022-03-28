@@ -380,7 +380,7 @@ for line in lines:
 
     dailyrace = dailyrace.replace("%REGULATIONS", regulations)
 
-    if bop == "y":
+    if bop:
         dailyrace += '<div class="boprace">BoP Race</div>'
 
     dailyrace += '\n</div>'
