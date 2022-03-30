@@ -410,7 +410,7 @@ html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%GAMEISSUES_SECTION", "Coming soon!<br>In the meantime, check issues known by the developers here:")
 html = html.replace("%MENUBOOKUSEDCARS_SECTION", "Coming soon! Well, whenever I can find all this data.")
 html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
-html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
+#html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
 ##################################################
 # output built html & json data
