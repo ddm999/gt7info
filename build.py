@@ -345,15 +345,16 @@ for line in lines:
         x = 0
         for carid in specificcars.split("|"):
             car = cardb_id_to_name(carid)
-            if x == 0:
-                regulations += '\n                <div class="racedetailrow">'
-            regulations += f'\n                    <span class="specifiedcar">{car}</span>'
-            x += 1
-            if x == 2:
-                x = 0
-                regulations += '\n                </div>'
-        if x != 0:
-            regulations += '\n                </div>'
+            regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span></div>'
+            #if x == 0:
+            #    regulations += '\n                <div class="racedetailrow">'
+            #regulations += f'\n                    <span class="specifiedcar">{car}</span>'
+            #x += 1
+            #if x == 2:
+            #    x = 0
+            #    regulations += '\n                </div>'
+        #if x != 0:
+        #    regulations += '\n                </div>'
         regulations += '\n            </span>'+\
                        '\n        <span class="racedetailsection" id="regulations">'+\
                        '\n            <div class="racedetailheader" id="regulations">Regulations</div>'
