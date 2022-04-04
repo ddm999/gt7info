@@ -397,7 +397,7 @@ for line in lines:
     if cartype == "category":
         jsondata["dailyrace"]["races"][-1]["category"] = category
     elif cartype == "specific":
-        jsondata["dailyrace"]["races"][-1]["specificcars"] = specificcars.split("|")
+        jsondata["dailyrace"]["races"][-1]["specificcars"] = list(map(cardb_id_to_name, specificcars.split("|")))
 
 ##################################################
 # do replacements
