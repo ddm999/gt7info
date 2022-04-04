@@ -28,6 +28,19 @@ legenddir.sort()
 
 dailyracedir = os.listdir("_data/dailyrace")
 dailyracedir.sort()
+
+##################################################
+# handle rewards
+##################################################
+lines = []
+with open(f"_data/rewards/{os.listdir('_data/rewards')[-1]}") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+rewards = {}
+for reward in lines:
+    rewardsplit = reward.strip().split(",")
+    rewards[rewardsplit[0]] = rewardsplit[1:]
 ##################################################
 # handle used car dealership
 ##################################################
@@ -105,30 +118,47 @@ for line in lines:
     estimatedays = 0
     daysvisible = 0
     if new:
-        car += '\n      <span id="new">NEW</span>'
+        car += '\n        <span id="new">NEW</span>'
     if state == "normal":
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 5:
                 estimatedays = 7-normal[carid]
-                car += f'\n      <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
             else:
                 estimatedays = 2
-                car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
+                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 2
-            car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
         elif carid in limited.keys() and limited[carid] == 1:
             estimatedays = 1
-            car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
             estimatedays = 1
-            car += '\n      <span id="limited">Limited Stock</span>'
+            car += '\n        <span id="limited">Limited Stock</span>'
     elif state == "soldout":
         estimatedays = 0
-        car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+        car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+
+    if carid in rewards.keys():
+        rewardinfo = rewards[carid]
+        car +=  '\n        <span id="reward-text">REWARD<br>CAR</span>'
+        rewardtype = ""
+        match rewardinfo[0]:
+            case "menubook":
+                rewardtype = "Menu Book"
+            case "license":
+                rewardtype = "License:"
+            case "mission":
+                rewardtype = "Mission Set:"
+        car += f'\n        <img id="reward-icon" src="img/open-book.svg" width="24" title="Reward from {rewardtype} {rewardinfo[1]}'
+        if rewardinfo[2] != "-":
+            car += f' All {rewardinfo[2].capitalize()}'
+        car +=  '"/>'
+ 
     usedcars_section += f'{car}\n      </p>'
     jsondata["used"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
@@ -209,13 +239,13 @@ for line in lines:
     nordslaps = int(cr)/6203.8
     if state != "soldout":
         if grind > 3:
-            car += f'\n      <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
+            car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         if play > 50:
-            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
+            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
         elif play > 10:
-            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
+            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
         elif play > 3:
-            car += f'\n      <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
+            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
         #if customrace > 3:
         #    car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
         #if nordslaps > 25:
@@ -224,32 +254,48 @@ for line in lines:
     estimatedays = 0
     daysvisible = 0
     if new:
-        car += '\n      <span id="new">NEW</span>'
+        car += '\n        <span id="new">NEW</span>'
     if state == "normal":
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 3:
                 estimatedays = 6-normal[carid]
-                car += f'\n      <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
             else:
                 estimatedays = 3
-                car += '\n      <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
+                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
     elif state == "limited":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 1
-            car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
         elif carid in limited.keys() and limited[carid] == 1:
             estimatedays = 2
-            car += '\n      <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
             estimatedays = 1
-            car += '\n      <span id="limited">Limited Stock</span>'
+            car += '\n        <span id="limited">Limited Stock</span>'
     elif state == "soldout":
         estimatedays = 0
-        car += '\n      <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
-    car += '\n</p>'
-    legendcars_section += car + '\n'
+        car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+
+    if carid in rewards.keys():
+        rewardinfo = rewards[carid]
+        car +=  '\n        <span id="reward-text">REWARD<br>CAR</span>'
+        rewardtype = ""
+        match rewardinfo[0]:
+            case "menubook":
+                rewardtype = "Menu Book"
+            case "license":
+                rewardtype = "License:"
+            case "mission":
+                rewardtype = "Mission Set:"
+        car += f'\n        <img id="reward-icon" src="img/open-book.svg" width="24" title="Reward from {rewardtype} {rewardinfo[1]}'
+        if rewardinfo[2] != "-":
+            car += f' All {rewardinfo[2].capitalize()}'
+        car +=  '"/>'
+
+    legendcars_section += car + '\n      </p>'
     jsondata["legend"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
 
 ##################################################
@@ -425,7 +471,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220327.css"]
+FILES_TO_COPY = ["style-220404.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
