@@ -287,7 +287,7 @@ footer {
 
     position: absolute;
     bottom: 10px;
-    left: 10px;
+    left: 60px;
 }
 .car #days-remaining {
     font-family: 'Roboto';
@@ -297,6 +297,21 @@ footer {
     position: absolute;
     bottom: 80px;
     right: 20px;
+}
+.car #reward-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.car #reward-text {
+    font-family: 'Roboto';
+    font-size: 8px;
+    color: #208ae7;
+
+    position: absolute;
+    bottom: 35px;
+    left: 6px;
+    text-align: center;
 }
 
 #legend-section {
@@ -445,6 +460,21 @@ footer {
     bottom: 95px;
     left: 20px;
     width: 240px;
+    text-align: center;
+}
+.lcar #reward-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.lcar #reward-text {
+    font-family: 'Roboto';
+    font-size: 8px;
+    color: #208ae7;
+
+    position: absolute;
+    bottom: 45px;
+    right: 16px;
     text-align: center;
 }
 
