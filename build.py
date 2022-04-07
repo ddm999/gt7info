@@ -233,8 +233,8 @@ for line in lines:
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
-    grind = int(cr)/900000
-    play = int(cr)/200000
+    grind = int(cr)/1500000
+    play = int(cr)/800000
     customrace = int(cr)/122053
     nordslaps = int(cr)/6203.8
     if state != "soldout":
