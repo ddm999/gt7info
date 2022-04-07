@@ -235,9 +235,12 @@ for line in lines:
     car = car.replace("%CREDITS", f"{int(cr):,}")
     grind = int(cr)/1500000
     play = int(cr)/400000
+    onetime = int(cr)/4000000
     customrace = int(cr)/122053
     nordslaps = int(cr)/6203.8
     if state != "soldout":
+        if onetime > 1:
+            car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
         if grind > 3:
             car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         if play > 50:
@@ -471,7 +474,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220404.css"]
+FILES_TO_COPY = ["style-220407.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:

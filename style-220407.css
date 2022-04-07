@@ -442,12 +442,22 @@ footer {
     width: 240px;
     text-align: center;
 }
+.lcar #onetime {
+    font-family: 'Roboto';
+    font-size: 11px;
+
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    width: 240px;
+    text-align: center;
+}
 .lcar #grind {
     font-family: 'Roboto';
     font-size: 11px;
 
     position: absolute;
-    bottom: 110px;
+    bottom: 105px;
     left: 20px;
     width: 240px;
     text-align: center;
@@ -457,7 +467,7 @@ footer {
     font-size: 11px;
 
     position: absolute;
-    bottom: 95px;
+    bottom: 90px;
     left: 20px;
     width: 240px;
     text-align: center;
