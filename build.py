@@ -233,7 +233,7 @@ for line in lines:
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
-    grind = int(cr)/1500000
+    grind = int(cr)/1818750
     play = int(cr)/400000
     onetime = int(cr)/4000000
     customrace = int(cr)/122053
@@ -241,7 +241,7 @@ for line in lines:
     if state != "soldout":
         if onetime > 1:
             car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
-        if grind > 3:
+        if grind > 2:
             car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         if play > 50:
             car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
