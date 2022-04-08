@@ -277,7 +277,7 @@ for line in lines:
             car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
             estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">0 Days Remaining <small style="font-size: 9px;">This should be sold out...</small></span>'
     elif state == "soldout":
         estimatedays = 0
         car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
