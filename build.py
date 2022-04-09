@@ -100,7 +100,12 @@ for line in lines:
     region = cardb_id_to_countrycode(carid)
 
     new = state == "normal" and carid in normal.keys() and normal[carid] == 1
-    if new and int(carid) != 3453: #HACKHACK: PLEASE CHANGE TOMORROW 
+
+    #HACKHACK: PLEASE CHANGE TOMORROW
+    if int(carid) == 3453:
+        new = False
+
+    if new:
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
         car = '<p class="car carlimited">\n'+used_template
@@ -117,9 +122,10 @@ for line in lines:
     car = car.replace("%CREDITS", f"{int(cr):,}")
     estimatedays = 0
     daysvisible = 0
-    if new and int(carid) != 3453: #HACKHACK: PLEASE CHANGE TOMORROW 
+    if new:
         car += '\n        <span id="new">NEW</span>'
-    if state == "normal" and int(carid) != 3453: #HACKHACK: PLEASE CHANGE TOMORROW 
+    #HACKHACK: PLEASE CHANGE TOMORROW
+    if state == "normal" and int(carid) != 3453:
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 5:
