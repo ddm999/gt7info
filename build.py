@@ -56,6 +56,7 @@ jsondata["used"] = {
 
 normal = {} # type: dict[str, int]
 limited = {} # type: dict[str, int]
+soldout = {} # type: dict[str, int]
 for car in lines:
     carsplit = car.strip().split(",")
     # days appeared, negative means still counting
@@ -63,6 +64,8 @@ for car in lines:
         normal[carsplit[0]] = -1
     elif carsplit[2] == "limited":
         limited[carsplit[0]] = -1
+    elif carsplit[2] == "soldout":
+        soldout[carsplit[0]] = -1
 
 for i in range(len(useddir)-1):
     morelines = []
@@ -89,6 +92,13 @@ for i in range(len(useddir)-1):
             else:                       
                 limited[k] = 0-limited[k]
                 normal[k] = -1
+
+    for k in soldout.keys():
+        if soldout[k] < 0:
+            if k in carnames.keys() and carnames[k] == "soldout":
+                soldout[k] -= 1
+            else:                       
+                soldout[k] = 0-soldout[k]
 
 usedcars_section = ""
 for line in lines:
@@ -241,7 +251,7 @@ for line in lines:
     car = car.replace("%MANUFACTURER", manufacturer)
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
-    grind = int(cr)/1818750
+    grind = int(cr)/2750000
     play = int(cr)/400000
     onetime = int(cr)/4000000
     customrace = int(cr)/122053
@@ -249,7 +259,7 @@ for line in lines:
     if state != "soldout":
         if onetime > 1:
             car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
-        if grind > 2:
+        if grind > 1:
             car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         if play > 50:
             car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
