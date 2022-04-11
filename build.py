@@ -355,7 +355,7 @@ for line in lines:
     i += 1
     if line == "\n":
         continue
-    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,pitlanepen,time,offset = line.strip().split(",")
+    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset = line.strip().split(",")
     track = coursedb_id_to_name(courseid)
     crsbase = coursedb_id_to_basename(courseid)
     logo = coursedb_id_to_logoname(courseid)
@@ -366,6 +366,9 @@ for line in lines:
     bop = bop == "y"
     spec = spec == "y"
     garagecar = garagecar == "y"
+    damage = damage if damage != "n" else False
+    shortcutpen = shortcutpen == "y"
+    carcollisionpen = carcollisionpen == "y"
     pitlanepen = pitlanepen == "y"
 
     dailyrace = '<div class="dailyrace">'+dailyrace_template
@@ -385,6 +388,9 @@ for line in lines:
     dailyrace = dailyrace.replace("%BOP", "Applicable" if bop else "no [TODO]")
     dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "no [TODO]")
     dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car" if garagecar else "no [TODO]")
+    dailyrace = dailyrace.replace("%DAMAGE", damage.capitalize() if damage else "Disabled")
+    dailyrace = dailyrace.replace("%SHORTCUTPEN", "Enabled" if shortcutpen else "Disabled")
+    dailyrace = dailyrace.replace("%COLLISIONPEN", "Enabled" if carcollisionpen else "Disabled")
     dailyrace = dailyrace.replace("%PITLANEPEN", "Enabled" if pitlanepen else "Disabled")
 
     mincheck = int(offset)
@@ -458,7 +464,8 @@ for line in lines:
         "courseid": courseid, "crsbase": crsbase, "track": track, "logo": f'img/track/{logo}.png', "region": region,
         "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
         "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"),
-        "bop": bop, "carsettings_specified": spec, "garagecar": garagecar, "pitlanepen": pitlanepen,
+        "bop": bop, "carsettings_specified": spec, "garagecar": garagecar,
+        "damage": damage, "shortcutpen": shortcutpen, "carcollisionpen": carcollisionpen, "pitlanepen": pitlanepen,
         "time": int(time), "offset": int(offset), "schedule": scheduledata
     })
     if cartype == "category":
@@ -492,7 +499,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220407.css"]
+FILES_TO_COPY = ["style-220411.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:

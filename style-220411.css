@@ -549,7 +549,7 @@ footer {
 .dailyrace {
     background-color: #0c1316;
     position: relative;
-    height: 600px;
+    height: 620px;
     min-width: 380px;
     max-width: 380px;
     width: 380px;
@@ -587,7 +587,7 @@ footer {
 }
 .dailyrace .racedetails {
     position: absolute;
-    top: 180px;
+    top: 200px;
     left: 20px;
     width: 340px;
 }
@@ -617,15 +617,15 @@ footer {
 .dailyrace #fuelcons, .dailyrace #tyrewear {
     color: #f64;
 }
-.dailyrace #bop, .dailyrace #spec {
-    color: #fe2;
-}
-.dailyrace #garagecar, .dailyrace #pitlanepen {
+.dailyrace #racesettings .racedetailcontent {
     color: #7bf;
 }
-.dailyrace #pitlanepenlabel {
-    font-size: 10px;
+.dailyrace .racedetailcontent#bop, .dailyrace .racedetailcontent#spec {
+    color: #fe2;
 }
+/*.dailyrace #pitlanepenlabel {
+    font-size: 10px;
+}*/
 .dailyrace .boprace {
     background-color: #fe2;
     color: #000;
