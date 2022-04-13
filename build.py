@@ -111,10 +111,6 @@ for line in lines:
 
     new = state == "normal" and carid in normal.keys() and normal[carid] == 1
 
-    #HACKHACK: PLEASE CHANGE TOMORROW
-    if int(carid) == 3453:
-        new = False
-
     if new:
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
@@ -134,8 +130,8 @@ for line in lines:
     daysvisible = 0
     if new:
         car += '\n        <span id="new">NEW</span>'
-    #HACKHACK: PLEASE CHANGE TOMORROW
-    if state == "normal" and int(carid) != 3453:
+
+    if state == "normal":
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 5:
