@@ -253,8 +253,8 @@ for line in lines:
     customrace = int(cr)/122053
     nordslaps = int(cr)/6203.8
     if state != "soldout":
-        if onetime > 1:
-            car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
+        #if onetime > 1:
+        #    car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
         if grind > 1:
             car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         if play > 50:
