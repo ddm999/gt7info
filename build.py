@@ -1,7 +1,10 @@
 import os, shutil, json
+from datetime import datetime
 from db import *
 
-jsondata = {}
+jsondata = {
+    "updatetimestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+}
 
 html = ""
 with open("index.html", "r", encoding='utf-8') as f:
