@@ -131,6 +131,7 @@ for line in lines:
     car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
     estimatedays = 0
+    maxestimatedays = 0
     daysvisible = 0
     if new:
         car += '\n        <span id="new">NEW</span>'
@@ -138,25 +139,33 @@ for line in lines:
     if state == "normal":
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
-            if normal[carid] <= 5:
+            if normal[carid] <= 4:
                 estimatedays = 7-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays} More Days Remaining</span>'
+                maxestimatedays = 10-normal[carid]
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
+            elif normal[carid] <= 6:
+                estimatedays = 3
+                maxestimatedays = 10-normal[carid]
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
             else:
-                estimatedays = 2
-                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
+                estimatedays = 3
+                maxestimatedays = 3
+                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
     elif state == "limited":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
-            estimatedays = 2
+            estimatedays = 1
             car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
         elif carid in limited.keys() and limited[carid] == 1:
-            estimatedays = 1
+            estimatedays = 2
             car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
             estimatedays = 1
             car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">0 Days Remaining <small style="font-size: 9px;">This should be sold out...</small></span>'
+        maxestimatedays = estimatedays
     elif state == "soldout":
         estimatedays = 0
+        maxestimatedays = 0
         car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
     else:
         car += f'\n        <span id="days-estimate">Unknown estimate due to error by Polyphony.</span>'
@@ -178,7 +187,10 @@ for line in lines:
         car +=  '"/>'
  
     usedcars_section += f'{car}\n      </p>'
-    jsondata["used"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
+    jsondata["used"]["cars"].append({
+        "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
+        "state": state, "estimatedays": estimatedays, "maxestimatedays": maxestimatedays, "new": new, "daysvisible": daysvisible
+    })
 
 ##################################################
 # handle legend car dealership
@@ -273,6 +285,7 @@ for line in lines:
         #    car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
     estimatedays = 0
+    maxestimatedays = 0
     daysvisible = 0
     if new:
         car += '\n        <span id="new">NEW</span>'
@@ -281,10 +294,15 @@ for line in lines:
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 3:
                 estimatedays = 6-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} More Days Remaining</span>'
+                maxestimatedays = 11-normal[carid]
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
+            elif normal[carid] <= 7:
+                estimatedays = 3
+                maxestimatedays = 11-normal[carid]
+                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
             else:
                 estimatedays = 3
-                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(At Least 2 More Days Remaining)</span>'
+                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
     elif state == "limited":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
@@ -317,7 +335,10 @@ for line in lines:
         car +=  '"/>'
 
     legendcars_section += car + '\n      </p>'
-    jsondata["legend"]["cars"].append({"carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr), "state": state, "estimatedays": estimatedays, "new": new, "daysvisible": daysvisible})
+    jsondata["legend"]["cars"].append({
+        "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
+        "state": state, "estimatedays": estimatedays, "maxestimatedays": maxestimatedays, "new": new, "daysvisible": daysvisible
+    })
 
 ##################################################
 # handle campaign rewards
