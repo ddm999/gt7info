@@ -15,7 +15,7 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships & Info","name":"ddm999.github.io","url":"https://ddm999.github.io/gt7info/"}
   </script>
-  <link rel="stylesheet" href="style-220411.css">
+  <link rel="stylesheet" href="style-220421.css">
 </head>
 <body>
   <div class="wrapper">
@@ -35,18 +35,11 @@
         <br>
         <strong><small>All dates are (YY-MM-DD)</small><br>
         Recent changes:</strong><br>
-        
-        <strong>- Dealerships seem to be back to normal. (22-04-13)</strong>
-        - <s>Dealerships appear to be slightly broken currently.</s> (22-04-08, 22-04-09)<br>
-        - v1.11 is out! More UCD, LCD cars, less grinding, endurance events... (22-04-07)<br>
-        - If a car is given as a reward, this is now noted in the dealerships. Hover over the icon to see where to get that car for free. (22-04-04)<br>
-        - GT ENGINE now has a BoP listing for Gr.3! It's linked to in the Balance of Performance section. (22-03-30) (and now Gr.4! 22-03-31) (and now Gr.B / Gr.2! 22-04-05)<br>
-        - Got rid of the "custom race" info in Legend Cars, it was mostly there as a joke and got in the way of the NEW label for the '70 Skyline (bc of it's really long name). (22-03-27)<br>
-        - I've been made aware that a couple legendary cars were available for less time than estimated, so I've reduced the estimate. (22-03-23)<br>
-        - Shuffled the sections around a bit to make the Daily Races closer to the top. (22-03-22)<br>
-        - Daily Races have been added - <s>note the styling is incomplete.</s> (22-03-22) Eh, the styling isn't that bad. It's honestly just way too much effort to get it "correct". (22-04-05)<br>
+        <strong>- You can now click on any car name to see a graph displaying it's lowest price history! (22-04-21)</strong>
+        <small>Improvements to this display and a full car select are being worked on...</small><br>
         <br>
         <strong>Breaking data.json changes:</strong><br>
+        - The `estimatedays` field for dealership data has been adjusted to make more sense. (22-04-20)<small>It's now consistently "the days remaining shown on the site, plus one".</small><br>
         - Booleans have all been changed to actual booleans instead of y/n strings. (22-03-24)<br>
         - For a short time, daily race specific cars were given as db IDs: that's been reverted back to names. (22-04-04)<br>
       </span>
@@ -70,6 +63,7 @@
         <span id="used-cars"><img src="img/ucd-auto.svg"/>| USED CAR DEALERSHIP</span>
         <span id="update-string">Last updated: %USEDCARS_UPDATESTRING (YY-MM-DD)</span>
       </div>
+      <strong>NEW: Click on a car's name to see a graph of it's lowest price history.</strong><br><br>
       You may see some cars before the ones displayed here.<br>
       These come from the menu book you currently have active.<br>
       <br>
@@ -85,6 +79,7 @@
         <h2 id="legend-cars"><img src="img/legend-hagerty.svg"/> | Collection</h2>
         <span id="update-string">Last updated: %LEGENDCARS_UPDATESTRING (YY-MM-DD)</span>
       </div>
+      <strong style="color:#ccc">NEW: Click on a car's name to see a graph of it's lowest price history.</strong><br><br>
       Hover over the book icon on a reward car to see how to obtain it for free.<br>
       <br>
       Legendary cars have an estimate of 5 to 10 days - note that cars ARE always "Limited Stock" for 2 days.<br>

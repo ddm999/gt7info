@@ -1,5 +1,6 @@
 import os, shutil, json
-from datetime import datetime
+from datetime import datetime, timezone
+from cardata import *
 from db import *
 
 jsondata = {
@@ -32,6 +33,17 @@ legenddir.sort()
 
 dailyracedir = os.listdir("_data/dailyrace")
 dailyracedir.sort()
+
+##################################################
+# handle brand central prices
+##################################################
+lines = []
+with open(f"_data/brandcentral/{os.listdir('_data/brandcentral')[-1]}") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+for car in lines:
+    cardata_add("brandcentral","*",car.strip().split(","))
 
 ##################################################
 # handle rewards
@@ -71,16 +83,21 @@ for car in lines:
     elif carsplit[2] == "soldout":
         soldout[carsplit[0]] = -1
 
-for i in range(len(useddir)-1):
+for i in range(len(useddir)):
     morelines = []
-    with open(f"_data/used/{useddir[-2-i]}") as f:
+    with open(f"_data/used/{useddir[-1-i]}") as f:
         morelines = f.readlines()
     morelines = morelines[1:] # remove headers
+
 
     carnames = {}
     for car in morelines:
         carsplit = car.strip().split(",")
         carnames[carsplit[0]] = carsplit[2]
+        cardata_add("used", useddir[-1-i].replace('.csv',''), carsplit)
+
+    if i == 0: # don't include current day in estimate calculation
+        continue
 
     for k in normal.keys():
         if normal[k] < 0:
@@ -128,7 +145,10 @@ for line in lines:
 
     car = car.replace("%FLAG", flag)
     car = car.replace("%MANUFACTURER", manufacturer.upper())
-    car = car.replace("%NAME", name)
+    if cardata_exists(int(carid)):
+        car = car.replace("%NAME", f'<a href="cars/prices_{carid}.png" target="_blank">{name}</a>')
+    else:
+        car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
     estimatedays = 0
     maxestimatedays = 0
@@ -166,7 +186,7 @@ for line in lines:
     elif state == "soldout":
         estimatedays = 0
         maxestimatedays = 0
-        car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+        car += '\n        <span id="soldout">SOLD OUT</span>'
     else:
         car += f'\n        <span id="days-estimate">Unknown estimate due to error by Polyphony.</span>'
 
@@ -215,9 +235,9 @@ for car in lines:
     elif carsplit[2] == "limited":
         limited[carsplit[0]] = -1
 
-for i in range(len(legenddir)-1):
+for i in range(len(legenddir)):
     morelines = []
-    with open(f"_data/legend/{legenddir[-2-i]}") as f:
+    with open(f"_data/legend/{legenddir[-1-i]}") as f:
         morelines = f.readlines()
     morelines = morelines[1:] # remove headers
 
@@ -225,6 +245,10 @@ for i in range(len(legenddir)-1):
     for car in morelines:
         carsplit = car.strip().split(",")
         carnames[carsplit[0]] = carsplit[2]
+        cardata_add("legend", legenddir[-1-i].replace('.csv',''), carsplit)
+
+    if i == 0: # don't include current day in estimate calculation
+        continue
 
     for k in normal.keys():
         if normal[k] < 0:
@@ -261,7 +285,10 @@ for line in lines:
         car = '<p class="lcar">\n'+legend_template
 
     car = car.replace("%MANUFACTURER", manufacturer)
-    car = car.replace("%NAME", name)
+    if cardata_exists(int(carid)):
+        car = car.replace("%NAME", f'<a href="cars/prices_{carid}.png" target="_blank">{name}</a>')
+    else:
+        car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
     grind = int(cr)/2750000
     play = int(cr)/400000
@@ -519,18 +546,32 @@ html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 ##################################################
 # output built html & json data
 ##################################################
+from time import sleep
+
 if os.path.exists("build"):
     shutil.rmtree("build")
+    sleep(1) # build folder is so large we need to delay now (windows moment)
 os.mkdir("build")
+os.mkdir("build/cars")
 with open("build/index.html", "w", encoding='utf-8') as f:
     f.write(html)
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220411.css"]
+FILES_TO_COPY = ["style-220421.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
     shutil.copyfile(f"{file}", f"build/{file}")
 for folder in FOLDERS_TO_COPY:
     shutil.copytree(f"{folder}", f"build/{folder}")
+
+##################################################
+# per car data
+##################################################
+
+for line in db_cars:
+    id, _, _ = line.strip().split(",")
+    id = int(id)
+    if cardata_exists(id):
+        cardata_plot(id)
