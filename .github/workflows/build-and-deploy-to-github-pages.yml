@@ -16,6 +16,11 @@ jobs:
 
       - name: Install python3
         uses: actions/setup-python@v3.0.0
+        with:
+          cache: 'pip'
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
 
       - name: Build site
         run: python3 build.py
