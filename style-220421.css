@@ -225,6 +225,9 @@ footer {
     left: 10px;
     width: 300px;
 }
+.car #name a {
+    color: #292929;
+}
 .car #credits {
     font-family: 'Roboto Bold';
     font-weight: 400;
@@ -260,12 +263,6 @@ footer {
     padding: 6px;
     border: 4px solid #B00;
     z-index: 1;
-}
-.car #dimmer {
-    background-color: #0008;
-    position: absolute;
-    height: 100%;
-    width: 100%;
 }
 .car #daycount {
     font-family: 'Roboto';
@@ -360,6 +357,9 @@ footer {
     top: 45px;
     left: 20px;
     width: 240px;
+}
+.lcar #name a {
+    color: #d5d5d5;
 }
 .lcar #credits {
     font-family: 'Roboto';
@@ -499,6 +499,9 @@ footer {
 .carsold {
     border: 1px solid #000;
     margin: 9px;
+}
+.car.carsold {
+    background-color: #999;
 }
 
 #campaign-reward-section {
