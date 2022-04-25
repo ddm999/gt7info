@@ -446,7 +446,7 @@ for line in lines:
         dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car")
     elif carused == "rent":
         dailyrace = dailyrace.replace("%GARAGECAR", "Event-Specified Car")
-    elif carused == "both":
+    elif carused == "any":
         dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car, Event-Specified Car")
     else:
         dailyrace = dailyrace.replace("%GARAGECAR", "ERROR: wtf???")
