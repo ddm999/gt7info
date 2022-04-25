@@ -410,7 +410,7 @@ for line in lines:
     i += 1
     if line == "\n":
         continue
-    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,garagecar,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset = line.strip().split(",")
+    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,carused,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset = line.strip().split(",")
     track = coursedb_id_to_name(courseid)
     crsbase = coursedb_id_to_basename(courseid)
     logo = coursedb_id_to_logoname(courseid)
@@ -420,7 +420,7 @@ for line in lines:
     nitrousban = nitrousban == "y"
     bop = bop == "y"
     spec = spec == "y"
-    garagecar = garagecar == "y"
+    carused = carused if carused != "n" else False
     damage = damage if damage != "n" else False
     shortcutpen = shortcutpen == "y"
     carcollisionpen = carcollisionpen == "y"
@@ -442,7 +442,14 @@ for line in lines:
     dailyrace = dailyrace.replace("%TIME", time)
     dailyrace = dailyrace.replace("%BOP", "Applicable" if bop else "no [TODO]")
     dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "no [TODO]")
-    dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car" if garagecar else "no [TODO]")
+    if carused == "garage":
+        dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car")
+    elif carused == "rent":
+        dailyrace = dailyrace.replace("%GARAGECAR", "Event-Specified Car")
+    elif carused == "both":
+        dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car, Event-Specified Car")
+    else:
+        dailyrace = dailyrace.replace("%GARAGECAR", "ERROR: wtf???")
     dailyrace = dailyrace.replace("%DAMAGE", damage.capitalize() if damage else "Disabled")
     dailyrace = dailyrace.replace("%SHORTCUTPEN", "Enabled" if shortcutpen else "Disabled")
     dailyrace = dailyrace.replace("%COLLISIONPEN", "Enabled" if carcollisionpen else "Disabled")
@@ -519,7 +526,7 @@ for line in lines:
         "courseid": courseid, "crsbase": crsbase, "track": track, "logo": f'img/track/{logo}.png', "region": region,
         "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
         "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"),
-        "bop": bop, "carsettings_specified": spec, "garagecar": garagecar,
+        "bop": bop, "carsettings_specified": spec, "garagecar": True if (carused == "garage" or carused == "both") else False, "carused": carused,
         "damage": damage, "shortcutpen": shortcutpen, "carcollisionpen": carcollisionpen, "pitlanepen": pitlanepen,
         "time": int(time), "offset": int(offset), "schedule": scheduledata
     })
