@@ -15,7 +15,7 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships & Info","name":"ddm999.github.io","url":"https://ddm999.github.io/gt7info/"}
   </script>
-  <link rel="stylesheet" href="style-220425.css">
+  <link rel="stylesheet" href="style-220502.css">
 </head>
 <body>
   <div class="wrapper">
@@ -41,6 +41,7 @@
         <small>Improvements to this display and a full car select are being worked on...</small><br>
         <br>
         <strong>Breaking data.json changes:</strong><br>
+        - A new setting for daily race `cartype` has been added: `both`, for both a category and specific car restrictions. (22-05-02)<br>
         - The `estimatedays` field for dealership data has been adjusted to make more sense. (22-04-20)<small>It's now consistently "the days remaining shown on the site, plus one".</small><br>
         - Booleans have all been changed to actual booleans instead of y/n strings. (22-03-24)<br>
         - For a short time, daily race specific cars were given as db IDs: that's been reverted back to names. (22-04-04)<br>
@@ -380,9 +381,9 @@
     <section id="daily-races-section">
       <h2 id="daily-races">Daily Race</h2>
       <span class="dailyrace-container"><div class="dailyrace">        <span id="racetitle">RACE A</span>
-        <img id="logo" src="img/track/seca.png"/>
-        <img id="flag" src="https://flagcdn.com/h24/us.png"/>
-        <span id="trackname">WeatherTech Raceway Laguna Seca</span>
+        <img id="logo" src="img/track/suzuka.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
+        <span id="trackname">Suzuka Circuit</span>
         <span class="racedetails">
         <span class="racedetailsection" id="times">
             <span class="racedetaillabel" id="timelabel">Time Required</span>
@@ -394,7 +395,7 @@
             <div class="racedetailheader" id="raceinfo">Race Information</div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
-                <span class="racedetailcontent" id="laps">4</span>
+                <span class="racedetailcontent" id="laps">5</span>
                 <span class="racedetaillabel" id="carslabel">No. of Cars</span>
                 <span class="racedetailcontent" id="cars">12</span>
                 <span class="racedetaillabel" id="starttypelabel">Start Type</span>
@@ -410,8 +411,9 @@
         
         <span class="racedetailsection" id="specificcars">
             <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>
-                <div class="racedetailrow"><span class="specifiedcar">SR3 SL '13</span></div>
-            </span>
+                <div class="racedetailrow"><span class="specifiedcar">GR86 RZ '21</span></div>
+                <div class="racedetailrow"><span class="specifiedcar">BRZ S '21</span></div>
+        </span>
         <span class="racedetailsection" id="regulations">
             <div class="racedetailheader" id="regulations">Regulations</div>
             <div class="racedetailrow">
@@ -452,9 +454,9 @@
         </span>
         </span><div class="boprace">BoP Race</div>
 </div><div class="dailyrace">        <span id="racetitle">RACE B</span>
-        <img id="logo" src="img/track/maggiore.png"/>
-        <img id="flag" src="https://flagcdn.com/h24/it.png"/>
-        <span id="trackname">Autodrome Lago Maggiore - Full Course</span>
+        <img id="logo" src="img/track/interlagos.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/br.png"/>
+        <span id="trackname">Autodromo de Interlagos</span>
         <span class="racedetails">
         <span class="racedetailsection" id="times">
             <span class="racedetaillabel" id="timelabel">Time Required</span>
@@ -466,7 +468,7 @@
             <div class="racedetailheader" id="raceinfo">Race Information</div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
-                <span class="racedetailcontent" id="laps">4</span>
+                <span class="racedetailcontent" id="laps">6</span>
                 <span class="racedetaillabel" id="carslabel">No. of Cars</span>
                 <span class="racedetailcontent" id="cars">16</span>
                 <span class="racedetaillabel" id="starttypelabel">Start Type</span>
@@ -484,7 +486,7 @@
             <div class="racedetailheader" id="regulations">Regulations</div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="categorylabel">Category</span>
-                <span class="racedetailcontent" id="category">Gr.4</span>
+                <span class="racedetailcontent" id="category">Gr.3</span>
             </div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="widebodylabel">Wide Body</span>
@@ -496,7 +498,7 @@
             </div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="">Tyre Choice</span>
-                <span class="racedetailcontent" id=""><div class="tyre" id="RM">RM</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="RH">RH</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
             </div>
         </span>
         <span class="racedetailsection" id="racesettings">
@@ -524,9 +526,9 @@
         </span>
         </span><div class="boprace">BoP Race</div>
 </div><div class="dailyrace">        <span id="racetitle">RACE C</span>
-        <img id="logo" src="img/track/sarthe.png"/>
-        <img id="flag" src="https://flagcdn.com/h24/fr.png"/>
-        <span id="trackname">24 Heures du Mans Racing Circuit</span>
+        <img id="logo" src="img/track/fuji.png"/>
+        <img id="flag" src="https://flagcdn.com/h24/jp.png"/>
+        <span id="trackname">Fuji International Speedway</span>
         <span class="racedetails">
         <span class="racedetailsection" id="times">
             <span class="racedetaillabel" id="timelabel">Time Required</span>
@@ -538,7 +540,7 @@
             <div class="racedetailheader" id="raceinfo">Race Information</div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="lapslabel">No. of Laps</span>
-                <span class="racedetailcontent" id="laps">5</span>
+                <span class="racedetailcontent" id="laps">12</span>
                 <span class="racedetaillabel" id="carslabel">No. of Cars</span>
                 <span class="racedetailcontent" id="cars">16</span>
                 <span class="racedetaillabel" id="starttypelabel">Start Type</span>
@@ -552,6 +554,12 @@
             </div>
         </span>
         
+        <span class="racedetailsection" id="specificcars">
+            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>
+                <div class="racedetailrow"><span class="specifiedcar">NSX CONCEPT-GT '16</span></div>
+                <div class="racedetailrow"><span class="specifiedcar">RC F GT500 '16</span></div>
+                <div class="racedetailrow"><span class="specifiedcar">GT-R NISMO GT500 '16</span></div>
+        </span>
         <span class="racedetailsection" id="regulations">
             <div class="racedetailheader" id="regulations">Regulations</div>
             <div class="racedetailrow">
@@ -568,7 +576,11 @@
             </div>
             <div class="racedetailrow">
                 <span class="racedetaillabel" id="">Tyre Choice</span>
-                <span class="racedetailcontent" id=""><div class="tyre" id="RM">RM</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="RM">RM</div> <div class="tyre" id="RS">RS</div> <div class="tyre" id="IM">IM</div> <div class="tyre" id="W">W</div></span>
+            </div>
+            <div class="racedetailrow">
+                <span class="racedetaillabel" id="">Required Tyre Type</span>
+                <span class="racedetailcontent" id=""><div class="tyre" id="RM">RM</div></span>
             </div>
         </span>
         <span class="racedetailsection" id="racesettings">
