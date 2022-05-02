@@ -418,7 +418,7 @@ for line in lines:
     i += 1
     if line == "\n":
         continue
-    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,bop,spec,carused,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset = line.strip().split(",")
+    courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,requiredtyres,bop,spec,carused,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset = line.strip().split(",")
     track = coursedb_id_to_name(courseid)
     crsbase = coursedb_id_to_basename(courseid)
     logo = coursedb_id_to_logoname(courseid)
@@ -475,14 +475,7 @@ for line in lines:
 
     regulations = ''
 
-    if cartype == "category":
-        regulations += '\n        <span class="racedetailsection" id="regulations">'+\
-                       '\n            <div class="racedetailheader" id="regulations">Regulations</div>'+\
-                       '\n            <div class="racedetailrow">'+\
-                       '\n                <span class="racedetaillabel" id="categorylabel">Category</span>'+\
-                      f'\n                <span class="racedetailcontent" id="category">{category}</span>'+\
-                       '\n            </div>'
-    elif cartype == "specific":
+    if cartype == "specific" or cartype == "both":
         regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
                        '\n            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>'
         x = 0
@@ -498,9 +491,16 @@ for line in lines:
             #    regulations += '\n                </div>'
         #if x != 0:
         #    regulations += '\n                </div>'
-        regulations += '\n            </span>'+\
-                       '\n        <span class="racedetailsection" id="regulations">'+\
-                       '\n            <div class="racedetailheader" id="regulations">Regulations</div>'
+        regulations += '\n        </span>'
+
+    regulations += '\n        <span class="racedetailsection" id="regulations">'+\
+                   '\n            <div class="racedetailheader" id="regulations">Regulations</div>'
+
+    if cartype == "category" or cartype == "both":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="categorylabel">Category</span>'+\
+                      f'\n                <span class="racedetailcontent" id="category">{category}</span>'+\
+                       '\n            </div>'
 
     if widebodyban:
         regulations += '\n            <div class="racedetailrow">'+\
@@ -519,7 +519,14 @@ for line in lines:
         for tyre in tyres.split("|"):
             regulations += f'<div class="tyre" id="{tyre}">{tyre}</div> '
         regulations = regulations[:-1] + '</span>\n            </div>'
-    
+    if requiredtyres != "-":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="">Required Tyre Type</span>'+\
+                      f'\n                <span class="racedetailcontent" id="">'
+        for tyre in requiredtyres.split("|"):
+            regulations += f'<div class="tyre" id="{tyre}">{tyre}</div> '
+        regulations = regulations[:-1] + '</span>\n            </div>'
+
     regulations += '\n        </span>'
 
     dailyrace = dailyrace.replace("%REGULATIONS", regulations)
@@ -533,14 +540,14 @@ for line in lines:
     jsondata["dailyrace"]["races"].append({
         "courseid": courseid, "crsbase": crsbase, "track": track, "logo": f'img/track/{logo}.png', "region": region,
         "laps": int(laps), "cars": int(cars), "starttype": starttype, "fuelcons": int(fuelcons), "tyrewear": int(tyrewear),
-        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"),
+        "cartype": cartype, "widebodyban": widebodyban, "nitrousban": nitrousban, "tyres": tyres.split("|"), "requiredtyres": requiredtyres.split("|"),
         "bop": bop, "carsettings_specified": spec, "garagecar": True if (carused == "garage" or carused == "both") else False, "carused": carused,
         "damage": damage, "shortcutpen": shortcutpen, "carcollisionpen": carcollisionpen, "pitlanepen": pitlanepen,
         "time": int(time), "offset": int(offset), "schedule": scheduledata
     })
-    if cartype == "category":
+    if cartype == "category" or cartype == "both":
         jsondata["dailyrace"]["races"][-1]["category"] = category
-    elif cartype == "specific":
+    if cartype == "specific" or cartype == "both":
         jsondata["dailyrace"]["races"][-1]["specificcars_ids"] = specificcars.split("|")
         jsondata["dailyrace"]["races"][-1]["specificcars"] = list(map(cardb_id_to_name, jsondata["dailyrace"]["races"][-1]["specificcars_ids"]))
 
@@ -573,7 +580,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220425.css"]
+FILES_TO_COPY = ["style-220502.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
