@@ -133,8 +133,9 @@ for line in lines:
     new = state == "normal" and carid in normal.keys() and normal[carid] == 1
 
     #HACK: holy shit PD get your fucking shit together
+    fucked = False
     if int(carid) == 773 or int(carid) == 3359:
-        state = "fucked"
+        fucked = True
         new = False
     #HACK end
 
@@ -163,7 +164,7 @@ for line in lines:
         car += '\n        <span id="new">NEW</span>'
     
 
-    if state == "normal":
+    if state == "normal" and not fucked:
         daysvisible = normal[carid]
         if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
             if normal[carid] <= 4:
@@ -178,7 +179,7 @@ for line in lines:
                 estimatedays = 3
                 maxestimatedays = 3
                 car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
-    elif state == "limited" or state == "limitedfucked":
+    elif state == "limited":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 1
