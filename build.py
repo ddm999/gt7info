@@ -155,6 +155,11 @@ for line in lines:
     daysvisible = 0
     if new:
         car += '\n        <span id="new">NEW</span>'
+    
+    #HACK: holy shit PD get your fucking shit together
+    if int(carid) == 773 or int(carid) == 3359:
+        state = "fucked"
+    #HACK end
 
     if state == "normal":
         daysvisible = normal[carid]
@@ -171,7 +176,7 @@ for line in lines:
                 estimatedays = 3
                 maxestimatedays = 3
                 car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
-    elif state == "limited":
+    elif state == "limited" or state == "limitedfucked":
         daysvisible = normal[carid] + limited[carid]
         if carid in limited.keys() and limited[carid] == 2:
             estimatedays = 1
@@ -181,7 +186,7 @@ for line in lines:
             car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
         else:
             estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">0 Days Remaining <small style="font-size: 9px;">This should be sold out...</small></span>'
+            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Unknown days remaining due to error by Polyphony</span>'
         maxestimatedays = estimatedays
     elif state == "soldout":
         estimatedays = 0
