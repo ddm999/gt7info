@@ -31,5 +31,17 @@ jobs:
           BRANCH: gh-pages
           FOLDER: build
           ssh-key: ${{ secrets.DEPLOY_KEY }}
+          
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: '.'
+          destination-github-username: 'ddm999'
+          destination-repository-name: 'gtinfo'
+          user-email: dan.ddm999@gmail.com
+          target-branch: web-new
+
           git-config-name: Github Actions
           git-config-email: gh.ddm999@gmail.com
