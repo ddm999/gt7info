@@ -39,10 +39,10 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: '.'
+          source-directory: 'build'
           destination-github-username: 'ddm999'
           destination-repository-name: 'gtinfo'
           user-name: Github Actions
           user-email: gh.ddm999@gmail.com
-          target-branch: web-new
+          target-branch: gh-pages
 
