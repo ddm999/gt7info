@@ -42,7 +42,7 @@ jobs:
           source-directory: 'build'
           destination-github-username: 'ddm999'
           destination-repository-name: 'gtinfo'
-          user-name: Github Actions
+          user-name: 'ddm999'
           user-email: gh.ddm999@gmail.com
           target-branch: gh-pages
 
