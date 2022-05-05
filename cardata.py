@@ -20,7 +20,7 @@ def cardata_exists(carid):
 def cardata_plot(carid):
     now = datetime.now(timezone.utc).date()
     #mindate = now
-    mindate = date.fromisoformat("2022-03-08")
+    mindate = date.fromisoformat("2022-03-02")
     daycredits = {}
     for values in cardata[carid]:
         type, datestr, credits = values.split(',')
