@@ -312,9 +312,8 @@ for line in lines:
         #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
         #elif play > 10:
         #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
-        #el
-        if play > 3:
-            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
+        #elif play > 3:
+        #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
         #if customrace > 3:
         #    car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
         #if nordslaps > 25:
