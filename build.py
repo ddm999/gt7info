@@ -308,11 +308,12 @@ for line in lines:
         #    car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
         if grind > 1:
             car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
-        if play > 50:
-            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
-        elif play > 10:
-            car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
-        elif play > 3:
+        #if play > 50:
+        #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
+        #elif play > 10:
+        #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 💀</span>'
+        #el
+        if play > 3:
             car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours</span>'
         #if customrace > 3:
         #    car += f'\n      <span id="customrace">Number of <b>24 hour</b> custom races to earn: {int(customrace)+1}</span>'
