@@ -132,13 +132,6 @@ for line in lines:
 
     new = state == "normal" and carid in normal.keys() and normal[carid] == 1
 
-    #HACK: holy shit PD get your fucking shit together
-    fucked = False
-    if int(carid) == 773 or int(carid) == 3359:
-        fucked = True
-        new = False
-    #HACK end
-
     if new:
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
