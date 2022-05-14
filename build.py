@@ -132,6 +132,13 @@ for line in lines:
 
     new = state == "normal" and carid in normal.keys() and normal[carid] == 1
 
+    #HACK for cars that go through bad state changes
+    fucked = False
+    if int(carid) == 999999:
+        fucked = True
+        new = False
+    #HACK end
+
     if new:
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
