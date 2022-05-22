@@ -152,6 +152,7 @@ footer {
 }
 #section-header img {
     vertical-align: middle;
+    height: 40px;
 }
 #used-cars {
     font-family: 'Roboto Bold';
@@ -406,10 +407,9 @@ footer {
 }
 .lcar #icon {
     position: absolute;
-    right: 40px;
+    right: 48px;
     top: 0px;
-    height: 40px;
-    width: 40px;
+    width: 32px;
 }
 .lcar #new {
     font-family: 'Roboto Bold';
