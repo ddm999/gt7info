@@ -444,12 +444,12 @@ for line in lines:
     dailyrace = dailyrace.replace("%TRACKNAME", track)
     dailyrace = dailyrace.replace("%LAPS", laps)
     dailyrace = dailyrace.replace("%CARS", cars)
-    dailyrace = dailyrace.replace("%STARTTYPE", "Grid Start" if starttype == "grid" else starttype.capitalize())
+    dailyrace = dailyrace.replace("%STARTTYPE", "Grid Start" if starttype == "grid" else ("Grid with False Start Check" if starttype == "grid_with_false_start" else starttype.capitalize()))
     dailyrace = dailyrace.replace("%FUELCONS", fuelcons)
     dailyrace = dailyrace.replace("%TYREWEAR", tyrewear)
     dailyrace = dailyrace.replace("%TIME", time)
-    dailyrace = dailyrace.replace("%BOP", "Applicable" if bop else "no [TODO]")
-    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "no [TODO]")
+    dailyrace = dailyrace.replace("%BOP", "On" if bop else "Off")
+    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "Open")
     if carused == "garage":
         dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car")
     elif carused == "rent":
