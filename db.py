@@ -65,7 +65,7 @@ def countrydb_id_to_code(input_id : int):
 def coursedb_id_to_name(input_id : int):
     input_id = int(input_id)
     for line in db_course:
-        id, name, base, country = line.strip().split(",")
+        id, name, base, country, category, length, straight, elevation, altitude, minH, minM, minS, maxH, maxM, maxS, layout, rev, pitlane, oval, corner, dryOnly = line.strip().split(",")
         if int(id) == input_id:
             return name
     raise ValueError(f"courseid {input_id} not found!")
@@ -73,7 +73,7 @@ def coursedb_id_to_name(input_id : int):
 def coursedb_id_to_base(input_id : int):
     input_id = int(input_id)
     for line in db_course:
-        id, name, base, country = line.strip().split(",")
+        id, name, base, country, category, length, straight, elevation, altitude, minH, minM, minS, maxH, maxM, maxS, layout, rev, pitlane, oval, corner, dryOnly = line.strip().split(",")
         if int(id) == input_id:
             return int(base)
     raise ValueError(f"courseid {input_id} not found!")
@@ -81,10 +81,20 @@ def coursedb_id_to_base(input_id : int):
 def coursedb_id_to_country(input_id : int):
     input_id = int(input_id)
     for line in db_course:
-        id, name, base, country = line.strip().split(",")
+        id, name, base, country, category, length, straight, elevation, altitude, minH, minM, minS, maxH, maxM, maxS, layout, rev, pitlane, oval, corner, dryOnly = line.strip().split(",")
         if int(id) == input_id:
             return int(country)
     raise ValueError(f"courseid {input_id} not found!")
+
+def coursedb_all_data():
+    data = {}
+    for line in db_course:
+        id, name, base, country, category, length, straight, elevation, altitude, minH, minM, minS, maxH, maxM, maxS, layout, rev, pitlane, oval, corner, dryOnly = line.strip().split(",")
+        data[id] = {'ID':id, 'Name':name, 'Base':base, 'Country':country, 'Category':category, 'Length':length,
+        'LongestStraight':straight, 'ElevationDiff':elevation, 'Altitude':altitude,
+        'MinTimeH':minH, 'MinTimeM':minM, 'MinTimeS':minS, 'MaxTimeH':maxH, 'MaxTimeM':maxM, 'MaxTimeS':maxS,
+        'LayoutNumber':layout, 'IsReverse':rev, 'PitLaneDelta':pitlane, 'IsOval':oval, 'NumCorners':corner, 'NoRain':dryOnly}
+    return data
 
 def crsbasedb_id_to_name(input_id : int):
     input_id = int(input_id)
@@ -167,7 +177,7 @@ def cardb_name_to_id(input_name : str):
 def coursedb_name_to_id(input_name : str):
     input_name_upper = input_name.upper()
     for line in db_course:
-        id, name, base, country = line.strip().split(",")
+        id, name, base, country, category, length, straight, elevation, altitude, minH, minM, minS, maxH, maxM, maxS, layout, rev, pitlane, oval, corner, dryOnly = line.strip().split(",")
         if name.upper() == input_name_upper:
             return id
     raise ValueError(f"course name '{input_name}' not found!")

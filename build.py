@@ -57,6 +57,7 @@ rewards = {}
 for reward in lines:
     rewardsplit = reward.strip().split(",")
     rewards[rewardsplit[0]] = rewardsplit[1:]
+
 ##################################################
 # handle used car dealership
 ##################################################
@@ -390,11 +391,11 @@ with open(f"engine-swaps.html", encoding='utf-8') as f:
     engineswaps_section = f.read()
 
 ##################################################
-# handle workout rewards
+# handle ticket rewards
 ##################################################
-workoutrewards_section = ""
-with open(f"workout-reward-estimate.html", encoding='utf-8') as f:
-    workoutrewards_section = f.read()
+ticketrewards_section = ""
+with open(f"ticket-rewards.html", encoding='utf-8') as f:
+    ticketrewards_section = f.read()
 
 ##################################################
 # handle daily races
@@ -560,7 +561,7 @@ html = html.replace("%LEGENDCARS_UPDATESTRING", legenddir[-1].replace(".csv", ""
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
 html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
-html = html.replace("%WORKOUTREWARDS_SECTION", workoutrewards_section)
+html = html.replace("%TICKETREWARDS_SECTION", ticketrewards_section)
 html = html.replace("%MENUBOOKUSEDCARS_SECTION", "Coming very soon!")
 html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 #html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
