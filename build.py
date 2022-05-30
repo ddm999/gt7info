@@ -482,7 +482,13 @@ for line in lines:
         x = 0
         for carid in specificcars.split("|"):
             car = cardb_id_to_name(carid)
-            regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span></div>'
+
+            #HACK: fucked rental for current daily race A
+            if carid in ["1040","1425","2159"]:
+                regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span> [CANNOT BE RENTED]</div>'
+            else:
+                regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span></div>'
+
             #if x == 0:
             #    regulations += '\n                <div class="racedetailrow">'
             #regulations += f'\n                    <span class="specifiedcar">{car}</span>'
