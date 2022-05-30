@@ -112,6 +112,19 @@ def crsbasedb_id_to_logo(input_id : int):
             return logo
     raise ValueError(f"crsbaseid {input_id} not found!")
 
+def crsbase_all_data():
+    data = {}
+    first_crs = {}
+    crsdata = coursedb_all_data()
+    for crs in crsdata:
+        if crs['Base'] not in first_crs.keys():
+            first_crs[crs['Base']] = crs
+
+    for line in db_crsbase:
+        id, name, logo = line.strip().split(",")
+        data[id] = {'Name':name, 'Logo':logo, 'FirstLayoutID':first_crs[id]['ID']}
+    return data
+
 def makerdb_id_to_name(input_id : int):
     input_id = int(input_id)
     for line in db_maker:
