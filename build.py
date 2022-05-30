@@ -475,6 +475,10 @@ for line in lines:
     dailyrace = dailyrace.replace("%SCHEDULE", schedule)
 
     regulations = ''
+    
+    #HACK: todo, actual "no dr/sr updates" support
+    if specificcars == "3223|2183|3436|1040|1425|2159":
+        regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #fe2;">No DR / SR Updates</span></span>'
 
     if cartype == "specific" or cartype == "both":
         regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
