@@ -445,7 +445,7 @@ for line in lines:
     dailyrace = dailyrace.replace("%TRACKNAME", track)
     dailyrace = dailyrace.replace("%LAPS", laps)
     dailyrace = dailyrace.replace("%CARS", cars)
-    dailyrace = dailyrace.replace("%STARTTYPE", "Grid Start" if starttype == "grid" else ("Grid with False Start Check" if starttype == "grid_with_false_start" else starttype.capitalize()))
+    dailyrace = dailyrace.replace("%STARTTYPE", "Grid Start" if starttype == "grid" else ("Grid with False Start Check" if starttype == "grid_with_false_start" else "Rolling Start"))
     dailyrace = dailyrace.replace("%FUELCONS", fuelcons)
     dailyrace = dailyrace.replace("%TYREWEAR", tyrewear)
     dailyrace = dailyrace.replace("%TIME", time)
@@ -477,7 +477,7 @@ for line in lines:
     regulations = ''
     
     #HACK: todo, actual "no dr/sr updates" support
-    if specificcars == "3223|2183|3436|1040|1425|2159":
+    if i == 0:
         regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #fe2;">No DR / SR Updates</span></span>'
 
     if cartype == "specific" or cartype == "both":
