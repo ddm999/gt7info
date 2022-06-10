@@ -38,7 +38,7 @@ jobs:
         run: python3 cname-make.py
 
       - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: cpina/github-action-push-to-another-repository@9543f7e15d5740b5689324e11d7060462c0f28f4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
