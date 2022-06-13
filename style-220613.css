@@ -672,6 +672,10 @@ footer {
     color: #26b;
     border: 2px solid #26b;
 }
+.tyre#D {
+    color: #c60;
+    border: 2px solid #c60;
+}
 
 #back-to-top {
     font-size: 13px;
