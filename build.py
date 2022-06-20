@@ -450,7 +450,7 @@ for line in lines:
     dailyrace = dailyrace.replace("%TYREWEAR", tyrewear)
     dailyrace = dailyrace.replace("%TIME", time)
     dailyrace = dailyrace.replace("%BOP", "On" if bop else "Off")
-    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "Open")
+    dailyrace = dailyrace.replace("%SPEC", "Specified" if spec else "Allowed")
     if carused == "garage":
         dailyrace = dailyrace.replace("%GARAGECAR", "Garage Car")
     elif carused == "rent":
@@ -460,7 +460,7 @@ for line in lines:
     else:
         dailyrace = dailyrace.replace("%GARAGECAR", "ERROR: wtf???")
     dailyrace = dailyrace.replace("%DAMAGE", damage.capitalize() if damage else "Disabled")
-    dailyrace = dailyrace.replace("%SHORTCUTPEN", "Enabled" if shortcutpen else "Disabled")
+    dailyrace = dailyrace.replace("%SHORTCUTPEN", "Light" if shortcutpen else "Disabled")
     dailyrace = dailyrace.replace("%COLLISIONPEN", "Enabled" if carcollisionpen else "Disabled")
     dailyrace = dailyrace.replace("%PITLANEPEN", "Enabled" if pitlanepen else "Disabled")
 
@@ -512,6 +512,15 @@ for line in lines:
                        '\n                <span class="racedetaillabel" id="categorylabel">Category</span>'+\
                       f'\n                <span class="racedetailcontent" id="category">{category}</span>'+\
                        '\n            </div>'
+    elif cartype == "pp":
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="categorylabel">Car Type</span>'+\
+                      f'\n                <span class="racedetailcontent" id="category">{category}</span>'+\
+                       '\n            </div>'
+        regulations += '\n            <div class="racedetailrow">'+\
+                       '\n                <span class="racedetaillabel" id="categorylabel">PP</span>'+\
+                      f'\n                <span class="racedetailcontent" id="category">{specificcars} or less</span>'+\
+                       '\n            </div>'
 
     if widebodyban:
         regulations += '\n            <div class="racedetailrow">'+\
@@ -561,6 +570,9 @@ for line in lines:
     if cartype == "specific" or cartype == "both":
         jsondata["dailyrace"]["races"][-1]["specificcars_ids"] = specificcars.split("|")
         jsondata["dailyrace"]["races"][-1]["specificcars"] = list(map(cardb_id_to_name, jsondata["dailyrace"]["races"][-1]["specificcars_ids"]))
+    if cartype == "pp":
+        jsondata["dailyrace"]["races"][-1]["cartype"] = category
+        jsondata["dailyrace"]["races"][-1]["pplimit"] = specificcars
 
 ##################################################
 # do replacements
