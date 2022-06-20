@@ -571,7 +571,7 @@ for line in lines:
         jsondata["dailyrace"]["races"][-1]["specificcars_ids"] = specificcars.split("|")
         jsondata["dailyrace"]["races"][-1]["specificcars"] = list(map(cardb_id_to_name, jsondata["dailyrace"]["races"][-1]["specificcars_ids"]))
     if cartype == "pp":
-        jsondata["dailyrace"]["races"][-1]["cartype"] = category
+        jsondata["dailyrace"]["races"][-1]["cartags"] = category
         jsondata["dailyrace"]["races"][-1]["pplimit"] = specificcars
 
 ##################################################
