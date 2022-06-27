@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 from cardata import *
 from db import *
 
+BUILD_TIMESTAMP = datetime.now().strftime("%Y%m%d%H%M%S")
+
 jsondata = {
     "updatetimestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 }
@@ -10,6 +12,8 @@ jsondata = {
 html = ""
 with open("index.html", "r", encoding='utf-8') as f:
     html = f.read()
+
+html = html.replace("%BUILD_TIMESTAMP", BUILD_TIMESTAMP)
 
 used_template = ""
 with open("used.html", "r", encoding='utf-8') as f:
@@ -417,10 +421,6 @@ for line in lines:
 ##################################################
 # handle html injects
 ##################################################
-campaignrewards_section = ""
-with open(f"campaign-rewards.html", encoding='utf-8') as f:
-    campaignrewards_section = f.read()
-
 engineswaps_section = ""
 with open(f"engine-swaps.html", encoding='utf-8') as f:
     engineswaps_section = f.read()
@@ -617,7 +617,6 @@ html = html.replace("%USEDCARS_UPDATESTRING", useddir[-1].replace(".csv", ""))
 html = html.replace("%USEDCARS_SECTION", usedcars_section)
 html = html.replace("%LEGENDCARS_UPDATESTRING", legenddir[-1].replace(".csv", ""))
 html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
-html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
 html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%TICKETREWARDS_SECTION", ticketrewards_section)
 html = html.replace("%MENUBOOKUSEDCARS_SECTION", menubookusedcars_section)
@@ -639,7 +638,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220627.css", "style-lotterycars-220627.css"]
+FILES_TO_COPY = ["campaign-rewards.html", "engine-swaps.html", "menu-book-used.html", "ticket-rewards.html", "legacy-changes.html", "style.css", "style-simple.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:
