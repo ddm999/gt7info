@@ -415,25 +415,23 @@ for line in lines:
     })
 
 ##################################################
-# handle campaign rewards
+# handle html injects
 ##################################################
 campaignrewards_section = ""
 with open(f"campaign-rewards.html", encoding='utf-8') as f:
     campaignrewards_section = f.read()
 
-##################################################
-# handle engine swaps
-##################################################
 engineswaps_section = ""
 with open(f"engine-swaps.html", encoding='utf-8') as f:
     engineswaps_section = f.read()
 
-##################################################
-# handle ticket rewards
-##################################################
 ticketrewards_section = ""
 with open(f"ticket-rewards.html", encoding='utf-8') as f:
     ticketrewards_section = f.read()
+
+menubookusedcars_section = ""
+with open(f"menu-book-used.html", encoding="utf-8") as f:
+    menubookusedcars_section = f.read()
 
 ##################################################
 # handle daily races
@@ -622,7 +620,7 @@ html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%CAMPAIGNREWARDS_SECTION", campaignrewards_section)
 html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%TICKETREWARDS_SECTION", ticketrewards_section)
-html = html.replace("%MENUBOOKUSEDCARS_SECTION", "Coming very soon!")
+html = html.replace("%MENUBOOKUSEDCARS_SECTION", menubookusedcars_section)
 html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 #html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
