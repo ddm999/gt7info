@@ -1,0 +1,145 @@
+/*
+    This stylesheet was adapted from the
+    https://github.com/orderedlist/minimal
+    GitHub Pages theme,
+    and is therefore licensed under CC BY-SA 3.0.
+
+    https://creativecommons.org/licenses/by-sa/3.0/
+*/
+
+/*
+    note: you really need to restructure this to use classes instead of ids
+*/
+
+@font-face {
+    font-family: 'Jaldi';
+    font-weight: 400;
+    font-weight: normal;
+    src: url("/test/fonts/Jaldi/Jaldi-Regular.ttf") format("truetype"), url("./fonts/Jaldi/Jaldi-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: url("/test/fonts/Roboto/Roboto-Regular.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto Bold';
+    font-weight: 400;
+    font-style: normal;
+    src: url("/test/fonts/Roboto/Roboto-Bold.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Roboto Medium';
+    font-weight: 500;
+    font-style: normal;
+    src: url("/test/fonts/Roboto/Roboto-Medium.ttf") format("truetype"), url("./fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+body {
+    background-color: #d3d5d7;
+    padding: 20px 0px;
+    font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #424242;
+    font-weight: 400;
+
+    min-width: 400px;
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #222;
+    margin: 0 0 20px;
+}
+h1,h2,h3 {
+    line-height: 1.1;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    color: #393939;
+}
+h3,h4,h5,h6 {
+    color: #494949;
+    margin-block-end: 6px;
+}
+
+a {
+    color: #267CB9;
+    text-decoration: none;
+}
+a:hover,a:focus {
+    color: #069;
+    font-weight: bold;
+}
+
+a small {
+    font-size: 11px;
+    color: #777;
+    margin-top: -0.3em;
+    display: block;
+}
+a:hover small {
+    color: #777;
+}
+
+code,pre {
+    font-family: Consolas, Terminal, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+    color: #333;
+}
+pre {
+    padding: 8px 15px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th,td {
+    text-align: left;
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+dt {
+    color: #444;
+    font-weight: 700;
+}
+th {
+    color: #444;
+}
+
+ul {
+    margin-block-start: 4px;
+    margin-block-end: 4px;
+}
+
+img {
+    max-width: 100%
+}
+
+strong {
+    color: #222;
+    font-weight: 700
+}
+small {
+    font-size: 11px
+}
+
+header {
+    padding: 0px 20px;
+}
+section {
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+    position: relative;
+}
+footer {
+    font-size: 12px;
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
+}

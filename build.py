@@ -46,7 +46,7 @@ for car in lines:
     cardata_add("brandcentral","*",car.strip().split(","))
 
 ##################################################
-# handle rewards
+# handle rewards, engine swaps, lottery cars
 ##################################################
 lines = []
 with open(f"_data/rewards/{os.listdir('_data/rewards')[-1]}") as f:
@@ -57,6 +57,26 @@ rewards = {}
 for reward in lines:
     rewardsplit = reward.strip().split(",")
     rewards[rewardsplit[0]] = rewardsplit[1:]
+
+lines = []
+with open(f"_data/db/engineswaps.csv") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+engineswaps = {}
+for engineswap in lines:
+    engineswapsplit = engineswap.strip().split(",")
+    engineswaps[engineswapsplit[0]] = engineswapsplit[1:]
+
+lines = []
+with open(f"_data/db/lotterycars.csv") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+lotterycars = {}
+for lotterycar in lines:
+    lotterycarsplit = lotterycar.strip().split(",")
+    lotterycars[lotterycarsplit[1]] = lotterycarsplit[0]
 
 ##################################################
 # handle used car dealership
@@ -214,7 +234,25 @@ for line in lines:
         if rewardinfo[2] != "-":
             car += f' All {rewardinfo[2].capitalize()}'
         car +=  '"/>'
- 
+
+    if carid in engineswaps.keys():
+        engineswapinfo = engineswaps[carid]
+        car +=  '\n        <span id="engineswap-text">ENGINE<br>SWAP</span>'+\
+               f'\n        <img id="engineswap-icon" src="img/engine.svg" width="24" title="Supports engine swap: {engineswapinfo[1]} from {cardb_id_to_name(engineswapinfo[0])}"/>'
+
+    if carid in lotterycars.keys():
+        lotterycarinfo = lotterycars[carid]
+        lotterystars = ""
+        match lotterycarinfo:
+            case "L":
+                lotterystars = "4/5/6"
+            case "M":
+                lotterystars = "3/4/5"
+            case "S":
+                lotterystars = "1/2/3/4"
+        car +=  '\n        <span id="lottery-text">TICKET<br>REWARD</span>'+\
+               f'\n        <img id="lottery-icon" src="img/gift.svg" width="24" title="Can be won from {lotterystars} star tickets. Special parts for this car can be recieved from 4/5 star tickets."/>'
+
     usedcars_section += f'{car}\n      </p>'
     jsondata["used"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
@@ -603,7 +641,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["style-220613.css"]
+FILES_TO_COPY = ["style-220613.css", "style-lotterycars-220627.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:

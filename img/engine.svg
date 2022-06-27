@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="繝ｬ繧､繝､繝ｼ_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 38.099998 38.099998"
+   enable-background="new 0 0 52 52"
+   xml:space="preserve"
+   sodipodi:docname="engine.svg"
+   width="38.099998"
+   height="38.099998"
+   inkscape:version="1.2-dev (1a5ce3f, 2021-04-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs844" /><sodipodi:namedview
+   id="namedview842"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   objecttolerance="10.0"
+   gridtolerance="10.0"
+   guidetolerance="10.0"
+   inkscape:pageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="8.1634615"
+   inkscape:cx="7.7173145"
+   inkscape:cy="24.683157"
+   inkscape:window-width="1837"
+   inkscape:window-height="1057"
+   inkscape:window-x="75"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="繝ｬ繧､繝､繝ｼ_1" />
+<rect
+   x="-7"
+   y="-14.1"
+   fill="none"
+   width="52"
+   height="52"
+   id="rect835" />
+<g
+   id="g839"
+   transform="translate(-7,-7.7914016)">
+	<path
+   fill="#303030"
+   d="m 45.1,25.8 c 0,-1.2 0,-2.4 0,-3.7 0,-1.1 -0.3,-1.8 -1.9,-1.8 H 43 v 0 c -1.2,0 -1.5,0.2 -2.2,0.7 -0.1,0.1 -0.3,0.2 -0.4,0.3 l -1.5,1 c -0.7,0.5 -0.8,0.5 -1.7,0.5 H 35 c -1.2,0 -1.2,-0.2 -1.2,-1.1 v -1.3 c 0,-1.2 -0.6,-1.7 -2.2,-1.7 -1.5,0 -2.5,0 -3.5,0 -1,0 -0.6,0 -2.1,0 V 16 h 6 V 14.1 H 17.5 V 16 h 6 v 2.5 h -7 c -1.6,0 -2.1,0.4 -2.1,1.7 v 6.5 H 9.3 V 19.2 C 9.3,18.5 8.7,18.1 8.1,18.1 7.5,18.1 7,18.5 7,19.3 v 8.4 h 2 c 0,2.8 0,5.7 0,8.5 0,0.6 0.2,0.9 0.4,1.1 0.2,0.2 0.5,0.3 0.8,0.3 0.6,0 1.2,-0.5 1.2,-1.3 v -7.7 h 3.2 v 5.8 c 0,0.8 0.4,1.7 2,1.7 H 20 l 4.8,3.5 h 0.1 c 2,0 2.2,0 3.7,0 1.7,0 3.3,0 5.5,0 1.7,0 2.2,-0.4 2.2,-1.8 0,-0.3 0,0.2 0,0 0,-0.3 0,-0.5 0.1,-0.6 0.1,-0.1 0.6,-0.1 1.4,-0.1 H 38 c 1.4,0 1.4,0.1 1.4,0.4 v 0.1 c 0,1 0.1,1.1 1.2,1.1 0.1,0 0.2,0 0.3,0 0.1,0 0.2,0 0.4,0 0.2,0 0.4,0 0.6,0 0.2,0 0.3,0 0.5,0 0,0 0,0 0,0 2.2,0 2.6,-0.3 2.7,-3.5 0,-3.5 0,-6.2 0,-9.4 z"
+   id="path837" />
+</g>
+</svg>
