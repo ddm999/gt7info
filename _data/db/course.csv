@@ -99,3 +99,5 @@ ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinT
 1261,Special Stage Route X 400,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,2,0,24.0,1,0,1
 1262,Special Stage Route X 1000,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,3,0,24.0,1,0,1
 1269,Spa 24h Layout,12,10,circuit,7004,751,104.0,420.9,0,0,0,0,0,0,2,0,35.0,0,21,0
+10001,Watkins Glen Long Course,10001,3,circuit,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10002,Watkins Glen Short Course,10001,3,circuit,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
