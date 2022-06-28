@@ -6,7 +6,7 @@ import numpy as np
 cardata = {}
 
 def cardata_add(dealertype, date, carsplit):
-    if len(carsplit) < 3 or carsplit[2] != "soldout":
+    if len(carsplit) >= 3 and carsplit[2] != "soldout":
         if int(carsplit[0]) in cardata:
             cardata[int(carsplit[0])].append(f"{dealertype},{date},{carsplit[1]}")
         else:

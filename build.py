@@ -95,76 +95,33 @@ jsondata["used"] = {
     "cars": [],
 }
 
-normal = {} # type: dict[str, int]
-limited = {} # type: dict[str, int]
-soldout = {} # type: dict[str, int]
-for car in lines:
-    carsplit = car.strip().split(",")
-    # days appeared, negative means still counting
-    if carsplit[2] == "normal":
-        normal[carsplit[0]] = -1
-    elif carsplit[2] == "limited":
-        limited[carsplit[0]] = -1
-    elif carsplit[2] == "soldout":
-        soldout[carsplit[0]] = -1
-
 for i in range(len(useddir)):
     morelines = []
     with open(f"_data/used/{useddir[-1-i]}") as f:
         morelines = f.readlines()
     morelines = morelines[1:] # remove headers
 
-
-    carnames = {}
     for car in morelines:
         carsplit = car.strip().split(",")
-        carnames[carsplit[0]] = carsplit[2]
         cardata_add("used", useddir[-1-i].replace('.csv',''), carsplit)
-
-    if i == 0: # don't include current day in estimate calculation
-        continue
-
-    for k in normal.keys():
-        if normal[k] < 0:
-            if k in carnames.keys() and carnames[k] == "normal":
-                normal[k] -= 1
-            else:                       
-                normal[k] = 0-normal[k]
-
-    for k in limited.keys():
-        if limited[k] < 0:
-            if k in carnames.keys() and carnames[k] == "limited":
-                limited[k] -= 1
-            else:                       
-                limited[k] = 0-limited[k]
-                normal[k] = -1
-
-    for k in soldout.keys():
-        if soldout[k] < 0:
-            if k in carnames.keys() and carnames[k] == "soldout":
-                soldout[k] -= 1
-            else:                       
-                soldout[k] = 0-soldout[k]
 
 usedcars_section = ""
 for line in lines:
     if line == "\n":
         continue
-    carid, cr, state = line.strip().split(",")
+    carid, cr, state, daysremaining = line.strip().split(",")
+    daysremaining = int(daysremaining)
     name = cardb_id_to_name(carid)
     manufacturer = cardb_id_to_makername(carid)
     region = cardb_id_to_countrycode(carid)
-
-    new = state == "normal" and carid in normal.keys() and normal[carid] == 1
 
     #HACK for cars that go through bad state changes
     fucked = False
     if int(carid) == 999999:
         fucked = True
-        new = False
     #HACK end
 
-    if new:
+    if state == "new":
         car = '<p class="car carnew">\n'+used_template
     elif state == "limited":
         car = '<p class="car carlimited">\n'+used_template
@@ -182,46 +139,25 @@ for line in lines:
     else:
         car = car.replace("%NAME", name)
     car = car.replace("%CREDITS", f"{int(cr):,}")
-    estimatedays = 0
-    maxestimatedays = 0
-    daysvisible = 0
-    if new:
-        car += '\n        <span id="new">NEW</span>'
-    
 
-    if state == "normal" and not fucked:
-        daysvisible = normal[carid]
-        if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
-            if normal[carid] <= 4:
-                estimatedays = 7-normal[carid]
-                maxestimatedays = 10-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
-            elif normal[carid] <= 6:
-                estimatedays = 3
-                maxestimatedays = 10-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
-            else:
-                estimatedays = 3
-                maxestimatedays = 3
-                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
+    if state == "new":
+        car += '\n        <span id="new">NEW</span>'
     elif state == "limited":
-        daysvisible = normal[carid] + limited[carid]
-        if carid in limited.keys() and limited[carid] == 2:
-            estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
-        elif carid in limited.keys() and limited[carid] == 1:
-            estimatedays = 2
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
-        else:
-            estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Unknown days remaining due to error by Polyphony</span>'
-        maxestimatedays = estimatedays
+        car += '\n        <span id="limited">Limited Stock</span>'
     elif state == "soldout":
-        estimatedays = 0
-        maxestimatedays = 0
         car += '\n        <span id="soldout">SOLD OUT</span>'
+
+    if not fucked:
+        if daysremaining > 3:
+            car += f'\n        <span id="days-estimate">Available For {daysremaining-1} More Days</span>'
+        elif daysremaining == 3:
+            car += f'\n        <span id="days-remaining">Available For 1 More Day</span>'
+        elif daysremaining == 2:
+            car += f'\n        <span id="days-remaining">Last Day Available</span>'
+        elif daysremaining == -1:
+            car += f'\n        <span id="days-estimate">No Estimate Available</span>'
     else:
-        car += f'\n        <span id="days-estimate">Unknown estimate due to error by Polyphony.</span>'
+        car += f'\n        <span id="days-estimate">No Estimate Available</span>'
 
     if carid in rewards.keys():
         rewardinfo = rewards[carid]
@@ -260,7 +196,7 @@ for line in lines:
     usedcars_section += f'{car}\n      </p>'
     jsondata["used"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
-        "state": state, "estimatedays": estimatedays, "maxestimatedays": maxestimatedays, "new": new, "daysvisible": daysvisible
+        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new"
     })
 
 ##################################################
@@ -276,57 +212,27 @@ jsondata["legend"] = {
     "cars": [],
 }
 
-normal = {} # type: dict[str, int]
-limited = {} # type: dict[str, int]
-for car in lines:
-    carsplit = car.strip().split(",")
-    # days appeared, negative means still counting
-    if carsplit[2] == "normal":
-        normal[carsplit[0]] = -1
-    elif carsplit[2] == "limited":
-        limited[carsplit[0]] = -1
-
 for i in range(len(legenddir)):
     morelines = []
     with open(f"_data/legend/{legenddir[-1-i]}") as f:
         morelines = f.readlines()
     morelines = morelines[1:] # remove headers
 
-    carnames = {}
     for car in morelines:
         carsplit = car.strip().split(",")
-        carnames[carsplit[0]] = carsplit[2]
         cardata_add("legend", legenddir[-1-i].replace('.csv',''), carsplit)
-
-    if i == 0: # don't include current day in estimate calculation
-        continue
-
-    for k in normal.keys():
-        if normal[k] < 0:
-            if k in carnames.keys() and carnames[k] == "normal":
-                normal[k] -= 1
-            else:                       
-                normal[k] = 0-normal[k]
-
-    for k in limited.keys():
-        if limited[k] < 0:
-            if k in carnames.keys() and carnames[k] == "limited":
-                limited[k] -= 1
-            else:
-                limited[k] = 0-limited[k]
-                normal[k] = -1
 
 legendcars_section = ""
 for line in lines:
     if line == "\n":
         continue
-    carid, cr, state = line.strip().split(",")
+    carid, cr, state, daysremaining = line.strip().split(",")
+    daysremaining = int(daysremaining)
     name = cardb_id_to_name(carid)
     manufacturer = cardb_id_to_makername(carid)
     region = cardb_id_to_countrycode(carid)
 
-    new = state == "normal" and carid in normal.keys() and normal[carid] == 1
-    if new:
+    if state == "new":
         car = '<p class="lcar carnew">\n'+legend_template
     elif state == "limited":
         car = '<p class="lcar carlimited">\n'+legend_template
@@ -362,39 +268,25 @@ for line in lines:
         #if nordslaps > 25:
         #    car += f'\n      <span id="nordslaps">Gr.3 custom race Nordschleife laps to earn: {int(nordslaps)+1}</span>'
 
-    estimatedays = 0
-    maxestimatedays = 0
-    daysvisible = 0
-    if new:
+    
+    if state == "new":
         car += '\n        <span id="new">NEW</span>'
-    if state == "normal":
-        daysvisible = normal[carid]
-        if carid in normal.keys() and normal[carid] > 0: # >0 checks for messed up data
-            if normal[carid] <= 3:
-                estimatedays = 6-normal[carid]
-                maxestimatedays = 11-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
-            elif normal[carid] <= 7:
-                estimatedays = 3
-                maxestimatedays = 11-normal[carid]
-                car += f'\n        <span id="days-estimate">Estimate: {estimatedays-1} to {maxestimatedays-1} More Days Remaining</span>'
-            else:
-                estimatedays = 3
-                car += '\n        <span id="days-estimate">Limited Stock Soon<br>(2+ More Days Remaining)</span>'
     elif state == "limited":
-        daysvisible = normal[carid] + limited[carid]
-        if carid in limited.keys() and limited[carid] == 2:
-            estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">Last Day Available</span>'
-        elif carid in limited.keys() and limited[carid] == 1:
-            estimatedays = 2
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">1 More Day Remaining</span>'
-        else:
-            estimatedays = 1
-            car += '\n        <span id="limited">Limited Stock</span><span id="days-remaining">0 Days Remaining <small style="font-size: 9px;">This should be sold out...</small></span>'
+        car += '\n        <span id="limited">Limited Stock</span>'
     elif state == "soldout":
-        estimatedays = 0
-        car += '\n        <span id="dimmer"></span><span id="soldout">SOLD OUT</span>'
+        car += '\n        <span id="soldout">SOLD OUT</span>'
+
+    if not fucked:
+        if daysremaining > 3:
+            car += f'\n        <span id="days-estimate">Available For {daysremaining-1} More Days</span>'
+        elif daysremaining == 3:
+            car += f'\n        <span id="days-remaining">Available For 1 More Day</span>'
+        elif daysremaining == 2:
+            car += f'\n        <span id="days-remaining">Last Day Available</span>'
+        elif daysremaining == -1:
+            car += f'\n        <span id="days-estimate">No Estimate Available</span>'
+    else:
+        car += f'\n        <span id="days-estimate">No Estimate Available</span>'
 
     if carid in rewards.keys():
         rewardinfo = rewards[carid]
@@ -415,7 +307,7 @@ for line in lines:
     legendcars_section += car + '\n      </p>'
     jsondata["legend"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
-        "state": state, "estimatedays": estimatedays, "maxestimatedays": maxestimatedays, "new": new, "daysvisible": daysvisible
+        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new"
     })
 
 ##################################################
