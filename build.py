@@ -252,11 +252,11 @@ for line in lines:
     onetime = int(cr)/4000000
     customrace = int(cr)/122053
     nordslaps = int(cr)/6203.8
-    if state != "soldout":
+    #if state != "soldout":
         #if onetime > 1:
         #    car += f'\n      <span id="onetime">Time to earn with one-time rewards: {int(onetime)+1} hours</span>'
-        if grind > 1:
-            car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
+        #if grind > 1:
+        #    car += f'\n        <span id="grind">Optimal grinding time to earn: {int(grind)+1} hours</span>'
         #if play > 50:
         #    car += f'\n        <span id="play">Normal gameplay time to earn: {int(play)+1} hours 🤡</span>'
         #elif play > 10:
