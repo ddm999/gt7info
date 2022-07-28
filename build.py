@@ -530,7 +530,7 @@ with open("build/index.html", "w", encoding='utf-8') as f:
 with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
-FILES_TO_COPY = ["campaign-rewards.html", "engine-swaps.html", "menu-book-used.html", "ticket-rewards.html", "legacy-changes.html", "style.css", "style-simple.css"]
+FILES_TO_COPY = ["course-bop.html", "campaign-rewards.html", "engine-swaps.html", "menu-book-used.html", "ticket-rewards.html", "legacy-changes.html", "style.css", "style-simple.css"]
 FOLDERS_TO_COPY = ["fonts", "img"]
 
 for file in FILES_TO_COPY:

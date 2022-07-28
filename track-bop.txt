@@ -1,0 +1,63 @@
+Northern Isle       BoP High
+Broad Bean          BoP High
+Dragons Seaside     BoP Mid
+Dragons Gardens     BoP Mid
+High Speed Ring     BoP High
+Blue Moon Bay       BoP High
+Blue Moon Bay In A  BoP Mid
+Blue Moon Bay In B  BoP High
+Tsukuba             BoP Low
+Daytona Tri-Oval    BoP High
+Daytona Road Course BoP High
+Maggiore Full       BoP Mid
+Maggiore Centre     BoP Low
+Maggiore East End   BoP Mid
+Maggiore West End   BoP Mid
+Maggiore East       BoP Low
+Maggiore West       BoP Mid
+Red Bull Ring       BoP Mid
+Red Bull Ring Short BoP Mid
+Deep Forest         BoP High
+Tokyo Central       BoP Mid
+Tokyo South         BoP High
+Tokyo East          BoP High
+Trial Mountain      BoP Mid
+Laguna Seca         BoP Low
+Kyoto Yamagiwa      BoP Mid
+Kyoto Miyabi        BoP Mid
+Kyoto Combined      BoP Mid
+Alsace Village      BoP Low
+Alsace Test Course  BoP Mid
+Fuji Full           BoP Mid
+Fuji Short          BoP Mid
+Sardegna A          BoP Mid
+Sardegna B          BoP Low
+Sardegna C          BoP Low
+Willow Streets      BoP Low
+Big Willow          BoP Mid
+Willow Horse Thief  BoP Low
+Watkins Glen Long   BoP High
+Watkins Glen Short  BoP High
+Monza               BoP High
+Monza No Chicane    BoP High
+Catalunya GP        BoP Mid
+Autopolis           BoP Mid
+Autopolis Shortcut  BoP Mid
+Brands Hatch GP     BoP Mid
+Brands Hatch Indy   BoP Low
+Sainte-Croix A      BoP Mid
+Sainte-Croix B      BoP Mid
+Sainte-Croix C      BoP High
+Suzuka Full         BoP Mid
+Suzuka East         BoP Mid
+Interlagos          BoP Mid
+Goodwood            BoP Mid
+Mount Panorama      BoP High
+Route X             BoP High
+Spa                 BoP Mid
+Spa 24hr            BoP Mid
+Le Mans             BoP High
+Le Mans No Chicane  BoP High
+Nurburgring Nords   BoP Mid
+Nurburgring 24hr    BoP Mid
+Nurburgring GP      BoP Mid
