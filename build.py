@@ -408,15 +408,15 @@ for line in lines:
     if i == 0:
         regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #fe2;">No DR / SR Updates</span></span>'
 
-    if cartype == "specific" or cartype == "both":
+    if cartype == "specific" or cartype == "both" or cartype == "specific_tuninglimits":
         regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
                        '\n            <div class="racedetailheader" id="specificcars">Regulations (Specified Car)</div>'
         x = 0
         for carid in specificcars.split("|"):
             car = cardb_id_to_name(carid)
 
-            #HACK: fucked rental for current daily race A
-            if carid in ["1040","1425","2159"]:
+            #HACK: rental hack
+            if carid in []:
                 regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span> [CANNOT BE RENTED]</div>'
             else:
                 regulations += f'\n                <div class="racedetailrow"><span class="specifiedcar">{car}</span></div>'
@@ -449,6 +449,19 @@ for line in lines:
                        '\n                <span class="racedetaillabel" id="categorylabel">PP</span>'+\
                       f'\n                <span class="racedetailcontent" id="category">{specificcars} or less</span>'+\
                        '\n            </div>'
+    elif cartype == "specific_tuninglimits":
+        splitcategory = category.split("|")
+        if len(splitcategory) == 4:
+            PSpower, HPpower, KGweight, LBweight = splitcategory
+            regulations += '\n            <div class="racedetailrow">'+\
+                        '\n                <span class="racedetaillabel" id="categorylabel">Power</span>'+\
+                        f'\n                <span class="racedetailcontent" id="category">{PSpower} PS or less / {HPpower} HP or less</span>'+\
+                        '\n            </div>'
+            regulations += '\n            <div class="racedetailrow">'+\
+                        '\n                <span class="racedetaillabel" id="categorylabel">Weight</span>'+\
+                        f'\n                <span class="racedetailcontent" id="category">At least {KGweight} kg / At least {LBweight} lbs.</span>'+\
+                        '\n            </div>'
+
 
     if widebodyban:
         regulations += '\n            <div class="racedetailrow">'+\
@@ -495,12 +508,15 @@ for line in lines:
     })
     if cartype == "category" or cartype == "both":
         jsondata["dailyrace"]["races"][-1]["category"] = category
-    if cartype == "specific" or cartype == "both":
+    if cartype == "specific" or cartype == "both" or cartype == "specific_tuninglimits":
         jsondata["dailyrace"]["races"][-1]["specificcars_ids"] = specificcars.split("|")
         jsondata["dailyrace"]["races"][-1]["specificcars"] = list(map(cardb_id_to_name, jsondata["dailyrace"]["races"][-1]["specificcars_ids"]))
     if cartype == "pp":
         jsondata["dailyrace"]["races"][-1]["cartags"] = category
         jsondata["dailyrace"]["races"][-1]["pplimit"] = specificcars
+    if cartype == "specific_tuninglimits":
+        jsondata["dailyrace"]["races"][-1]["pslimit"] = PSpower
+        jsondata["dailyrace"]["races"][-1]["kglimit"] = KGweight
 
 ##################################################
 # do replacements
