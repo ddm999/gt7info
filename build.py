@@ -449,18 +449,38 @@ for line in lines:
                        '\n                <span class="racedetaillabel" id="categorylabel">PP</span>'+\
                       f'\n                <span class="racedetailcontent" id="category">{specificcars} or less</span>'+\
                        '\n            </div>'
+    elif cartype == "dt_tuninglimits":
+        splitcategory = category.split("|")
+        if len(splitcategory) == 5:
+            cartag, PSpower, HPpower, KGweight, LBweight = splitcategory
+            regulations += '\n            <div class="racedetailrow">'+\
+                           '\n                <span class="racedetaillabel" id="categorylabel">Car Type</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">{cartag}</span>'+\
+                           '\n            </div>'
+            regulations += '\n            <div class="racedetailrow">'+\
+                           '\n                <span class="racedetaillabel" id="categorylabel">Drivetrain</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">{specificcars}</span>'+\
+                           '\n            </div>'
+            regulations += '\n            <div class="racedetailrow">'+\
+                           '\n                <span class="racedetaillabel" id="categorylabel">Power</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">{PSpower} PS or less / {HPpower} HP or less</span>'+\
+                           '\n            </div>'
+            regulations += '\n            <div class="racedetailrow">'+\
+                           '\n                <span class="racedetaillabel" id="categorylabel">Weight</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">At least {KGweight} kg / At least {LBweight} lbs.</span>'+\
+                           '\n            </div>'
     elif cartype == "specific_tuninglimits":
         splitcategory = category.split("|")
         if len(splitcategory) == 4:
             PSpower, HPpower, KGweight, LBweight = splitcategory
             regulations += '\n            <div class="racedetailrow">'+\
-                        '\n                <span class="racedetaillabel" id="categorylabel">Power</span>'+\
-                        f'\n                <span class="racedetailcontent" id="category">{PSpower} PS or less / {HPpower} HP or less</span>'+\
-                        '\n            </div>'
+                           '\n                <span class="racedetaillabel" id="categorylabel">Power</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">{PSpower} PS or less / {HPpower} HP or less</span>'+\
+                           '\n            </div>'
             regulations += '\n            <div class="racedetailrow">'+\
-                        '\n                <span class="racedetaillabel" id="categorylabel">Weight</span>'+\
-                        f'\n                <span class="racedetailcontent" id="category">At least {KGweight} kg / At least {LBweight} lbs.</span>'+\
-                        '\n            </div>'
+                           '\n                <span class="racedetaillabel" id="categorylabel">Weight</span>'+\
+                          f'\n                <span class="racedetailcontent" id="category">At least {KGweight} kg / At least {LBweight} lbs.</span>'+\
+                           '\n            </div>'
 
 
     if widebodyban:
@@ -514,7 +534,10 @@ for line in lines:
     if cartype == "pp":
         jsondata["dailyrace"]["races"][-1]["cartags"] = category
         jsondata["dailyrace"]["races"][-1]["pplimit"] = specificcars
-    if cartype == "specific_tuninglimits":
+    if cartype == "dt_tuninglimits":
+        jsondata["dailyrace"]["races"][-1]["cartags"] = cartag
+        jsondata["dailyrace"]["races"][-1]["drivetrainlimit"] = specificcars
+    if cartype == "specific_tuninglimits" or cartype == "dt_tuninglimits":
         jsondata["dailyrace"]["races"][-1]["pslimit"] = PSpower
         jsondata["dailyrace"]["races"][-1]["kglimit"] = KGweight
 
