@@ -99,5 +99,8 @@ ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinT
 1261,Special Stage Route X 400,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,2,0,24.0,1,0,1
 1262,Special Stage Route X 1000,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,3,0,24.0,1,0,1
 1269,Spa 24h Layout,12,10,circuit,7004,751,104.0,420.9,0,0,0,0,0,0,2,0,35.0,0,21,0
-10001,Watkins Glen Long Course,10001,3,circuit,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-10002,Watkins Glen Short Course,10001,3,circuit,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1240,Watkins Glen Long Course,35,3,circuit,5423.0,560.5272,41.148,454.152,5,0,0,22,30,0,1,0,10.0,0,11,1
+1264,Watkins Glen Short Course,35,3,circuit,3942.0,621.792,10.668,454.152,5,0,0,22,30,0,2,0,10.0,0,7,1
+1249,Circuit de Barcelona-Catalunya GP Layout No Chicane,10,13,circuit,4730.0,1047.0,30.0,140.0,6,0,0,22,0,0,2,0,28.0,0,14,1
+1250,Circuit de Barcelona-Catalunya National,10,13,circuit,2977.0,862.0,28.0,140.0,6,0,0,22,0,0,3,0,28.0,0,11,1
+1265,Circuit de Barcelona-Catalunya Rallycross,10,13,snow_dirt,1133.0,148.0,11.0,140.0,6,0,0,22,0,0,4,0,28.0,0,11,1
