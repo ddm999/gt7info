@@ -143,3 +143,48 @@ footer {
     padding: 20px 20px 50px 20px;
     box-shadow: 0 0 0 8px #d3d5d7, 0 -8px 8px #666;
 }
+
+.cardetails {
+    background-color: #d9dbdb;
+    position: relative;
+    width: 644px;
+    margin: 10px;
+    border: 2px solid #222;
+    font-family: 'Roboto Medium';
+    color: #292929;
+    font-weight: 500;
+}
+
+.cardetails .manufacturer {
+    font-family: 'Jaldi';
+    font-weight: 400;
+    font-size: 24px;
+    padding-left: 8px;
+}
+
+.cardetails .name {
+    font-size: 24px;
+}
+
+.cardetails .id {
+    font-size: 12px;
+
+    float: right;
+    padding: 8px;
+}
+
+.cardetails .carclass {
+    font-size: 24px;
+    padding-left: 8px;
+}
+
+.cardetails .credits {
+    font-size: 18px;
+
+    float: right;
+    padding: 8px;
+}
+
+.cardetails .bop, .cardetails .hybridtype, .cardetails .capacity, .cardetails .power, .cardetails .torque, .cardetails .reductiongear, .cardetails .ersh {
+    padding-left: 8px;
+}
