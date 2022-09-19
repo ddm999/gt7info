@@ -406,8 +406,8 @@ for line in lines:
     
     #HACK: todo, actual "no dr/sr updates" support
     if i == 0:
-        #regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #fe2;">No DR / SR Updates</span></span>'
-        regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #271;">DR / SR Updates enabled</span></span>'
+        regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #fe2;">No DR / SR Updates</span></span>'
+        #regulations += '\n        <span class="racedetailrow"><span class="specifiedcar" style="color: #271;">DR / SR Updates enabled</span></span>'
 
     if cartype == "specific" or cartype == "both" or cartype == "specific_tuninglimits":
         regulations += '\n        <span class="racedetailsection" id="specificcars">'+\
