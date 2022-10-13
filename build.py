@@ -552,6 +552,7 @@ html = html.replace("%LEGENDCARS_SECTION", legendcars_section)
 html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%TICKETREWARDS_SECTION", ticketrewards_section)
 html = html.replace("%MENUBOOKUSEDCARS_SECTION", menubookusedcars_section)
+html = html.replace("%DAILYRACES_UPDATESTRING", dailyracedir[-1].replace(".csv", ""))
 html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 #html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
