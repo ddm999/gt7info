@@ -12,6 +12,7 @@ lines = lines[1:] # remove headers
 cars_s = []
 cars_m = []
 cars_l = []
+cars_b = []
 for lotterycar in lines:
     lotterycarsplit = lotterycar.strip().split(",")
     cars = []
@@ -22,11 +23,14 @@ for lotterycar in lines:
             cars = cars_m
         case "S":
             cars = cars_s
+        case "B":
+            cars = cars_b
     cars.append(f"{cardb_id_to_makername(lotterycarsplit[1])} {cardb_id_to_name(lotterycarsplit[1])}")
 
 cars_s = sorted(cars_s)
 cars_m = sorted(cars_m)
 cars_l = sorted(cars_l)
+cars_b = sorted(cars_b)
 
 section_s = ""
 for car in cars_s:
@@ -37,10 +41,14 @@ for car in cars_m:
 section_l = ""
 for car in cars_l:
     section_l += f"<li>{car}</li>\n"
+section_b = ""
+for car in cars_b:
+    section_b += f"<li>{car}</li>\n"
 
 html = html.replace("%LOTTERY_CAR_S", section_s)
 html = html.replace("%LOTTERY_CAR_M", section_m)
 html = html.replace("%LOTTERY_CAR_L", section_l)
+html = html.replace("%LOTTERY_CAR_B", section_b)
 
 with open("build/lottery-cars.html", "w") as f:
     f.write(html)
