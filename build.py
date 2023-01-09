@@ -328,6 +328,7 @@ with open(f"menu-book-used.html", encoding="utf-8") as f:
 ##################################################
 # handle daily races
 ##################################################
+"""
 dailyraces_section = ""
 
 lines = [] # type: list[str]
@@ -541,7 +542,22 @@ for line in lines:
     if cartype == "specific_tuninglimits" or cartype == "dt_tuninglimits":
         jsondata["dailyrace"]["races"][-1]["pslimit"] = PSpower
         jsondata["dailyrace"]["races"][-1]["kglimit"] = KGweight
+"""
 
+jsondata["dailyrace"] = {
+    "date": "70-01-01",
+    "races": [],
+}
+
+for i in range(3):
+    jsondata["dailyrace"]["races"].append({
+        "courseid": 0, "crsbase": "No Longer Updated", "track": "No Longer Updated", "logo": f'img/track/nothing.png', "region": "pd",
+        "laps": 0, "cars": 0, "starttype": "You can check Twitter instead: @Nenkaai the weekend before & @Mistah_MCA at the start of a week", "fuelcons": 0, "tyrewear": 0,
+        "cartype": "category", "widebodyban": False, "nitrousban": False, "tyres": [], "requiredtyres": [],
+        "bop": False, "carsettings_specified": False, "garagecar": False, "carused": False,
+        "damage": False, "shortcutpen": False, "carcollisionpen": False, "pitlanepen": False,
+        "time": 0, "offset": 0, "schedule": "Tell your bot author to stop trying to get daily races :)"
+    })
 ##################################################
 # do replacements
 ##################################################
@@ -553,7 +569,7 @@ html = html.replace("%ENGINESWAPS_SECTION", engineswaps_section)
 html = html.replace("%TICKETREWARDS_SECTION", ticketrewards_section)
 html = html.replace("%MENUBOOKUSEDCARS_SECTION", menubookusedcars_section)
 html = html.replace("%DAILYRACES_UPDATESTRING", dailyracedir[-1].replace(".csv", ""))
-html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
+#html = html.replace("%DAILYRACES_SECTION", dailyraces_section)
 #html = html.replace("%BOP_SECTION", "Coming soon! (Well, probably after economy changes make obtaining Gr.3 cars more reasonable.)<br>In the meantime, you can reference Gran Turismo Sport's BoP here:")
 
 ##################################################
