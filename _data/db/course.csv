@@ -104,3 +104,7 @@ ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinT
 1249,Circuit de Barcelona-Catalunya GP Layout No Chicane,10,13,circuit,4730.0,1047.0,30.0,140.0,6,0,0,22,0,0,2,0,28.0,0,14,1
 1250,Circuit de Barcelona-Catalunya National,10,13,circuit,2977.0,862.0,28.0,140.0,6,0,0,22,0,0,3,0,28.0,0,11,1
 1265,Circuit de Barcelona-Catalunya Rallycross,10,13,snow_dirt,1133.0,148.0,11.0,140.0,6,0,0,22,0,0,4,0,28.0,0,11,1
+1292,Grand Valley - Highway 1,36,3,circuit,5102,?,?,?,?,?,?,?,?,?,1,0,?,0,18,1
+1293,Grand Valley - Highway 1 Reverse,36,3,circuit,5102,?,?,?,?,?,?,?,?,?,2,1,?,0,18,1
+1299,Grand Valley - South,36,3,circuit,3074,?,?,?,?,?,?,?,?,?,3,0,?,0,11,1
+1300,Grand Valley - South Reverse,36,3,circuit,3074,?,?,?,?,?,?,?,?,?,4,1,?,0,11,1
