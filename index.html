@@ -15,7 +15,7 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships & Info","name":"ddm999.github.io","url":"https://ddm999.github.io/gt7info/"}
   </script>
-  <link rel="stylesheet" href="style.css?nocache=20230326000910">
+  <link rel="stylesheet" href="style.css?nocache=20230326045055">
 </head>
 <body>
   <div class="wrapper">
@@ -31,6 +31,9 @@
         - Content updated for v1.29. (23-02-21)<br>
         <br>
         <strong>Breaking data.json changes:</strong><br>
+        - The `updatetimestamp` time is now derived from the GT7 update version. (The date is still accurate.)<br>
+          This shouldn't break any existing bots, and will cause the timestamp to only change once per day OR when data is adjusted for a GT7 update.<br>
+          This allows for bots to compare timestamps to determine whether to redownload data.<br>
         - `daysvisible` in a `car` entry has been removed. (22-06-28)<br>
         - A new setting for daily race `cartype` has been added: `pp`, for a PP limit. (22-06-20)<br>
         - A new setting for daily race `starttype` has been added: `grid_with_false_start`. (22-05-23)<br>
