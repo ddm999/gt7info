@@ -2,11 +2,17 @@ import os, shutil, json
 from datetime import datetime, timezone
 from cardata import *
 from db import *
+from math import floor
 
+GT_VERSION = 1.29 #NOTE: IF THIS GOES ABOVE x.59, SCREAM AND ADJUST THE CODE
+DATA_VERSION = 1
 BUILD_TIMESTAMP = datetime.now().strftime("%Y%m%d%H%M%S")
 
+version_hack_hour = floor(GT_VERSION)
+version_hack_minute = floor((GT_VERSION - version_hack_hour) * 100)
+version_hack_second = floor(DATA_VERSION)
 jsondata = {
-    "updatetimestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    "updatetimestamp": datetime.now().strftime(f"%Y-%m-%d {version_hack_hour:02d}:{version_hack_minute:02d}:{version_hack_second:02d}")
 }
 
 html = ""
