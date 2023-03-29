@@ -55,7 +55,7 @@ def cardata_plot(carid):
         f = np.float64(i)
         weeks.append(f)
 
-    fig = pyplot.figure(figsize=(8,6))
+    fig = pyplot.figure(figsize=(16,6))
     pyplot.title(cardb_id_to_name(carid), {'fontsize': 20})
     pyplot.ylim(0,max([i for i in y if i is not None])*1.1)
     pyplot.plot(x, y, marker='.')
