@@ -22,6 +22,8 @@ NewCar,OriginalCar,EngineName
 3341,2138,Coyote-5.0L-Mustang
 1729,2138,Coyote-5.0L-Mustang
 3444,3391,Voodoo-5.2L-GT350R
+3357,2156,SE75E-2&4
+135,2156,SE75E-2&4
 3438,3467,K20C1-Civic-'20
 204,3467,K20C1-Civic-'20
 203,3467,K20C1-Civic-'20
@@ -60,6 +62,7 @@ NewCar,OriginalCar,EngineName
 1431,3426,LS7-Rampage
 919,3339,LS7-BRZ
 2150,808,H25A-Escudo
+3354,3508,V8-Suzuki-VGT-Gr.3
 1448,82,2JZ-GTE-Supra
 3506,82,2JZ-GTE-Supra
 3481,82,2JZ-GTE-Supra
