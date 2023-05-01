@@ -7,6 +7,11 @@ with open(f"_data/db/cars.csv") as f:
     db_cars = f.readlines()
 db_cars = db_cars[1:] # remove headers
 
+db_cargrp = [] # type: list[str]
+with open(f"_data/db/cargrp.csv") as f:
+    db_cargrp = f.readlines()
+db_cargrp = db_cargrp[1:] # remove headers
+
 db_country = [] # type: list[str]
 with open(f"_data/db/country.csv") as f:
     db_country = f.readlines()
@@ -27,6 +32,11 @@ with open(f"_data/db/maker.csv") as f:
     db_maker = f.readlines()
 db_maker = db_maker[1:] # remove headers
 
+db_stockperf = [] # type: list[str]
+with open(f"_data/db/stockperf.csv") as f:
+    db_stockperf = f.readlines()
+db_stockperf = db_stockperf[1:] # remove headers
+
 ##################################################
 # database queries
 ##################################################
@@ -44,6 +54,14 @@ def cardb_id_to_maker(input_id : int):
         id, name, maker = line.strip().split(",")
         if int(id) == input_id:
             return int(maker)
+    raise ValueError(f"carid {input_id} not found!")
+
+def cargrpdb_id_to_group(input_id : int):
+    input_id = int(input_id)
+    for line in db_cargrp:
+        id, group = line.strip().split(",")
+        if int(id) == input_id:
+            return group
     raise ValueError(f"carid {input_id} not found!")
 
 def countrydb_id_to_name(input_id : int):
@@ -141,6 +159,15 @@ def makerdb_id_to_country(input_id : int):
             return int(country)
     raise ValueError(f"makerid {input_id} not found!")
 
+def stockperfdb_id_tyre_to_pp(input_id : int, input_tyre : str):
+    input_id = int(input_id)
+    for line in db_stockperf:
+        id, pp, tyre = line.strip().split(",")
+        if int(id) == input_id and tyre == input_tyre:
+            return pp
+    return "0" # no entry is provided when the car has "⚠️ PP"
+    #raise ValueError(f"carid {input_id} / tyre {input_tyre} not found!")
+
 ##################################################
 # combined db queries
 ##################################################
@@ -168,6 +195,14 @@ def makerdb_id_to_countrycode(input_id : int):
     country = makerdb_id_to_country(input_id)
     return countrydb_id_to_code(country)
 
+def stockperfdb_id_to_pp_dict(input_id : int):
+    tyres = ["CH","CM","CS","SH","SM","SS","RH","RM","RS","IM","W","D"]
+    ppdict = {}
+    for tyre in tyres:
+        pp = stockperfdb_id_tyre_to_pp(input_id, tyre)
+        ppdict[tyre] = pp
+    return ppdict
+
 ##################################################
 # db reverse query (item -> id)
 ##################################################
@@ -194,3 +229,13 @@ def coursedb_name_to_id(input_name : str):
         if name.upper() == input_name_upper:
             return id
     raise ValueError(f"course name '{input_name}' not found!")
+
+def cargrpdb_list_ids_from_group(input_group : str):
+    idlist = []
+    for line in db_cargrp:
+        id, group = line.strip().split(",")
+        if group == input_group:
+            idlist.append(int(id))
+    if len(idlist) == 0:
+        raise ValueError(f"group '{input_group}' not found!")
+    return idlist
