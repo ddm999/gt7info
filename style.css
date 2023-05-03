@@ -341,6 +341,21 @@ footer {
     left: 66px;
     text-align: center;
 }
+.car #trophy-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+}
+.car #trophy-text {
+    font-family: 'Roboto';
+    font-size: 8px;
+    color: rgb(173, 137, 18);
+
+    position: absolute;
+    bottom: 35px;
+    left: 98px;
+    text-align: center;
+}
 
 #legend-section {
     background-color: #28282b;
@@ -401,7 +416,7 @@ footer {
     padding: 6px 0px 0px 0px;
     position: absolute;
     color: #d5d5d5;
-    bottom: 45px;
+    bottom: 70px;
     left: 20px;
     width: 240px;
 }
@@ -418,7 +433,7 @@ footer {
     bottom: 20px;
     left: 20px;
     width: 240px;
-    text-align: center;
+    text-align: right;
 }
 .lcar #soldout {
     font-family: 'Roboto Bold';
@@ -426,7 +441,7 @@ footer {
     color: #B00;
 
     transform: rotate(-10deg);
-    margin: 0px 0px 8px 0px;
+    margin: 0px 0px 24px 0px;
     padding: 6px;
     border: 4px solid #B00;
     z-index: 1;
@@ -459,7 +474,7 @@ footer {
     bottom: 6px;
     left: 20px;
     width: 240px;
-    text-align: center;
+    text-align: right;
 }
 .lcar #days-remaining {
     font-family: 'Roboto';
@@ -470,7 +485,7 @@ footer {
     bottom: 6px;
     left: 20px;
     width: 240px;
-    text-align: center;
+    text-align: right;
 }
 .lcar #onetime {
     font-family: 'Roboto';
@@ -504,7 +519,7 @@ footer {
 }
 .lcar #reward-icon {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     right: 20px;
 }
 .lcar #reward-text {
@@ -513,8 +528,38 @@ footer {
     color: #208ae7;
 
     position: absolute;
-    bottom: 45px;
+    bottom: 50px;
     right: 16px;
+    text-align: center;
+}
+.lcar #engineswap-icon {
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+}
+.lcar #engineswap-text {
+    font-family: 'Roboto';
+    font-size: 8px;
+    color: #aaa;
+
+    position: absolute;
+    bottom: 50px;
+    left: 48px;
+    text-align: center;
+}
+.lcar #trophy-icon {
+    position: absolute;
+    bottom: 25px;
+    left: 80px;
+}
+.lcar #trophy-text {
+    font-family: 'Roboto';
+    font-size: 8px;
+    color: #c93;
+
+    position: absolute;
+    bottom: 50px;
+    left: 78px;
     text-align: center;
 }
 
