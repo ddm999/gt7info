@@ -529,13 +529,13 @@ footer {
 
     position: absolute;
     bottom: 50px;
-    right: 16px;
+    right: 15px;
     text-align: center;
 }
 .lcar #engineswap-icon {
     position: absolute;
     bottom: 25px;
-    left: 50px;
+    right: 50px;
 }
 .lcar #engineswap-text {
     font-family: 'Roboto';
@@ -544,13 +544,13 @@ footer {
 
     position: absolute;
     bottom: 50px;
-    left: 48px;
+    right: 48px;
     text-align: center;
 }
 .lcar #trophy-icon {
     position: absolute;
     bottom: 25px;
-    left: 80px;
+    right: 80px;
 }
 .lcar #trophy-text {
     font-family: 'Roboto';
@@ -559,7 +559,7 @@ footer {
 
     position: absolute;
     bottom: 50px;
-    left: 78px;
+    right: 78px;
     text-align: center;
 }
 
