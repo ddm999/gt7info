@@ -15,7 +15,7 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Dealerships & Info","name":"ddm999.github.io","url":"https://ddm999.github.io/gt7info/"}
   </script>
-  <link rel="stylesheet" href="style.css?nocache=20230503000722">
+  <link rel="stylesheet" href="style.css?nocache=20230503004808">
 </head>
 <body>
   <div class="wrapper">
@@ -28,21 +28,17 @@
         This will update whenever the site is updated.<br>
         <br>
         <strong><small>All dates are (YY-MM-DD)</small><br>
+        - Content updated for v1.32. (23-05-03)<br>
         - Added stock performance data for non-Special BoP (ie. not Gr.1/2/3/4/B) cars. (23-05-01)<br>
         &nbsp;&nbsp;&nbsp;&nbsp;<small>This data is also available in JSON & CSV formats for importing to a spreadsheet!</small><br>
-        - Content partially updated for v1.32. (23-04-28)<br>
         <br>
         <strong>Breaking data.json changes:</strong><br>
         - The `updatetimestamp` time is now derived from the GT7 update version. (The date is still accurate.)<br>
-          This shouldn't break any existing bots, and will cause the timestamp to only change once per day OR when data is adjusted for a GT7 update.<br>
-          This allows for bots to compare timestamps to determine whether to redownload data.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<small>This shouldn't break any existing bots, and will cause the timestamp to only change once per day OR when data is adjusted for a GT7 update.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;This allows for bots to compare timestamps to determine whether to redownload data.</small><br>
         - `daysvisible` in a `car` entry has been removed. (22-06-28)<br>
-        - A new setting for daily race `cartype` has been added: `pp`, for a PP limit. (22-06-20)<br>
-        - A new setting for daily race `starttype` has been added: `grid_with_false_start`. (22-05-23)<br>
-        - A new setting for daily race `cartype` has been added: `both`, for both a category and specific car restrictions. (22-05-02)<br>
-        - The `estimatedays` field for dealership data has been adjusted to make more sense. (22-04-20) <small>It's now consistently "the days remaining shown on the site, plus one".</small><br>
-        - Booleans have all been changed to actual booleans instead of y/n strings. (22-03-24)<br>
-        - For a short time, daily race specific cars were given as db IDs: that's been reverted back to names. (22-04-04)<br>
+        - The `estimatedays` field for dealership data has been adjusted to make more sense. (22-04-20)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<small>It's now consistently "the days remaining shown on the site, plus one".</small><br>
       </span>
       <br><br>
     </header>
