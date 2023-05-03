@@ -1,0 +1,111 @@
+ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinTimeH,MinTimeM,MinTimeS,MaxTimeH,MaxTimeM,MaxTimeS,LayoutNumber,IsReverse,PitLaneDelta,IsOval,NumCorners,NoRain
+4,Daytona Tri-Oval,14,3,circuit,4023,914,10.0,8.4,0,0,0,0,0,0,1,0,14.0,1,4,1
+10,Suzuka Circuit,29,2,circuit,5807,1200,40.0,29.0,4,20,0,19,40,0,1,0,20.5,0,20,0
+11,High Speed Ring,20,2,original,4345,1060,8.5,300.0,3,28,0,19,30,0,1,0,10.0,0,6,0
+16,Fuji International Speedway,18,2,circuit,4563,1475,40.0,566.76755,4,45,0,18,40,0,1,0,17.0,0,16,0
+41,WeatherTech Raceway Laguna Seca,33,3,circuit,3602,453,55.0,232.0,7,0,0,19,0,0,1,0,32.0,0,11,1
+51,Deep Forest Raceway,15,16,original,4253,765,50.0,1500.0,5,30,0,21,30,0,1,0,15.0,0,18,1
+95,Nurburgring Nordschleife,24,5,circuit,20832,2135,300.0,480.0,5,0,0,22,0,0,1,0,22.0,0,73,0
+116,Mount Panorama Motor Racing Circuit,22,8,circuit,6213,1916,174.0,800.0,0,0,0,0,0,0,1,0,23.5,0,23,1
+119,Brands Hatch Grand Prix Circuit,8,4,circuit,3946,475,35.0,140.0,5,30,0,20,30,0,1,0,9.0,0,9,1
+122,Willow Springs International Raceway: Big Willow,34,3,circuit,3951,756,50.0,744.199951171875,5,30,0,20,30,0,1,0,11.0,0,10,1
+123,Willow Springs International Raceway: Streets of Willow Springs,34,3,circuit,2675,400,20.0,744.199951171875,5,30,0,20,30,0,1,0,15.0,0,14,1
+125,Willow Springs International Raceway: Horse Thief Mile,34,3,circuit,1624,216,42.0,744.199951171875,5,30,0,19,0,0,1,0,14.0,0,11,1
+152,Autodromo de Interlagos,5,17,circuit,4309,650,43.0,755.34,4,30,0,19,0,0,1,0,30.0,0,15,1
+154,Goodwood Motor Circuit,19,4,circuit,3809,514,10.0,886.0,5,0,0,21,0,0,1,0,11.0,0,7,1
+346,Brands Hatch Indy Circuit,8,4,circuit,1944,400,24.0,140.0,5,30,0,20,30,0,2,0,11.0,0,5,1
+347,Nurburgring Nordschleife Tourist Layout,24,5,circuit,20832,2135,300.0,480.0,5,0,0,22,0,0,2,0,0.0,0,73,0
+348,Nurburgring 24h,24,5,circuit,25378,2135,300.0,480.0,0,0,0,0,0,0,3,0,22.0,0,89,0
+349,Nurburgring GP,24,5,circuit,5148,620,57.0,480.0,6,0,0,21,0,0,4,0,23.0,0,17,0
+351,Tokyo Expressway - Central Clockwise,30,2,city,4405,600,8.0,20.0,0,0,0,0,0,0,1,0,18.5,0,13,0
+353,Fishermans Ranch,17,3,snow_dirt,6893,434,145.0,1180.0,6,0,0,20,50,0,1,0,10.0,0,40,1
+354,Northern Isle Speedway,23,3,original,900,134,0.0,0.0,0,0,0,0,0,0,1,0,20.0,1,4,1
+356,Blue Moon Bay Speedway,7,3,original,3200,1060,0.0,0.0,6,30,0,19,30,0,1,0,18.0,1,3,1
+357,BB Raceway,9,2,original,1665,386,0.0,0.0,5,30,0,17,50,0,1,0,28.5,1,5,1
+358,Alsace - Village,2,6,original,5423,450,57.3,133.0,4,45,0,22,29,0,1,0,10.0,0,17,1
+361,Tokyo Expressway - East Clockwise,30,2,city,7301,2000,32.0,20.0,0,0,0,0,0,0,1,0,10.0,0,13,0
+362,Tokyo Expressway - South Clockwise,30,2,city,5201,900,24.0,20.0,0,0,0,0,0,0,1,0,9.5,0,17,1
+363,Dragon Trail - Seaside,16,18,original,5209,653,38.0,20.0,6,15,0,19,29,0,1,0,14.0,0,18,1
+365,Autodrome Lago Maggiore - Full Course,3,7,original,5809,800,74.0,700.0,5,30,0,21,30,0,1,0,17.0,0,17,1
+372,Colorado Springs - Lake,13,3,snow_dirt,2990,177,15.0,1805.0,0,0,0,0,0,0,1,0,13.0,0,15,1
+376,Kyoto Driving Park - Yamagiwa,21,2,original,4912,743,38.6,150.0,4,48,0,19,12,0,1,0,14.0,0,15,1
+439,Alsace - Village Reverse,2,6,original,5423,450,57.3,133.0,4,45,0,22,29,0,2,1,10.0,0,17,1
+440,Kyoto Driving Park - Miyabi,21,2,original,1953,442,17.5,150.0,4,48,0,19,12,0,2,0,14.0,0,7,1
+442,Suzuka Circuit East Course,29,2,circuit,2243,800,33.6,29.0,4,20,0,19,40,0,2,0,21.5,0,9,0
+443,Fishermans Ranch Reverse,17,3,snow_dirt,6893,434,145.0,1180.0,6,0,0,20,50,0,2,1,10.0,0,40,1
+444,BB Raceway Reverse,9,2,original,1665,386,0.0,0.0,5,30,0,17,50,0,2,1,30.0,1,5,1
+449,Blue Moon Bay Speedway Reverse,7,3,original,3200,1060,0.0,0.0,6,30,0,19,30,0,2,1,20.0,1,3,1
+450,Tokyo Expressway - Central Counterclockwise,30,2,city,4369,600,16.0,20.0,0,0,0,0,0,0,2,0,16.0,0,14,0
+451,Tokyo Expressway - East Counterclockwise,30,2,city,7192,2000,32.0,20.0,0,0,0,0,0,0,2,0,10.0,0,13,0
+452,Willow Springs International Raceway: Horse Thief Mile Reverse,34,3,circuit,1624,216,42.0,744.199951171875,5,30,0,19,0,0,2,1,14.0,0,11,1
+453,Sardegna - Windmills,27,7,snow_dirt,3310,298,75.0,145.0,6,35,0,22,10,0,1,0,6.0,0,14,1
+454,24 Heures du Mans Racing Circuit,1,6,circuit,13629,1679,37.3,811.0,0,0,0,0,0,0,1,0,30.0,0,38,0
+462,Circuit de Spa-Francorchamps,12,10,circuit,7004,751,104.0,420.9,8,10,0,21,0,0,1,0,25.0,0,21,0
+469,Autodromo Nazionale Monza,4,7,circuit,5793,938,13.5,800.0,7,40,0,18,50,0,1,0,15.0,0,11,1
+470,Red Bull Ring,25,15,circuit,4318,939,65.45,700.0,6,0,0,20,5,0,1,0,25.0,0,10,0
+471,Tsukuba Circuit,32,2,circuit,2045,445,5.3,24.0,4,50,0,18,20,0,1,0,17.0,0,8,0
+598,Willow Springs International Raceway: Streets of Willow Springs Reverse,34,3,circuit,2675,400,20.0,744.199951171875,5,30,0,20,30,0,2,1,15.0,0,14,1
+599,Sardegna - Windmills Reverse,27,7,snow_dirt,3310,298,75.0,145.0,6,35,0,22,10,0,2,1,6.0,0,14,1
+600,Colorado Springs - Lake Reverse,13,3,snow_dirt,2990,177,15.0,1805.0,0,0,0,0,0,0,2,1,13.0,0,15,1
+601,Dragon Trail - Seaside Reverse,16,18,original,5209,653,38.0,20.0,6,15,0,19,29,0,2,1,14.0,0,18,1
+602,Autodrome Lago Maggiore - Full Course Reverse,3,7,original,5809,800,74.0,700.0,5,30,0,21,30,0,2,1,17.0,0,17,1
+613,Kyoto Driving Park - Yamagiwa Reverse,21,2,original,4912,743,38.6,150.0,4,48,0,19,12,0,4,1,14.0,0,15,1
+742,Autodromo Nazionale Monza No Chicane,4,7,circuit,5755,1238,13.5,800.0,7,40,0,18,50,0,2,0,15.0,0,9,1
+747,Deep Forest Raceway Reverse,15,16,original,4253,765,50.0,1500.0,5,30,0,21,30,0,2,1,15.0,0,18,1
+776,Kyoto Driving Park - Yamagiwa+Miyabi,21,2,original,6846,743,38.6,150.0,4,48,0,19,12,0,5,0,14.0,0,19,1
+777,Kyoto Driving Park - Yamagiwa+Miyabi Reverse,21,2,original,6846,743,38.6,150.0,4,48,0,19,12,0,6,1,14.0,0,19,1
+790,Autodrome Lago Maggiore - East End Reverse,3,7,original,2010,500,42.0,700.0,5,30,0,21,30,0,6,1,17.0,0,8,1
+791,Autodrome Lago Maggiore - Centre Reverse,3,7,original,1706,550,12.0,700.0,5,30,0,21,30,0,4,1,17.0,0,8,1
+792,Autodrome Lago Maggiore - West End,3,7,original,2444,373,48.0,700.0,5,30,0,21,30,0,7,0,17.0,0,10,1
+793,Autodrome Lago Maggiore - Centre,3,7,original,1706,550,12.0,700.0,5,30,0,21,30,0,3,0,17.0,0,8,1
+794,Autodrome Lago Maggiore - West End Reverse,3,7,original,2444,373,48.0,700.0,5,30,0,21,30,0,8,1,17.0,0,10,1
+795,Autodrome Lago Maggiore - East End,3,7,original,2010,500,42.0,700.0,5,30,0,21,30,0,5,0,17.0,0,8,1
+819,Blue Moon Bay Speedway - Infield B,7,3,original,2860,890,0.0,0.0,6,30,0,19,30,0,4,0,18.0,0,5,1
+820,Blue Moon Bay Speedway - Infield A,7,3,original,3350,890,0.0,0.0,6,30,0,19,30,0,3,0,18.0,0,10,1
+822,Blue Moon Bay Speedway - Infield A Reverse,7,3,original,3350,890,0.0,0.0,6,30,0,19,30,0,5,1,20.0,0,10,1
+823,Blue Moon Bay Speedway - Infield B Reverse,7,3,original,2860,890,0.0,0.0,6,30,0,19,30,0,6,1,20.0,0,5,1
+825,Circuit de Sainte-Croix - A,11,6,original,9477,915,44.0,480.0,6,31,0,22,55,0,1,0,14.0,0,19,1
+826,Circuit de Sainte-Croix - A Reverse,11,6,original,9477,915,44.0,480.0,6,31,0,22,55,0,2,1,14.0,0,19,1
+827,Circuit de Sainte-Croix - B,11,6,original,7062,915,44.0,480.0,6,31,0,22,55,0,3,0,14.0,0,14,1
+828,Circuit de Sainte-Croix - B Reverse,11,6,original,7062,915,44.0,480.0,6,31,0,22,55,0,4,1,14.0,0,14,1
+829,Circuit de Sainte-Croix - C,11,6,original,10825,1807,44.0,480.0,6,31,0,22,55,0,5,0,14.0,0,24,1
+830,Circuit de Sainte-Croix - C Reverse,11,6,original,10825,1807,44.0,480.0,6,31,0,22,55,0,6,1,14.0,0,24,1
+837,Fuji International Speedway (Short),18,2,circuit,4526,1475,40.0,566.76755,4,45,0,18,40,0,2,0,17.0,0,14,0
+838,Sardegna - Road Track - C Reverse,26,7,original,2661,915,54.0,145.0,8,0,0,21,0,0,6,1,17.0,0,10,1
+839,Sardegna - Road Track - B Reverse,26,7,original,3893,915,56.0,145.0,8,0,0,21,0,0,4,1,17.0,0,13,1
+841,Sardegna - Road Track - B,26,7,original,3893,915,56.0,145.0,8,0,0,21,0,0,3,0,17.0,0,13,1
+843,Sardegna - Road Track - C,26,7,original,2661,915,54.0,145.0,8,0,0,21,0,0,5,0,17.0,0,10,1
+846,Red Bull Ring Short Track,25,15,circuit,2336,939,32.4,700.0,6,0,0,20,5,0,2,0,25.0,0,6,0
+847,Dragon Trail - Gardens,16,18,original,4352,781,27.0,20.0,6,15,0,19,29,0,1,0,14.0,0,17,0
+853,Dragon Trail - Gardens Reverse,16,18,original,4352,781,27.0,20.0,6,15,0,19,29,0,2,1,14.0,0,17,0
+854,24 Heures du Mans Racing Circuit No Chicane,1,6,circuit,13567,5700,37.3,811.0,0,0,0,0,0,0,2,0,30.0,0,32,0
+874,Circuit de Barcelona-Catalunya Grand Prix Layout,10,13,circuit,4655,1047,30.0,140.0,6,0,0,22,0,0,1,0,28.0,0,16,1
+896,Autopolis International Racing Course,6,2,circuit,4674,902,52.0,900.0,5,0,0,19,50,0,1,0,13.0,0,18,0
+898,Autopolis International Racing Course - Short Course,6,2,circuit,3022,902,30.0,900.0,5,0,0,19,50,0,2,0,13.0,0,11,0
+915,Tokyo Expressway - South Counterclockwise,30,2,city,6560,900,24.0,20.0,0,0,0,0,0,0,2,0,9.5,0,16,1
+921,Sardegna - Road Track - A,26,7,original,5113,915,38.0,145.0,8,0,0,21,0,0,1,0,17.0,0,15,1
+922,Sardegna - Road Track - A Reverse,26,7,original,5113,915,38.0,145.0,8,0,0,21,0,0,2,1,17.0,0,15,1
+1024,Trial Mountain Circuit,31,3,original,5434,1340,58.0,1255.0,6,45,0,21,15,0,1,0,25.0,0,15,1
+1034,Trial Mountain Circuit - Reverse,31,3,original,5434,1340,58.0,1255.0,6,45,0,21,15,0,2,1,27.0,0,15,1
+1069,High Speed Ring Reverse,20,2,original,4345,1060,8.5,300.0,3,28,0,19,30,0,2,1,10.0,0,6,0
+1163,Daytona Road Course,14,3,circuit,5729,575,8.4,8.4,0,0,0,0,0,0,2,0,25.0,0,12,1
+1224,Alsace - Test Course,2,6,original,2118,432,35.3,133.0,4,45,0,22,29,0,3,0,10.0,0,7,1
+1225,Alsace - Test Course Reverse,2,6,original,2118,432,35.3,133.0,4,45,0,22,29,0,4,1,10.0,0,7,1
+1226,Autodrome Lago Maggiore - East,3,7,original,3643,550,43.0,700.0,5,30,0,21,30,0,9,0,17.0,0,11,1
+1231,Autodrome Lago Maggiore - East Reverse,3,7,original,3643,550,43.0,700.0,5,30,0,21,30,0,10,1,17.0,0,11,1
+1232,Autodrome Lago Maggiore - West,3,7,original,4168,800,49.0,700.0,5,30,0,21,30,0,11,0,17.0,0,13,1
+1233,Autodrome Lago Maggiore - West Reverse,3,7,original,4168,800,49.0,700.0,5,30,0,21,30,0,12,1,17.0,0,13,1
+1260,Special Stage Route X,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,1,0,24.0,1,2,1
+1261,Special Stage Route X 400,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,2,0,24.0,1,0,1
+1262,Special Stage Route X 1000,28,3,original,30283,12000,65.0,-10.0,0,0,0,0,0,0,3,0,24.0,1,0,1
+1269,Spa 24h Layout,12,10,circuit,7004,751,104.0,420.9,0,0,0,0,0,0,2,0,35.0,0,21,0
+1240,Watkins Glen Long Course,35,3,circuit,5423.0,560.5272,41.148,454.152,5,0,0,22,30,0,1,0,10.0,0,11,1
+1264,Watkins Glen Short Course,35,3,circuit,3942.0,621.792,10.668,454.152,5,0,0,22,30,0,2,0,10.0,0,7,1
+1249,Circuit de Barcelona-Catalunya GP Layout No Chicane,10,13,circuit,4730.0,1047.0,30.0,140.0,6,0,0,22,0,0,2,0,28.0,0,14,1
+1250,Circuit de Barcelona-Catalunya National,10,13,circuit,2977.0,862.0,28.0,140.0,6,0,0,22,0,0,3,0,28.0,0,11,1
+1265,Circuit de Barcelona-Catalunya Rallycross,10,13,snow_dirt,1133.0,148.0,11.0,140.0,6,0,0,22,0,0,4,0,28.0,0,11,1
+1292,Grand Valley - Highway 1,36,3,circuit,5099,995,97,0,5,45,0,20,30,0,1,0,10.0,0,18,1
+1293,Grand Valley - Highway 1 Reverse,36,3,circuit,5099,995,97,0,5,45,0,20,30,0,2,1,10.0,0,18,1
+1299,Grand Valley - South,36,3,circuit,3076,995,85,0,5,45,0,20,30,0,3,0,10.0,0,10,1
+1300,Grand Valley - South Reverse,36,3,circuit,3076,995,85,0,5,45,0,20,30,0,4,1,10.0,0,10,1
+1007,Michelin Raceway Road Atlanta,37,3,circuit,4088,1275,38.0,281.0,0,0,0,0,0,0,1,0,10.0,0,12,1

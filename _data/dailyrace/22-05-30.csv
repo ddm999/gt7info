@@ -1,0 +1,4 @@
+courseid,laps,cars,starttype,fuelcons,tyrewear,cartype,category,specificcars,widebodyban,nitrousban,tyres,requiredtyres,bop,spec,carused,damage,shortcutpen,carcollisionpen,pitlanepen,time,offset
+4,7,12,formation,1,1,both,Gr.3,3223|2183|3436|1040|1425|2159,y,y,RH|IM|W,-,y,y,any,light,y,y,y,15,0
+363,4,16,formation,1,1,category,Gr.4,-,y,y,RH|IM|W,-,y,y,any,light,y,y,y,15,10
+1163,12,16,formation,4,3,both,Gr.1,3373|954|998|296|1067,y,y,RM|IM|W,-,y,y,any,light,y,y,y,25,0
