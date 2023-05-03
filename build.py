@@ -56,7 +56,7 @@ for car in lines:
     cardata_add("brandcentral","*",car.strip().split(","))
 
 ##################################################
-# handle rewards, engine swaps, lottery cars
+# handle rewards, engine swaps, lottery cars, trophy cars
 ##################################################
 lines = []
 with open(f"_data/rewards/{os.listdir('_data/rewards')[-1]}") as f:
@@ -86,7 +86,18 @@ lines = lines[1:] # remove headers
 lotterycars = {}
 for lotterycar in lines:
     lotterycarsplit = lotterycar.strip().split(",")
-    lotterycars[lotterycarsplit[1]] = lotterycarsplit[0]
+    if lotterycarsplit[0] != "B":
+        lotterycars[lotterycarsplit[1]] = lotterycarsplit[0]
+
+lines = []
+with open(f"_data/db/trophy.csv") as f:
+    lines = f.readlines()
+lines = lines[1:] # remove headers
+
+trophycars = {}
+for trophycar in lines:
+    trophycarsplit = trophycar.strip().split(",")
+    trophycars[trophycarsplit[1]] = trophycarsplit[0]
 
 ##################################################
 # handle used car dealership
@@ -199,6 +210,11 @@ for line in lines:
         car +=  '\n        <span id="lottery-text">TICKET<br>REWARD</span>'+\
                f'\n        <img id="lottery-icon" src="img/gift.svg" width="24" title="Can be won from {lotterystars} star tickets. Special parts for this car can be recieved from 4/5 star tickets."/>'
 
+    if carid in trophycars.keys():
+        trophyname = trophycars[carid]
+        car +=  '\n        <span id="trophy-text">TROPHY<br>REQ.</span>'+\
+               f'\n        <img id="trophy-icon" src="img/trophy.svg" width="24" title="Must be owned to earn the {trophyname} trophy."/>'
+
     usedcars_section += f'{car}\n      </p>'
     jsondata["used"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
@@ -309,6 +325,16 @@ for line in lines:
         if rewardinfo[2] != "-":
             car += f' All {rewardinfo[2].capitalize()}'
         car +=  '"/>'
+
+    if carid in engineswaps.keys():
+        engineswapinfo = engineswaps[carid]
+        car +=  '\n        <span id="engineswap-text">ENGINE<br>SWAP</span>'+\
+               f'\n        <img id="engineswap-icon" src="img/engine-lcd.svg" width="24" title="Supports engine swap: {engineswapinfo[1]} from {cardb_id_to_name(engineswapinfo[0])}"/>'
+
+    if carid in trophycars.keys():
+        trophyname = trophycars[carid]
+        car +=  '\n        <span id="trophy-text">TROPHY<br>REQ.</span>'+\
+               f'\n        <img id="trophy-icon" src="img/trophy.svg" width="24" title="Must be owned to earn the {trophyname} trophy."/>'
 
     legendcars_section += car + '\n      </p>'
     jsondata["legend"]["cars"].append({
