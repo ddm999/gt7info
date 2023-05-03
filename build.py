@@ -594,7 +594,7 @@ with open(f"build/data.json", "w") as f:
     json.dump(jsondata, f)
 
 FILES_TO_COPY = ["course-bop.html", "campaign-rewards.html", "engine-swaps.html", "gr1-hybrid-info.html", "menu-book-used.html", "ticket-rewards.html", "legacy-changes.html", "style.css", "style-simple.css"]
-FOLDERS_TO_COPY = ["fonts", "img"]
+FOLDERS_TO_COPY = ["fonts", "img", "_data"]
 
 for file in FILES_TO_COPY:
     shutil.copyfile(f"{file}", f"build/{file}")
