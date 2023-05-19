@@ -40,17 +40,17 @@ jobs:
           git-config-name: Github Actions
           git-config-email: gh.ddm999@gmail.com
 
-      - name: Add CNAME for gtinfo
-        run: python3 cname-make.py
-
-      - name: Pushes to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: 'build'
-          destination-github-username: 'ddm999'
-          destination-repository-name: 'gtinfo'
-          user-name: 'ddm999'
-          user-email: gh.ddm999@gmail.com
-          target-branch: gh-pages
+#      - name: Add CNAME for gtinfo
+#        run: python3 cname-make.py
+#
+#      - name: Pushes to another repository
+#        uses: cpina/github-action-push-to-another-repository@main
+#        env:
+#          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+#        with:
+#          source-directory: 'build'
+#          destination-github-username: 'ddm999'
+#          destination-repository-name: 'gtinfo'
+#          user-name: 'ddm999'
+#          user-email: gh.ddm999@gmail.com
+#          target-branch: gh-pages
