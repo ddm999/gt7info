@@ -13,7 +13,6 @@ NewCar,OriginalCar,EngineName
 3513,3449,LT5-Corvette-C7
 3413,3449,LT5-Corvette-C7
 3295,3449,LT5-Corvette-C7
-3439,3398,CTR38-CTR3
 1543,2152,Hellcat-Charger
 665,2152,Hellcat-Charger
 3430,2152,Hellcat-Charger
@@ -64,6 +63,7 @@ NewCar,OriginalCar,EngineName
 1549,3426,LS7-Rampage
 48,3426,LS7-Rampage
 1431,3426,LS7-Rampage
+3439,3398,CTR38-CTR3
 919,3339,LS7-BRZ
 2150,808,H25A-Escudo
 3384,808,H25A-Escudo
