@@ -166,7 +166,7 @@ for line in lines:
 
     if not fucked:
         if daysremaining > 3:
-            car += f'\n        <span id="days-estimate">Available For {daysremaining-1} More Days</span>'
+            car += f'\n        <span id="days-estimate">Available For {daysremaining-2} More Days</span>'
         elif daysremaining == 3:
             car += f'\n        <span id="days-remaining">Available For 1 More Day</span>'
         elif daysremaining == 2:
@@ -300,7 +300,7 @@ for line in lines:
 
     if not fucked:
         if daysremaining > 3:
-            car += f'\n        <span id="days-estimate">Available For {daysremaining-1} More Days</span>'
+            car += f'\n        <span id="days-estimate">Available For {daysremaining-2} More Days</span>'
         elif daysremaining == 3:
             car += f'\n        <span id="days-remaining">Available For 1 More Day</span>'
         elif daysremaining == 2:
