@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GT7 Online Info: JSON use developer notes</title>
+  <meta property="og:title" content="GT7 Online Info: JSON use developer notes">
+  <meta property="og:locale" content="en_GB">
+  <link rel="canonical" href="https://ddm999.github.io/gt7info/base-simple">
+  <meta property="og:url" content="https://ddm999.github.io/gt7info/base-simple">
+  <meta property="og:site_name" content="ddm999.github.io/gt7info">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="GT7 Online Info: JSON use developer notes">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","headline":"GT7 Online Info: JSON use developer notes","name":"ddm999.github.io/gt7info","url":"https://ddm999.github.io/gt7info/base-simple"}
+  </script>
+  <link rel="stylesheet" href="style-simple.css?nocache=%BUILD_TIMESTAMP">
+</head>
+<body>
+<header>
+<img src="img/gt7info-logo.svg" width="400"/><br>
+<a href="https://ddm999.github.io/gt7info/">Return to home</a><br>
+<h2 id="base-simple">JSON use developer notes</h2>
+<br>
+The time in the updatetimestamp is not accurate: instead, it is derived from the current game update...<br>
+if I remember to increment it on the day of an update.<br>
+This timestamp should ONLY be used to check if your current set of data is outdated.<br>
+<br>
+In car data, "maxestimatedays" is obsolete and will always match "estimatedays".<br>
+Do not use it.<br>
+<br>
+An "estimatedays" of -2 means the car has been forced into the dealership by Polyphony, usually as a "hot" car.<br>
+<br>
+All data in "dailyrace" is placeholder as it is no longer provided due to an inability to keep it up to date.<br>
+Do not use it.<br>
+<br>
+Car IDs can be found at <a href="https://github.com/ddm999/gt7info/blob/web-new/_data/db/cars.csv">github.com/ddm999/gt7info/blob/web-new/_data/db/cars.csv</a>.<br>
+To get an automatically updating version, download from "https://ddm999.github.io/gt7info/data/db/cars.csv".<br>
+<br>
+All other data folder files can also be gotten from the website: check <a href="https://github.com/ddm999/gt7info/tree/web-new/_data">github.com/ddm999/gt7info/tree/web-new/_data</a> to find the filename, then replace "gt7info/_data/" with "ddm999.github.io/gt7info/data/" to get an updating download link.<br>
+Data folder update rates:<br>
+cars.csv / country.csv / engineswaps.csv / maker.csv is updated as soon as possible.<br>
+trophy.csv is unchanging data.<br>
+cargrp.csv / course.csv / crsbase.csv / lotterycars.csv / stockperf.csv relies on game data + significant manual effort and therefore will update much slower.<br>
+<a href="https://ddm999.github.io/gt7info/">Return to home</a><br>
+</header><br><br>
+<footer>
+  This page is not affiliated with Polyphony Digital or Sony Interactive Entertainment.<br>
+  It is provided by fans of the Gran Turismo series.<br>
+  <br>
+  You may have issues if you browse with Internet Explorer, or any other outdated browser.<br>
+  <br>
+  Hosted on GitHub Pages - Source is available at <a href="https://github.com/ddm999/gt7info">github.com/ddm999/gt7info</a><br>
+  Styling adapted from <a href="https://github.com/orderedlist/minimal">github.com/orderedlist/minimal</a><br><br>
+  If you're interested in delving deeper into Gran Turismo / have an interest in GT5 and GT6 modding (which improves all the time!)<br>
+  you can hang out on the <a href="https://discord.gg/YbJjbYEKzB">GT Modding Community Discord</a>.<br>
+</footer>
+</div>
+</body>
+</html>
