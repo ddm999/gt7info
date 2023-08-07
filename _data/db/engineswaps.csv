@@ -4,6 +4,7 @@ NewCar,OriginalCar,EngineName
 207,1365,BYH-R8
 3389,1902,P65B44-Z4
 3422,1902,P65B44-Z4
+31,3387,LT4-Camaro
 187,3387,LT4-Camaro
 1985,1480,LS9-Corvette
 2148,1916,LT1-Corvette
@@ -13,6 +14,7 @@ NewCar,OriginalCar,EngineName
 3513,3449,LT5-Corvette-C7
 3413,3449,LT5-Corvette-C7
 3295,3449,LT5-Corvette-C7
+942,3449,LT5-Corvette-C7
 1543,2152,Hellcat-Charger
 665,2152,Hellcat-Charger
 3430,2152,Hellcat-Charger
@@ -22,6 +24,9 @@ NewCar,OriginalCar,EngineName
 3341,2138,Coyote-5.0L-Mustang
 1729,2138,Coyote-5.0L-Mustang
 3444,3391,Voodoo-5.2L-GT350R
+3487,3391,Voodoo-5.2L-GT350R
+1925,3391,Voodoo-5.2L-GT350R
+3391,3522,Windsor-351-Maverick
 3357,2156,SE75E-2&4
 135,2156,SE75E-2&4
 3438,3467,K20C1-Civic-'20

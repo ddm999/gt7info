@@ -4,7 +4,7 @@ from cardata import *
 from db import *
 from math import floor
 
-GT_VERSION = 1.29 #NOTE: IF THIS GOES ABOVE x.59, SCREAM AND ADJUST THE CODE
+GT_VERSION = 1.36 #NOTE: IF THIS GOES ABOVE x.59, SCREAM AND ADJUST THE CODE
 DATA_VERSION = 1
 BUILD_TIMESTAMP = datetime.now().strftime("%Y%m%d%H%M%S")
 
