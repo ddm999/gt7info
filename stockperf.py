@@ -14,7 +14,7 @@ with open("stock-perf-car.html", "r", encoding='utf-8') as f:
 ##################################################
 perf_section = ""
 jsondata = {"stockperf": []}
-csvdata = "carid,manufacturer,name,group,CH,CM,CS,SH,SM,SS,RH,RM,RS,IM,W\n"
+csvdata = "carid,manufacturer,name,group,CH,CM,CS,SH,SM,SS,RH,RM,RS,IM,W,D\n"
 
 carids = cargrpdb_list_ids_from_group("N")
 carids.extend(cargrpdb_list_ids_from_group("X"))
@@ -53,7 +53,7 @@ for carid in sorted_carids:
                f'{ppdict["CH"]},{ppdict["CM"]},{ppdict["CS"]},'+\
                f'{ppdict["SH"]},{ppdict["SM"]},{ppdict["SS"]},'+\
                f'{ppdict["RH"]},{ppdict["RM"]},{ppdict["RS"]},'+\
-               f'{ppdict["IM"]},{ppdict["W"]}\n'
+               f'{ppdict["IM"]},{ppdict["W"]},{ppdict["D"]}\n'
 
 html = html.replace("%CAR_PERFS", perf_section)
 
