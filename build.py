@@ -4,15 +4,11 @@ from cardata import *
 from db import *
 from math import floor
 
-GT_VERSION = 1.36 #NOTE: IF THIS GOES ABOVE x.59, SCREAM AND ADJUST THE CODE
 DATA_VERSION = 1
 BUILD_TIMESTAMP = datetime.now().strftime("%Y%m%d%H%M%S")
 
-version_hack_hour = floor(GT_VERSION)
-version_hack_minute = floor((GT_VERSION - version_hack_hour) * 100)
-version_hack_second = floor(DATA_VERSION)
 jsondata = {
-    "updatetimestamp": datetime.now().strftime(f"%Y-%m-%d {version_hack_hour:02d}:{version_hack_minute:02d}:{version_hack_second:02d}")
+    "updatetimestamp": datetime.now().strftime(f"%Y-%m-%d")
 }
 
 html = ""
@@ -28,7 +24,7 @@ with open("used.html", "r", encoding='utf-8') as f:
 legend_template = ""
 with open("legend.html", "r", encoding='utf-8') as f:
     legend_template = f.read()
-    
+
 dailyrace_template = ""
 with open("dailyrace.html", "r", encoding='utf-8') as f:
     dailyrace_template = f.read()
@@ -176,6 +172,7 @@ for line in lines:
     else:
         car += f'\n        <span id="days-estimate">No Estimate Available</span>'
 
+    rewardinfo = None
     if carid in rewards.keys():
         rewardinfo = rewards[carid]
         car +=  '\n        <span id="reward-text">REWARD<br>CAR</span>'
@@ -192,11 +189,13 @@ for line in lines:
             car += f' All {rewardinfo[2].capitalize()}'
         car +=  '"/>'
 
+    engineswapinfo = None
     if carid in engineswaps.keys():
         engineswapinfo = engineswaps[carid]
         car +=  '\n        <span id="engineswap-text">ENGINE<br>SWAP</span>'+\
                f'\n        <img id="engineswap-icon" src="img/engine.svg" width="24" title="Supports engine swap: {engineswapinfo[1]} from {cardb_id_to_name(engineswapinfo[0])}"/>'
 
+    lotterycarinfo = None
     if carid in lotterycars.keys():
         lotterycarinfo = lotterycars[carid]
         lotterystars = ""
@@ -210,6 +209,7 @@ for line in lines:
         car +=  '\n        <span id="lottery-text">TICKET<br>REWARD</span>'+\
                f'\n        <img id="lottery-icon" src="img/gift.svg" width="24" title="Can be won from {lotterystars} star tickets. Special parts for this car can be recieved from 4/5 star tickets."/>'
 
+    trophyname = None
     if carid in trophycars.keys():
         trophyname = trophycars[carid]
         car +=  '\n        <span id="trophy-text">TROPHY<br>REQ.</span>'+\
@@ -218,7 +218,12 @@ for line in lines:
     usedcars_section += f'{car}\n      </p>'
     jsondata["used"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
-        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new"
+        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new",
+        "rewardcar": {"type": rewardinfo[0], "name": rewardinfo[1], "requirement": rewardinfo[2] if rewardinfo[2] != "-" else None} if rewardinfo is not None else None,
+        "engineswap": {"carid": engineswapinfo[0], "manufacturer": cardb_id_to_makername(engineswapinfo[0]),
+                       "region": cardb_id_to_countrycode(engineswapinfo[0]), "name": cardb_id_to_name(engineswapinfo[0]),
+                       "enginename": engineswapinfo[1]} if engineswapinfo is not None else None,
+        "lotterycar": lotterycarinfo, "trophycar": trophyname
     })
 
 ##################################################
@@ -310,6 +315,7 @@ for line in lines:
     else:
         car += f'\n        <span id="days-estimate">No Estimate Available</span>'
 
+    rewardinfo = None
     if carid in rewards.keys():
         rewardinfo = rewards[carid]
         car +=  '\n        <span id="reward-text">REWARD<br>CAR</span>'
@@ -326,11 +332,13 @@ for line in lines:
             car += f' All {rewardinfo[2].capitalize()}'
         car +=  '"/>'
 
+    engineswapinfo = None
     if carid in engineswaps.keys():
         engineswapinfo = engineswaps[carid]
         car +=  '\n        <span id="engineswap-text">ENGINE<br>SWAP</span>'+\
                f'\n        <img id="engineswap-icon" src="img/engine-lcd.svg" width="24" title="Supports engine swap: {engineswapinfo[1]} from {cardb_id_to_name(engineswapinfo[0])}"/>'
 
+    trophyname = None
     if carid in trophycars.keys():
         trophyname = trophycars[carid]
         car +=  '\n        <span id="trophy-text">TROPHY<br>REQ.</span>'+\
@@ -339,7 +347,12 @@ for line in lines:
     legendcars_section += car + '\n      </p>'
     jsondata["legend"]["cars"].append({
         "carid": carid, "manufacturer": manufacturer, "region": region, "name": name, "credits": int(cr),
-        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new"
+        "state": "normal" if state == "new" else state, "estimatedays": daysremaining-1, "maxestimatedays": daysremaining-1, "new": state == "new",
+        "rewardcar": {"type": rewardinfo[0], "name": rewardinfo[1], "requirement": rewardinfo[2] if rewardinfo[2] != "-" else None} if rewardinfo is not None else None,
+        "engineswap": {"carid": engineswapinfo[0], "manufacturer": cardb_id_to_makername(engineswapinfo[0]),
+                       "region": cardb_id_to_countrycode(engineswapinfo[0]), "name": cardb_id_to_name(engineswapinfo[0]),
+                       "enginename": engineswapinfo[1]} if engineswapinfo is not None else None,
+        "trophycar": trophyname
     })
 
 ##################################################
@@ -584,7 +597,7 @@ jsondata["dailyrace"] = {
 for i in range(3):
     jsondata["dailyrace"]["races"].append({
         "courseid": 0, "crsbase": "No Longer Updated", "track": "No Longer Updated", "logo": f'img/track/nothing.png', "region": "pd",
-        "laps": 0, "cars": 0, "starttype": "You can check Twitter instead: @Nenkaai the weekend before & @Mistah_MCA at the start of a week", "fuelcons": 0, "tyrewear": 0,
+        "laps": 0, "cars": 0, "starttype": "You can check Twitter instead: @Mistah_MCA at the start of a week", "fuelcons": 0, "tyrewear": 0,
         "cartype": "category", "widebodyban": False, "nitrousban": False, "tyres": [], "requiredtyres": [],
         "bop": False, "carsettings_specified": False, "garagecar": False, "carused": False,
         "damage": False, "shortcutpen": False, "carcollisionpen": False, "pitlanepen": False,

@@ -111,3 +111,9 @@ ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinT
 1299,Grand Valley - South,36,3,circuit,3076,995,85,0,5,45,0,20,30,0,3,0,10.0,0,10,1
 1300,Grand Valley - South Reverse,36,3,circuit,3076,995,85,0,5,45,0,20,30,0,4,1,10.0,0,10,1
 1007,Michelin Raceway Road Atlanta,37,3,circuit,4088,1275,38.0,281.0,0,0,0,0,0,0,1,0,10.0,0,12,1
+1273,Lake Louise Tri-Oval,38,14,snow_dirt,3068.0,1184.0,78.0,2190.0,6,0,0,22,0,0,1,0,9.0,0,3,1
+1308,Lake Louise Short Track,38,14,snow_dirt,2577.0,1024.0,63.0,2190.0,6,0,0,22,0,0,2,0,9.0,0,7,1
+1309,Lake Louise Long Track,38,14,snow_dirt,3694.0,765.0,78.0,2190.0,6,0,0,22,0,0,3,0,12.0,0,11,1
+1316,Lake Louise Tri-Oval Reverse,38,14,snow_dirt,3068.0,1184.0,78.0,2190.0,6,0,0,22,0,0,4,1,9.0,0,3,1
+1317,Lake Louise Short Track Reverse,38,14,snow_dirt,2577.0,1024.0,63.0,2190.0,6,0,0,22,0,0,5,1,9.0,0,7,1
+1318,Lake Louise Long Track Reverse,38,14,snow_dirt,3694.0,765.0,78.0,2190.0,6,0,0,22,0,0,6,1,12.0,0,11,1
