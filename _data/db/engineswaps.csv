@@ -56,6 +56,8 @@ NewCar,OriginalCar,EngineName
 2154,3526,K24A-Civic
 3559,3526,K24A-Civic
 3336,3522,Windsor-351-Maverick
+1426,3522,Windsor-351-Maverick
+3402,3522,Windsor-351-Maverick
 3300,3522,Windsor-351-Maverick
 3391,3522,Windsor-351-Maverick
 3488,3522,Windsor-351-Maverick
@@ -153,6 +155,7 @@ NewCar,OriginalCar,EngineName
 919,3339,LS7-BRZ
 2167,3339,LS7-BRZ
 3554,3339,LS7-BRZ
+3354,3550,EJ20-Impreza-Rally
 451,3550,EJ20-Impreza-Rally
 379,3550,EJ20-Impreza-Rally
 3545,3456,K14C-Swift
@@ -165,6 +168,8 @@ NewCar,OriginalCar,EngineName
 63,207,3S-GTE-MR2
 810,207,3S-GTE-MR2
 3344,3418,B58-GR-Supra-'20
+3483,82,2JZ-GTE-Supra
+655,82,2JZ-GTE-Supra
 1448,82,2JZ-GTE-Supra
 3506,82,2JZ-GTE-Supra
 3481,82,2JZ-GTE-Supra
