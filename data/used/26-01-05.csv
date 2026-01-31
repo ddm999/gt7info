@@ -1,4 +1,6 @@
 id,cr,state,daysremaining
+3524,400000,normal,-1
+3551,90000,normal,-1
 1537,19400,soldout,1
 201,30500,new,8
 3563,50700,normal,4
@@ -26,6 +28,5 @@ id,cr,state,daysremaining
 1458,37100,normal,4
 1384,26800,limited,3
 1426,397100,normal,9
-1410,299300,new,9
 396,432900,normal,11
 1545,340400,soldout,1
