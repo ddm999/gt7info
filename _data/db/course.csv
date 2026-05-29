@@ -117,3 +117,7 @@ ID,Name,Base,Country,Category,Length,LongestStraight,ElevationDiff,Altitude,MinT
 1316,Lake Louise Tri-Oval Reverse,38,14,snow_dirt,3068.0,1184.0,78.0,2190.0,6,0,0,22,0,0,4,1,9.0,0,3,1
 1317,Lake Louise Short Track Reverse,38,14,snow_dirt,2577.0,1024.0,63.0,2190.0,6,0,0,22,0,0,5,1,9.0,0,7,1
 1318,Lake Louise Long Track Reverse,38,14,snow_dirt,3694.0,765.0,78.0,2190.0,6,0,0,22,0,0,6,1,12.0,0,11,1
+2001,Eiger Nordwand,39,16,original,2436,250,90,2016,?,?,?,?,?,?,1,0,?,0,11,1
+2002,Eiger Nordwand Reverse,39,16,original,2436,250,90,2016,?,?,?,?,?,?,2,1,?,0,11,1
+2003,Yas Marina Circuit,40,21,circuit,5281,1233,11,2,0,0,0,0,0,0,1,0,?,0,16,1
+2004,Circuit Gilles-Villeneuve,41,14,circuit,4361,1173,5,13,?,?,?,?,?,?,1,0,?,0,14,1

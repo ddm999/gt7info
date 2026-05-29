@@ -1,4 +1,5 @@
 
+import os, shutil
 from db import *
 
 html = ""
@@ -20,33 +21,32 @@ with open("course.html", "r", encoding='utf-8') as f:
 ##################################################
 # handle courses
 ##################################################
-def course_sorter(id):
-    course = coursedata[id]
-    return f"{course['Category']} {course['Base']} {course['LayoutNumber']}"
-
-categories_bases_courses : dict[str, dict[int, list[dict]]] = {}
+categories_bases_courses : dict[str, dict[str, list[dict]]] = {}
 for category in ["circuit", "original", "city", "snow_dirt"]:
     categories_bases_courses[category] = {}
 
 coursedata = coursedb_all_data().values()
 for course in coursedata:
-    if course['Base'] not in categories_bases_courses[course['Category']].keys():
-        categories_bases_courses[course['Category']][course['Base']] = [course]
+    base = course['Base']
+    cat = course['Category']
+    if base not in categories_bases_courses[cat]:
+        categories_bases_courses[cat][base] = [course]
     else:
-        categories_bases_courses[course['Category']][course['Base']].append(course)
+        categories_bases_courses[cat][base].append(course)
+
+for cat in categories_bases_courses:
+    for base in categories_bases_courses[cat]:
+        categories_bases_courses[cat][base].sort(key=lambda c: int(c['LayoutNumber']))
 
 ##################################################
 # helpers
 ##################################################
-def CourseCategoryToShownName(category : str):
-    if category == "circuit":
-        return "World Circuits"
-    elif category == "original":
-        return "Original Circuits"
-    elif category == "city":
-        return "City Courses"
-    elif category == "snow_dirt":
-        return "Dirt & Snow"
+def CourseCategoryToShownName(category: str):
+    match category:
+        case "circuit":   return "World Circuits"
+        case "original":  return "Original Circuits"
+        case "city":      return "City Courses"
+        case "snow_dirt": return "Dirt & Snow"
 
 ##################################################
 # run through sections
@@ -54,66 +54,74 @@ def CourseCategoryToShownName(category : str):
 courses_section = ""
 for category, bases in categories_bases_courses.items():
     category_html = category_template
-
-    categoryname = CourseCategoryToShownName(category)
-
-    category_html = category_html.replace("%CATEGORYNAME", categoryname)
+    category_html = category_html.replace("%CATEGORYNAME", CourseCategoryToShownName(category))
     category_html = category_html.replace("%CATEGORY", category)
 
+    crsbases_section = ""
+    for base_id, courses in bases.items():
+        base_html = base_template
+
+        logo = crsbasedb_id_to_logo(base_id)
+        base_name = crsbasedb_id_to_name(base_id)
+        region = countrydb_id_to_code(int(courses[0]['Country']))
+        flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
+
+        base_html = base_html.replace("%TRACKLOGO", logo)
+        base_html = base_html.replace("%FLAG", flag)
+        base_html = base_html.replace("%TRACKNAME", base_name)
+        base_html = base_html.replace("%NUMLAYOUTS", str(len(courses)))
+
+        crslayouts_section = ""
+        for course in courses:
+            course_html = course_template
+
+            MinTimeH = f"{int(course['MinTimeH']):02d}" if course['MinTimeH'] != "?" else "??"
+            MinTimeM = f"{int(course['MinTimeM']):02d}" if course['MinTimeM'] != "?" else "??"
+            MaxTimeH = f"{int(course['MaxTimeH']):02d}" if course['MaxTimeH'] != "?" else "??"
+            MaxTimeM = f"{int(course['MaxTimeM']):02d}" if course['MaxTimeM'] != "?" else "??"
+
+            course_html = course_html.replace("%TRACKNAME", course['Name'])
+            course_html = course_html.replace("%LENGTH", f"{float(course['Length'])/1000:.3f}")
+            course_html = course_html.replace("%STRAIGHT", f"{float(course['LongestStraight'])/1000:.3f}")
+            course_html = course_html.replace("%ELEVATION", course['ElevationDiff'])
+            course_html = course_html.replace("%ALTITUDE", course['Altitude'])
+            course_html = course_html.replace("%CORNERS", course['NumCorners'])
+            course_html = course_html.replace("%PITLANEDELTA", course['PitLaneDelta'])
+
+            if f"{MinTimeH}{MinTimeM}{MaxTimeH}{MaxTimeM}" == "00000000":
+                course_html += ('        <img id="hr24" src="img/track_24hr.png"/>24hr\n'
+                                '        <span id="hr24-text">Supports 24hr time</span><br>\n')
+            else:
+                course_html += f'<span id="time-range">{MinTimeH}:{MinTimeM} to {MaxTimeH}:{MaxTimeM}</span>\n'
+
+            if int(course['IsReverse']) != 0:
+                course_html += '        <img id="rev" src="img/track_rev.png"/>rev\n'
+            if int(course['IsOval']) != 0:
+                course_html += '        <img id="oval" src="img/track_oval.png"/>oval\n'
+            if int(course['NoRain']) != 0:
+                course_html += '        <img id="norain" src="img/track_norain.png"/>norain<br>\n'
+            else:
+                course_html += ('        <img id="rain" src="img/track_rain.png"/>rain\n'
+                                '        <span id="rain-text">Supports rain</span><br>\n')
+
+            course_html += '</div>\n'
+            crslayouts_section += course_html
+
+        base_html = base_html.replace("%CRSLAYOUTS_SECTION", crslayouts_section)
+        crsbases_section += base_html
+
+    category_html = category_html.replace("%CRSBASES_SECTION", crsbases_section)
     courses_section += category_html
-
-"""
-for id in sorted_ids:
-    course_html = course_template
-
-    track = coursedata[id]["Name"]
-    logo = crsbasedb_id_to_logo(coursedata[id]["Base"])
-    region = coursedata[id]["Country"]
-    flag = f"img/pdi-flag.png" if region == "pdi" else f"https://flagcdn.com/h24/{region}.png"
-
-    MinTimeH = int(coursedata[id]['MinTimeH'])
-    MinTimeM = int(coursedata[id]['MinTimeM'])
-    MaxTimeH = int(coursedata[id]['MaxTimeH'])
-    MaxTimeM = int(coursedata[id]['MaxTimeM'])
-
-    course_html = course_html.replace("%TRACKLOGO", logo)
-    course_html = course_html.replace("%FLAG", flag)
-    course_html = course_html.replace("%TRACKNAME", track)
-    course_html = course_html.replace("%LENGTH", f"{int(coursedata[id]['Length'])/1000}")
-    course_html = course_html.replace("%STRAIGHT", f"{int(coursedata[id]['LongestStraight'])/1000}")
-    course_html = course_html.replace("%ELEVATION", coursedata[id]["ElevationDiff"])
-    course_html = course_html.replace("%ALTITUDE", coursedata[id]["Altitude"])
-    course_html = course_html.replace("%CORNERS", coursedata[id]["NumCorners"])
-    course_html = course_html.replace("%PITLANEDELTA", coursedata[id]["PitLaneDelta"])
-
-    if MinTimeH == 0 and MinTimeM == 0 and MaxTimeH == 0 and MaxTimeM == 0:
-        course_html += ('        <img id="24hr" src="img/track_24hr.png"/>24hr\n'+
-                        '        <span id="24hr-text">Supports 24hr time</span><br>\n')
-    else:
-        course_html += f'<span id="time-range">{MinTimeH:02d}:{MinTimeM:02d} to {MaxTimeH:02d}:{MaxTimeM:02d}</span>\n'
-
-    if int(coursedata[id]['IsReverse']) != 0:
-        course_html += '        <img id="rev" src="img/track_rev.png"/>rev\n'
-
-    if int(coursedata[id]['IsOval']) != 0:
-        course_html += '        <img id="oval" src="img/track_oval.png"/>oval\n'
-
-    if int(coursedata[id]['NoRain']) != 0:
-        course_html += '        <img id="norain" src="img/track_norain.png"/>norain<br>\n'
-    else:
-        course_html += ('       <img id="rain" src="img/track_rain.png"/>rain\n'+
-                        '       <span id="rain-text">Supports rain</span><br>\n')
-
-    courses_section += course_html
-"""
 
 html = html.replace("%COURSES_SECTION", courses_section)
 
-with open("build/courses.html", "w") as f:
+os.makedirs("build", exist_ok=True)
+with open("build/courses.html", "w", encoding='utf-8') as f:
     f.write(html)
 
-FILES_TO_COPY = ["style-courses-220530.css"]
-
-import shutil
+FILES_TO_COPY = ["style-courses.css"]
 for file in FILES_TO_COPY:
-    shutil.copyfile(f"{file}", f"build/{file}")
+    if os.path.exists(file):
+        shutil.copyfile(file, f"build/{file}")
+
+print("spaghetti")

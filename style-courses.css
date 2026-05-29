@@ -46,7 +46,9 @@ body {
     margin: 0px;
 
     background-image: url("/img/ford-gt-lm-spec-ii/4.png");
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -171,8 +173,29 @@ footer {
     top: 32px;
 }
 
+#categoryheader {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
 #categorybanner {
-    height: 24px;
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#categoryname {
+    font-family: 'Roboto Bold';
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 1px 1px 6px #000;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #back-to-top {
@@ -180,4 +203,125 @@ footer {
     position: absolute;
     right: 26px;
     bottom: 32px;
+}
+
+.course-container {
+    display: block;
+    width: 100%;
+}
+
+.course-base-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    overflow-x: auto;
+}
+
+#crsbase {
+    background-color: #1e2022;
+    position: relative;
+    flex-shrink: 0;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 12px #000;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#crsbase-header {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+#crsbase #logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#trackname-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+#crsbase #trackname {
+    font-family: 'Roboto Bold';
+    font-size: 16px;
+    color: #d5d5d5;
+}
+
+#crsbase #flag {
+    height: 16px;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+#numlayouts {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #999;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.course-layout-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    border-left: 1px solid #444;
+    margin-left: 8px;
+    padding-left: 8px;
+    gap: 8px;
+}
+
+.course-layout {
+    flex-shrink: 0;
+    width: 200px;
+    border-left: 1px solid #333;
+    padding-left: 8px;
+}
+
+.course-layout-container #trackname {
+    font-family: 'Roboto Medium';
+    font-size: 14px;
+    color: #d5d5d5;
+    display: block;
+    margin-top: 4px;
+}
+
+#trackdata {
+    display: block;
+    margin: 4px 0px;
+}
+
+#length, #straight, #elevation, #altitude, #corners, #pitlane {
+    font-family: 'Roboto';
+    font-size: 12px;
+    color: #aaa;
+}
+
+#time-range {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #999;
+    display: block;
+}
+
+#hr24, #rev, #oval, #rain, #norain {
+    height: 16px;
+    vertical-align: middle;
+}
+
+#rain-text, #hr24-text {
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #999;
+    vertical-align: middle;
 }
